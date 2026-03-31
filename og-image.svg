@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="overlay" result="blend"/>
+      <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#09090b"/>
+  <!-- Subtle gold glow -->
+  <ellipse cx="600" cy="280" rx="500" ry="300" fill="rgba(200,169,110,0.04)"/>
+  <!-- Top border line -->
+  <rect x="80" y="80" width="1040" height="1" fill="rgba(255,255,255,0.08)"/>
+  <!-- Bottom border line -->
+  <rect x="80" y="549" width="1040" height="1" fill="rgba(255,255,255,0.08)"/>
+  <!-- Logo mark -->
+  <rect x="551" y="165" width="98" height="98" rx="16" fill="#c8a96e"/>
+  <text x="600" y="232" font-family="Georgia, serif" font-size="60" font-weight="400" fill="#09090b" text-anchor="middle">1</text>
+  <!-- Main title -->
+  <text x="600" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="88" font-weight="400" fill="#eeeef0" text-anchor="middle" letter-spacing="-3">1bot</text>
+  <!-- Gold accent line -->
+  <rect x="540" y="358" width="120" height="2" fill="#c8a96e" opacity="0.6"/>
+  <!-- Tagline -->
+  <text x="600" y="410" font-family="Georgia, serif" font-size="24" font-weight="400" fill="#9898a6" text-anchor="middle">Váš AI kolega. V krabičke.</text>
+  <!-- Sub tagline -->
+  <text x="600" y="448" font-family="system-ui, Arial, sans-serif" font-size="15" fill="#58586a" text-anchor="middle" letter-spacing="2">LOKÁLNE · SÚKROMNE · 24/7</text>
+  <!-- URL -->
+  <text x="600" y="520" font-family="'SF Mono', 'Courier New', monospace" font-size="16" fill="#58586a" text-anchor="middle" letter-spacing="1">1bot.sk</text>
+</svg>
