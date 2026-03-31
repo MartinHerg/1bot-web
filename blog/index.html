@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c8a96e'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='400' fill='%2309090b' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Blog 1bot — AI pre advokátov a regulované profesie. Praktické články o lokálnom AI, GDPR, mlčanlivosti a digitalizácii právnej kancelárie.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1bot.sk/blog/">
+<meta property="og:title" content="Blog — 1bot">
+<meta property="og:description" content="Praktické články o AI pre advokátov, GDPR a digitalizácii právnej kancelárie.">
+<meta property="og:image" content="https://1bot.sk/og-image.png">
+<meta property="og:locale" content="sk_SK">
+<link rel="canonical" href="https://1bot.sk/blog/">
+<title>Blog — 1bot</title>
+<style>
+:root {
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
+  --bg: #09090b; --bg2: #0f0f12; --bg3: #16161a;
+  --surface: #1e1e24;
+  --b: rgba(255,255,255,0.07); --b2: rgba(255,255,255,0.13);
+  --t: #eeeef0; --t2: #9898a6; --t3: #58586a;
+  --gold: #c8a96e; --gold3: rgba(200,169,110,0.28); --gold4: rgba(200,169,110,0.06);
+  --r: 5px; --r2: 10px; --r3: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--t); font-family: var(--sans); line-height: 1.6; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+.w { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+body::after { content:''; position:fixed; inset:0; pointer-events:none; z-index:9000; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E"); opacity:.55; }
+
+nav { position:fixed; top:0; left:0; right:0; z-index:500; padding:16px 0; background:rgba(9,9,11,.93); border-bottom:1px solid var(--b); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+.nav-i { display:flex; justify-content:space-between; align-items:center; gap:24px; }
+.logo { font-family:var(--mono); font-size:19px; font-weight:500; letter-spacing:-.3px; }
+.logo b { color:var(--gold); }
+.nav-links { display:flex; gap:24px; list-style:none; }
+.nav-links a { font-size:14px; color:var(--t2); transition:color .2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--t); }
+.nav-cta { font-family:var(--sans); font-size:13px; font-weight:600; padding:9px 20px; background:var(--gold); color:#09090b; border:none; cursor:pointer; border-radius:var(--r); transition:opacity .2s; }
+.nav-cta:hover { opacity:.88; }
+
+/* Hero */
+.blog-hero { padding: 120px 0 60px; border-bottom: 1px solid var(--b); }
+.blog-hero-label { font-family:var(--mono); font-size:11px; letter-spacing:2.2px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:block; }
+.blog-hero-title { font-family:var(--serif); font-size:clamp(32px,5vw,56px); font-weight:400; letter-spacing:-1.5px; margin-bottom:14px; }
+.blog-hero-sub { font-size:16px; color:var(--t2); max-width:520px; line-height:1.7; }
+
+/* Layout */
+.blog-layout { padding: 60px 0 80px; display:grid; grid-template-columns:1fr 280px; gap:60px; align-items:start; }
+
+/* Featured article */
+.featured-article { background:var(--bg2); border:1px solid var(--b2); border-radius:var(--r3); overflow:hidden; margin-bottom:32px; transition:border-color .2s; }
+.featured-article:hover { border-color:var(--gold3); }
+.featured-badge { display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; background:var(--gold); color:#09090b; padding:4px 12px; }
+.featured-body { padding:28px 32px; }
+.featured-label { font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; display:block; }
+.featured-title { font-family:var(--serif); font-size:clamp(22px,3vw,30px); font-weight:400; letter-spacing:-.5px; margin-bottom:12px; line-height:1.2; color:var(--t); transition:color .2s; }
+.featured-article:hover .featured-title { color:var(--gold); }
+.featured-desc { font-size:15px; color:var(--t2); line-height:1.7; margin-bottom:20px; }
+.article-meta { display:flex; align-items:center; gap:14px; font-size:12px; color:var(--t3); }
+.read-more { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:500; color:var(--gold); margin-top:16px; transition:gap .2s; }
+.featured-article:hover .read-more { gap:10px; }
+
+/* Article grid */
+.articles-grid { display:flex; flex-direction:column; gap:16px; }
+.article-card { background:var(--bg2); border:1px solid var(--b); border-radius:var(--r2); padding:22px 24px; display:grid; grid-template-columns:1fr auto; gap:16px; align-items:start; transition:border-color .2s; }
+.article-card:hover { border-color:var(--b2); }
+.ac-label { font-family:var(--mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; display:block; }
+.ac-title { font-family:var(--serif); font-size:18px; font-weight:400; letter-spacing:-.3px; margin-bottom:8px; line-height:1.25; color:var(--t); transition:color .2s; }
+.article-card:hover .ac-title { color:var(--gold); }
+.ac-desc { font-size:13px; color:var(--t3); line-height:1.6; }
+.ac-meta { font-size:11px; color:var(--t3); margin-top:10px; font-family:var(--mono); }
+.ac-arrow { font-size:18px; color:var(--t3); transition:color .2s; margin-top:4px; flex-shrink:0; }
+.article-card:hover .ac-arrow { color:var(--gold); }
+
+/* Coming soon cards */
+.coming-soon { opacity:.5; cursor:default; }
+.coming-soon:hover { border-color:var(--b) !important; }
+.coming-soon:hover .ac-title { color:var(--t) !important; }
+.coming-soon:hover .ac-arrow { color:var(--t3) !important; }
+.cs-badge { font-family:var(--mono); font-size:10px; background:var(--surface); border:1px solid var(--b); color:var(--t3); padding:3px 8px; border-radius:100px; white-space:nowrap; }
+
+/* Sidebar */
+.blog-sidebar { position:sticky; top:88px; display:flex; flex-direction:column; gap:14px; }
+.sidebar-card { background:var(--bg2); border:1px solid var(--b); border-radius:var(--r2); padding:22px; }
+.sidebar-card h4 { font-size:13px; font-weight:600; margin-bottom:14px; color:var(--t); }
+.topic-list { display:flex; flex-direction:column; gap:6px; }
+.topic-item { display:flex; align-items:center; justify-content:space-between; padding:8px 10px; background:var(--bg3); border-radius:var(--r); font-size:13px; color:var(--t2); transition:all .2s; cursor:pointer; }
+.topic-item:hover { background:var(--surface); color:var(--t); }
+.topic-count { font-family:var(--mono); font-size:10px; color:var(--t3); }
+.nl-form { display:flex; flex-direction:column; gap:8px; }
+.nl-inp { background:var(--surface); border:1px solid var(--b2); color:var(--t); padding:10px 12px; font-family:var(--sans); font-size:13px; outline:none; border-radius:var(--r); transition:border-color .2s; }
+.nl-inp:focus { border-color:var(--gold); }
+.nl-inp::placeholder { color:var(--t3); }
+.nl-btn { background:var(--gold); color:#09090b; border:none; padding:10px; font-family:var(--sans); font-size:13px; font-weight:600; cursor:pointer; border-radius:var(--r); transition:opacity .18s; }
+.nl-btn:hover { opacity:.88; }
+.nl-note { font-size:11px; color:var(--t3); line-height:1.5; }
+.cta-mini { background:var(--gold4); border:1px solid var(--gold3); border-radius:var(--r2); padding:20px; }
+.cta-mini h4 { font-family:var(--serif); font-size:17px; font-weight:400; margin-bottom:8px; }
+.cta-mini p { font-size:13px; color:var(--t2); line-height:1.6; margin-bottom:14px; }
+.cta-mini-btn { display:block; text-align:center; background:var(--gold); color:#09090b; padding:10px; border-radius:var(--r); font-size:13px; font-weight:600; transition:opacity .18s; }
+.cta-mini-btn:hover { opacity:.88; }
+
+footer { border-top:1px solid var(--b); padding:40px 0 32px; background:var(--bg2); }
+.foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; margin-bottom:32px; }
+.foot-brand p { font-size:13px; color:var(--t3); line-height:1.65; margin-top:10px; max-width:260px; }
+.foot-col h4 { font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:var(--t3); font-family:var(--mono); margin-bottom:12px; }
+.foot-col ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.foot-col ul li a { font-size:13px; color:var(--t3); transition:color .2s; }
+.foot-col ul li a:hover { color:var(--t2); }
+.foot-bottom { display:flex; justify-content:space-between; padding-top:24px; border-top:1px solid var(--b); font-size:12px; color:var(--t3); }
+
+@media(max-width:768px){
+  .blog-layout{grid-template-columns:1fr}
+  .blog-sidebar{position:static}
+  .article-card{grid-template-columns:1fr}
+  .ac-arrow{display:none}
+  .foot-grid{grid-template-columns:1fr;gap:24px}
+  .foot-bottom{flex-direction:column;gap:8px}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="w">
+    <div class="nav-i">
+      <a href="/" class="logo"><b>1</b>bot</a>
+      <ul class="nav-links">
+        <li><a href="/#produkty">Produkty</a></li>
+        <li><a href="/#cennik">Cenník</a></li>
+        <li><a href="/#o-nas">O nás</a></li>
+        <li><a href="/blog/" class="active">Blog</a></li>
+      </ul>
+      <button class="nav-cta" onclick="location.href='/#kontakt'">Nezáväzná konzultácia</button>
+    </div>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <div class="w">
+    <span class="blog-hero-label">Blog · 1bot</span>
+    <h1 class="blog-hero-title">AI pre právnu kanceláriu — prakticky</h1>
+    <p class="blog-hero-sub">Články o lokálnom AI, GDPR, mlčanlivosti advokáta a digitalizácii kancelárie. Bez buzzwordov, s konkrétnymi odpoveďami.</p>
+  </div>
+</div>
+
+<div class="w">
+  <div class="blog-layout">
+    <main>
+      <!-- Featured -->
+      <a href="/blog/moze-advokat-pouzivat-chatgpt/" class="featured-article">
+        <div class="featured-badge">⭐ Odporúčaný článok</div>
+        <div class="featured-body">
+          <span class="featured-label">Právna prax &amp; AI</span>
+          <div class="featured-title">Môže advokát používať ChatGPT na klientske dokumenty?</div>
+          <p class="featured-desc">Odpoveď závisí od toho, kde AI beží. Porovnávame tri režimy — cloudový AI bez DPA, cloudový AI s DPA, a lokálny AI — a ich dopady na mlčanlivosť advokáta a GDPR.</p>
+          <div class="article-meta">
+            <span>✍️ Martin Hergovic</span>
+            <span>📅 1. apríl 2026</span>
+            <span>⏱ 6 min čítania</span>
+          </div>
+          <div class="read-more">Čítať článok →</div>
+        </div>
+      </a>
+
+      <!-- Articles list -->
+      <div class="articles-grid">
+
+        <a href="/blog/gdpr-ai-advokatska-kancelaria/" class="article-card coming-soon">
+          <div>
+            <span class="ac-label">GDPR &amp; Compliance</span>
+            <div class="ac-title">GDPR a AI v advokátskej kancelárií — praktický sprievodca</div>
+            <p class="ac-desc">Čo GDPR hovorí o AI nástrojoch, aké riziká existujú a ako ich eliminovať. Bez zbytočnej teórie.</p>
+            <div class="ac-meta">Čoskoro</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+            <span class="cs-badge">Čoskoro</span>
+          </div>
+        </a>
+
+        <a href="/blog/lokalny-ai-asistent-ako-funguje/" class="article-card coming-soon">
+          <div>
+            <span class="ac-label">AI Technológie</span>
+            <div class="ac-title">Lokálny AI asistent pre advokátov — ako to funguje v praxi</div>
+            <p class="ac-desc">Technické vysvetlenie bez žargónu. Ollama, Open WebUI, Mac Mini M4 — čo to je a prečo je to bezpečné.</p>
+            <div class="ac-meta">Čoskoro</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+            <span class="cs-badge">Čoskoro</span>
+          </div>
+        </a>
+
+        <a href="/blog/ai-danovi-poradcovia-slovensko/" class="article-card coming-soon">
+          <div>
+            <span class="ac-label">Daňová prax</span>
+            <div class="ac-title">AI pre daňových poradcov — čo smiem a nesmiem</div>
+            <p class="ac-desc">Zákonná mlčanlivosť daňových poradcov a AI. Aké nástroje sú v súlade s predpismi a aké nie.</p>
+            <div class="ac-meta">Čoskoro</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+            <span class="cs-badge">Čoskoro</span>
+          </div>
+        </a>
+
+        <a href="/blog/mac-mini-m4-ai-server-kancelaria/" class="article-card coming-soon">
+          <div>
+            <span class="ac-label">Hardware &amp; Setup</span>
+            <div class="ac-title">Mac Mini M4 ako AI server pre kanceláriu — review</div>
+            <p class="ac-desc">Prečo práve Mac Mini, aký výkon ponúka a ako ho nastaviť ako tichý AI server v kancelárií.</p>
+            <div class="ac-meta">Čoskoro</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+            <span class="cs-badge">Čoskoro</span>
+          </div>
+        </a>
+
+      </div>
+    </main>
+
+    <aside class="blog-sidebar">
+      <div class="cta-mini">
+        <h4>Zaujíma vás 1bot?</h4>
+        <p>Nainštalujeme AI priamo vo vašej kancelárií. Žiadny cloud, žiadne dáta von.</p>
+        <a href="/#kontakt" class="cta-mini-btn">Nezáväzná konzultácia →</a>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>Témy</h4>
+        <div class="topic-list">
+          <div class="topic-item">Právna prax &amp; AI <span class="topic-count">1</span></div>
+          <div class="topic-item">GDPR &amp; Compliance <span class="topic-count">čoskoro</span></div>
+          <div class="topic-item">AI Technológie <span class="topic-count">čoskoro</span></div>
+          <div class="topic-item">Daňová prax <span class="topic-count">čoskoro</span></div>
+          <div class="topic-item">Hardware &amp; Setup <span class="topic-count">čoskoro</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>Newsletter</h4>
+        <p style="font-size:13px;color:var(--t2);margin-bottom:12px;line-height:1.6">Nové články a novinky o AI pre regulované profesie. Max 1× za mesiac.</p>
+        <div class="nl-form">
+          <input type="email" class="nl-inp" placeholder="vas@email.sk">
+          <button class="nl-btn" onclick="alert('Newsletter bude čoskoro dostupný. Zatiaľ nás kontaktujte na info@1bot.sk')">Prihlásiť sa</button>
+        </div>
+        <p class="nl-note" style="margin-top:8px">Žiadny spam. Odhlásiť sa môžete kedykoľvek.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="w">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="logo"><b>1</b>bot</a>
+        <p>Váš AI kolega v krabičke. Lokálne, súkromne, spoľahlivo. Bratislava, Slovensko.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produkty</h4>
+        <ul>
+          <li><a href="/#produkty">Štart</a></li>
+          <li><a href="/#produkty">Pro</a></li>
+          <li><a href="/#produkty">Max</a></li>
+          <li><a href="/#cennik">Cenník</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Spoločnosť</h4>
+        <ul>
+          <li><a href="/#o-nas">O nás</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/ochrana-sukromia">Ochrana súkromia</a></li>
+          <li><a href="/podmienky-pouzitia">Podmienky použitia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 1bot · Bratislava, Slovensko · IČO: 54 566 746</span>
+      <span>Súkromné AI · Žiadny cloud · GDPR</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
