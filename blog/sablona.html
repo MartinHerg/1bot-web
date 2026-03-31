@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c8a96e'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='400' fill='%2309090b' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
+
+<!-- SEO: vyplniť pre každý článok -->
+<meta name="description" content="[POPIS ČLÁNKU — 150-160 znakov]">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://1bot.sk/blog/[SLUG]/">
+<meta property="og:title" content="[NADPIS ČLÁNKU] — 1bot">
+<meta property="og:description" content="[POPIS ČLÁNKU]">
+<meta property="og:image" content="https://1bot.sk/og-image.png">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:site_name" content="1bot">
+<meta property="article:published_time" content="[DATUM ISO8601]">
+<meta property="article:author" content="Martin Hergovic">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://1bot.sk/blog/[SLUG]/">
+<link rel="alternate" hreflang="sk" href="https://1bot.sk/blog/[SLUG]/">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "[NADPIS ČLÁNKU]",
+  "description": "[POPIS ČLÁNKU]",
+  "datePublished": "[DATUM ISO8601]",
+  "author": { "@type": "Person", "name": "Martin Hergovic" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1bot",
+    "url": "https://1bot.sk"
+  }
+}
+</script>
+
+<title>[NADPIS ČLÁNKU] — 1bot</title>
+<style>
+:root {
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
+  --bg: #09090b; --bg2: #0f0f12; --bg3: #16161a;
+  --surface: #1e1e24;
+  --b: rgba(255,255,255,0.07); --b2: rgba(255,255,255,0.13);
+  --t: #eeeef0; --t2: #9898a6; --t3: #58586a;
+  --gold: #c8a96e; --gold3: rgba(200,169,110,0.28); --gold4: rgba(200,169,110,0.06);
+  --green: #5db87a;
+  --r: 5px; --r2: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { background: var(--bg); color: var(--t); font-family: var(--sans); line-height: 1.6; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+.w { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+body::after { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9000; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E"); opacity: .55; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 16px 0; background: rgba(9,9,11,.93); border-bottom: 1px solid var(--b); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.nav-i { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.logo { font-family: var(--mono); font-size: 19px; font-weight: 500; letter-spacing: -.3px; color: var(--t); }
+.logo b { color: var(--gold); }
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--t2); transition: color .2s; }
+.nav-links a:hover { color: var(--t); }
+.nav-cta { font-family: var(--sans); font-size: 13px; font-weight: 600; padding: 9px 20px; background: var(--gold); color: #09090b; border: none; cursor: pointer; border-radius: var(--r); transition: opacity .2s; }
+.nav-cta:hover { opacity: .88; }
+
+/* Article layout */
+.article-wrap { padding: 100px 0 80px; display: grid; grid-template-columns: 1fr 280px; gap: 60px; align-items: start; }
+.article-main { min-width: 0; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--t3); margin-bottom: 32px; transition: color .2s; }
+.back-link:hover { color: var(--gold); }
+.article-label { font-family: var(--mono); font-size: 11px; letter-spacing: 2.2px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
+.article-title { font-family: var(--serif); font-size: clamp(28px, 4.5vw, 52px); font-weight: 400; line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 16px; font-size: 13px; color: var(--t3); margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--b); flex-wrap: wrap; }
+.article-meta-item { display: flex; align-items: center; gap: 6px; }
+.read-time { font-family: var(--mono); }
+
+/* Article content */
+.article-content { font-size: 16px; line-height: 1.8; color: var(--t2); }
+.article-content h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; letter-spacing: -.5px; margin: 44px 0 16px; color: var(--t); padding-bottom: 10px; border-bottom: 1px solid var(--b); }
+.article-content h3 { font-size: 18px; font-weight: 600; margin: 28px 0 10px; color: var(--t); }
+.article-content p { margin-bottom: 18px; }
+.article-content strong { color: var(--t); font-weight: 600; }
+.article-content a { color: var(--gold); transition: opacity .2s; }
+.article-content a:hover { opacity: .8; }
+.article-content ul, .article-content ol { margin: 14px 0 18px 22px; display: flex; flex-direction: column; gap: 8px; }
+.article-content li { line-height: 1.7; }
+.article-content blockquote { border-left: 2px solid var(--gold); padding: 16px 20px; margin: 24px 0; background: var(--gold4); border-radius: 0 var(--r) var(--r) 0; font-style: italic; }
+.article-content blockquote p { margin-bottom: 0; color: var(--t); }
+.article-content code { font-family: var(--mono); font-size: 13px; background: var(--surface); border: 1px solid var(--b); padding: 1px 6px; border-radius: 3px; color: var(--gold); }
+.article-content pre { background: var(--bg3); border: 1px solid var(--b); border-radius: var(--r); padding: 16px; overflow-x: auto; margin: 16px 0; }
+.article-content pre code { background: none; border: none; padding: 0; color: var(--t2); }
+.info-box { background: var(--bg3); border: 1px solid var(--b2); border-radius: var(--r2); padding: 20px 24px; margin: 24px 0; }
+.info-box p { color: var(--t2); margin-bottom: 0; }
+
+/* Sidebar */
+.article-sidebar { position: sticky; top: 88px; }
+.sidebar-card { background: var(--bg2); border: 1px solid var(--b); border-radius: var(--r2); padding: 22px; margin-bottom: 14px; }
+.sidebar-card h4 { font-size: 13px; font-weight: 600; margin-bottom: 14px; color: var(--t); }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.toc-list a { font-size: 13px; color: var(--t3); transition: color .2s; line-height: 1.4; display: block; }
+.toc-list a:hover { color: var(--gold); }
+.cta-card { background: var(--gold4); border: 1px solid var(--gold3); border-radius: var(--r2); padding: 22px; }
+.cta-card h4 { font-family: var(--serif); font-size: 18px; font-weight: 400; margin-bottom: 10px; }
+.cta-card p { font-size: 13px; color: var(--t2); line-height: 1.6; margin-bottom: 16px; }
+.cta-btn { display: block; text-align: center; background: var(--gold); color: #09090b; padding: 11px; border-radius: var(--r); font-size: 13px; font-weight: 600; transition: opacity .18s; }
+.cta-btn:hover { opacity: .88; }
+
+/* Tags */
+.article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--b); }
+.article-tag { font-family: var(--mono); font-size: 11px; padding: 5px 12px; border: 1px solid var(--b2); color: var(--t3); border-radius: 100px; transition: all .2s; }
+.article-tag:hover { color: var(--t2); border-color: var(--b3); }
+
+/* Related articles */
+.related-sec { padding: 60px 0; border-top: 1px solid var(--b); }
+.related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 32px; }
+.related-card { background: var(--bg2); border: 1px solid var(--b); border-radius: var(--r2); padding: 22px; transition: border-color .2s; }
+.related-card:hover { border-color: var(--b2); }
+.related-label { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 8px; display: block; }
+.related-title { font-family: var(--serif); font-size: 16px; font-weight: 400; line-height: 1.3; margin-bottom: 8px; color: var(--t); }
+.related-desc { font-size: 13px; color: var(--t3); line-height: 1.55; }
+
+footer { border-top: 1px solid var(--b); padding: 40px 0 32px; background: var(--bg2); }
+.foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+.foot-brand p { font-size: 13px; color: var(--t3); line-height: 1.65; margin-top: 10px; max-width: 260px; }
+.foot-col h4 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--t3); font-family: var(--mono); margin-bottom: 12px; }
+.foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.foot-col ul li a { font-size: 13px; color: var(--t3); transition: color .2s; }
+.foot-col ul li a:hover { color: var(--t2); }
+.foot-bottom { display: flex; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--b); font-size: 12px; color: var(--t3); }
+
+@media(max-width:768px){
+  .article-wrap{grid-template-columns:1fr;gap:40px}
+  .article-sidebar{position:static}
+  .related-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:24px}
+  .foot-bottom{flex-direction:column;gap:8px}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="w">
+    <div class="nav-i">
+      <a href="/" class="logo"><b>1</b>bot</a>
+      <ul class="nav-links">
+        <li><a href="/#produkty">Produkty</a></li>
+        <li><a href="/#cennik">Cenník</a></li>
+        <li><a href="/#o-nas">O nás</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <button class="nav-cta" onclick="location.href='/#kontakt'">Nezáväzná konzultácia</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="w">
+    <div class="article-wrap">
+      <article class="article-main">
+        <a href="/blog/" class="back-link">← Späť na blog</a>
+        <span class="article-label">Blog · [KATEGÓRIA]</span>
+        <h1 class="article-title">[NADPIS ČLÁNKU]</h1>
+        <div class="article-meta">
+          <span class="article-meta-item">✍️ Martin Hergovic</span>
+          <span class="article-meta-item">📅 [DÁTUM, napr. 1. apríl 2026]</span>
+          <span class="article-meta-item read-time">⏱ [X] min čítania</span>
+        </div>
+
+        <div class="article-content">
+
+          <!-- ÚVOD -->
+          <p>[Úvodný odsek — zachytí pozornosť, definuje problém. 2-3 vety.]</p>
+
+          <p>[Rozvinutie úvodu — prečo je téma dôležitá pre cieľovú skupinu. Zmienka kľúčového slova.]</p>
+
+          <!-- SEKCIA 1 -->
+          <h2 id="sekcia-1">[Nadpis sekcie 1 — obsahuje kľúčové slovo]</h2>
+
+          <p>[Obsah sekcie 1.]</p>
+
+          <blockquote>
+            <p>[Silný citát alebo kľúčová myšlienka sekcie]</p>
+          </blockquote>
+
+          <!-- SEKCIA 2 -->
+          <h2 id="sekcia-2">[Nadpis sekcie 2]</h2>
+
+          <p>[Obsah sekcie 2.]</p>
+
+          <ul>
+            <li>[Bod 1]</li>
+            <li>[Bod 2]</li>
+            <li>[Bod 3]</li>
+          </ul>
+
+          <div class="info-box">
+            <p><strong>💡 Tip:</strong> [Praktický tip alebo zaujímavý fakt.]</p>
+          </div>
+
+          <!-- SEKCIA 3 -->
+          <h2 id="sekcia-3">[Nadpis sekcie 3]</h2>
+
+          <p>[Obsah sekcie 3.]</p>
+
+          <!-- ZÁVER -->
+          <h2 id="zaver">Záver</h2>
+
+          <p>[Zhrnutie kľúčových bodov článku. Čo si má čitateľ odniesť.]</p>
+
+          <p>[CTA — čo má čitateľ urobiť ďalej. Odkaz na 1bot konzultáciu alebo ďalší článok.]</p>
+
+        </div>
+
+        <div class="article-tags">
+          <a href="/blog/tag/[TAG1]/" class="article-tag">[Tag 1]</a>
+          <a href="/blog/tag/[TAG2]/" class="article-tag">[Tag 2]</a>
+          <a href="/blog/tag/[TAG3]/" class="article-tag">[Tag 3]</a>
+        </div>
+      </article>
+
+      <aside class="article-sidebar">
+        <div class="sidebar-card">
+          <h4>Obsah článku</h4>
+          <ul class="toc-list">
+            <li><a href="#sekcia-1">[Nadpis sekcie 1]</a></li>
+            <li><a href="#sekcia-2">[Nadpis sekcie 2]</a></li>
+            <li><a href="#sekcia-3">[Nadpis sekcie 3]</a></li>
+            <li><a href="#zaver">Záver</a></li>
+          </ul>
+        </div>
+        <div class="cta-card">
+          <h4>Záujem o 1bot?</h4>
+          <p>Nainštalujeme AI priamo vo vašej kancelárií. Žiadny cloud, žiadne dáta von.</p>
+          <a href="/#kontakt" class="cta-btn">Nezáväzná konzultácia →</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Related articles -->
+  <section class="related-sec">
+    <div class="w">
+      <span style="font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px">Ďalšie články</span>
+      <div class="related-grid">
+        <a href="/blog/[SLUG-2]/" class="related-card">
+          <span class="related-label">Právna prax</span>
+          <div class="related-title">[Názov súvisiaceho článku 1]</div>
+          <p class="related-desc">[Krátky popis]</p>
+        </a>
+        <a href="/blog/[SLUG-3]/" class="related-card">
+          <span class="related-label">GDPR</span>
+          <div class="related-title">[Názov súvisiaceho článku 2]</div>
+          <p class="related-desc">[Krátky popis]</p>
+        </a>
+        <a href="/blog/[SLUG-4]/" class="related-card">
+          <span class="related-label">AI technológie</span>
+          <div class="related-title">[Názov súvisiaceho článku 3]</div>
+          <p class="related-desc">[Krátky popis]</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="w">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="logo"><b>1</b>bot</a>
+        <p>Váš AI kolega v krabičke. Lokálne, súkromne, spoľahlivo. Bratislava, Slovensko.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produkty</h4>
+        <ul>
+          <li><a href="/#produkty">Štart</a></li>
+          <li><a href="/#produkty">Pro</a></li>
+          <li><a href="/#produkty">Max</a></li>
+          <li><a href="/#cennik">Cenník</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Spoločnosť</h4>
+        <ul>
+          <li><a href="/#o-nas">O nás</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/ochrana-sukromia">Ochrana súkromia</a></li>
+          <li><a href="/podmienky-pouzitia">Podmienky použitia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 1bot · Bratislava, Slovensko · IČO: 54 566 746</span>
+      <span>Súkromné AI · Žiadny cloud · GDPR</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
