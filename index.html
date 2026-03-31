@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c8a96e'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='400' fill='%2309090b' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
+<meta name="description" content="1bot — Váš AI kolega v krabičke. Súkromné AI pre advokátov, poradcov a firmy. Žiadny cloud, žiadne zdieľanie dát. Mac Mini, lokálne, 24/7.">
+<!-- OG / Social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1bot.sk/">
+<meta property="og:title" content="1bot — Váš AI kolega. V krabičke.">
+<meta property="og:description" content="Súkromné AI pre advokátov, daňových poradcov a fintech firmy. Beží lokálne na Mac Mini — žiadny cloud, žiadne dáta von.">
+<meta property="og:image" content="https://1bot.sk/og-image.png">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:site_name" content="1bot">
+<!-- Twitter/X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="1bot — Váš AI kolega. V krabičke.">
+<meta name="twitter:description" content="Súkromné AI pre advokátov, daňových poradcov a fintech firmy. Beží lokálne na Mac Mini — žiadny cloud, žiadne dáta von.">
+<meta name="twitter:image" content="https://1bot.sk/og-image.png">
+<!-- Canonical -->
+<link rel="canonical" href="https://1bot.sk/">
+<link rel="alternate" hreflang="sk" href="https://1bot.sk/">
+<title>1bot — Váš AI kolega. V krabičke.</title>
+<style>
+/* System fonts — zero external requests, zero privacy risk */
+:root {
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
+
+  --bg: #09090b;
+  --bg2: #0f0f12;
+  --bg3: #16161a;
+  --surface: #1e1e24;
+  --surface2: #26262f;
+  --b: rgba(255,255,255,0.07);
+  --b2: rgba(255,255,255,0.13);
+  --b3: rgba(255,255,255,0.22);
+  --t: #eeeef0;
+  --t2: #9898a6;
+  --t3: #58586a;
+  --gold: #c8a96e;
+  --gold2: rgba(200,169,110,0.13);
+  --gold3: rgba(200,169,110,0.28);
+  --gold4: rgba(200,169,110,0.06);
+  --green: #5db87a;
+  --green2: rgba(93,184,122,0.11);
+  --red: #e05555;
+  --red2: rgba(224,85,85,0.1);
+  --r: 5px;
+  --r2: 10px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { background: var(--bg); color: var(--t); font-family: var(--sans); line-height: 1.6; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+.w { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+/* NOISE */
+body::after {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 9000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E");
+  opacity: .55;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  padding: 16px 0;
+  border-bottom: 1px solid transparent;
+  transition: background .3s, border-color .3s;
+}
+nav.stuck { background: rgba(9,9,11,.93); border-color: var(--b); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.nav-i { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.logo { font-family: var(--mono); font-size: 19px; font-weight: 500; letter-spacing: -.3px; color: var(--t); }
+.logo b { color: var(--gold); font-weight: 500; }
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--t2); transition: color .2s; }
+.nav-links a:hover { color: var(--t); }
+.nav-cta { font-family: var(--sans); font-size: 13px; font-weight: 600; padding: 9px 20px; background: var(--gold); color: #09090b; border: none; cursor: pointer; border-radius: var(--r); transition: opacity .2s; white-space: nowrap; }
+.nav-cta:hover { opacity: .88; }
+
+/* ── HERO ── */
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 80px; position: relative; overflow: hidden; }
+.hero-glow { position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 900px; height: 700px; background: radial-gradient(ellipse, rgba(200,169,110,0.055) 0%, transparent 62%); pointer-events: none; }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--b) 1px, transparent 1px), linear-gradient(90deg, var(--b) 1px, transparent 1px); background-size: 72px 72px; mask-image: radial-gradient(ellipse 60% 60% at 50% 35%, black 0%, transparent 100%); opacity: .4; }
+.hero-content { position: relative; z-index: 1; max-width: 760px; }
+
+/* Chat story card */
+.story-card {
+  display: inline-flex; gap: 14px; align-items: flex-start;
+  background: var(--bg3); border: 1px solid var(--b2); padding: 16px 20px; border-radius: var(--r2);
+  margin-bottom: 36px; max-width: 460px;
+  opacity: 0; animation: up .65s .1s forwards;
+}
+.story-ava { width: 34px; height: 34px; border-radius: 50%; background: var(--gold2); border: 1px solid var(--gold3); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+.story-body { display: flex; flex-direction: column; gap: 4px; }
+.story-name { font-size: 12px; font-weight: 600; color: var(--t); display: flex; align-items: center; gap: 7px; }
+.story-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2.5s infinite; }
+.story-msg { font-size: 13px; color: var(--t2); line-height: 1.55; }
+.story-time { font-size: 11px; color: var(--t3); font-family: var(--mono); }
+
+.h1 { font-family: var(--serif); font-size: clamp(48px, 6.8vw, 88px); font-weight: 400; line-height: 1.03; letter-spacing: -2px; margin-bottom: 22px; opacity: 0; animation: up .65s .3s forwards; }
+.h1 em { font-style: italic; color: var(--gold); }
+.hero-sub { font-size: 17px; color: var(--t2); max-width: 500px; line-height: 1.75; margin-bottom: 38px; opacity: 0; animation: up .65s .45s forwards; }
+.hero-ctas { display: flex; gap: 12px; align-items: center; opacity: 0; animation: up .65s .6s forwards; }
+.btn-gold { display: inline-flex; align-items: center; gap: 7px; background: var(--gold); color: #09090b; padding: 13px 26px; border-radius: var(--r); font-weight: 600; font-size: 14px; transition: opacity .18s, transform .15s; }
+.btn-gold:hover { opacity: .9; transform: translateY(-1px); }
+.btn-outline { display: inline-flex; align-items: center; gap: 7px; color: var(--t2); padding: 13px 20px; border: 1px solid var(--b2); border-radius: var(--r); font-size: 14px; transition: color .2s, border-color .2s; }
+.btn-outline:hover { color: var(--t); border-color: var(--t3); }
+
+.hero-stats { display: flex; gap: 0; margin-top: 60px; border-top: 1px solid var(--b); opacity: 0; animation: up .65s .75s forwards; }
+.stat { padding: 22px 32px 0 0; margin-right: 32px; border-right: 1px solid var(--b); }
+.stat:last-child { border-right: none; }
+.stat-n { font-family: var(--serif); font-size: 32px; line-height: 1; margin-bottom: 3px; }
+.stat-l { font-size: 12px; color: var(--t3); }
+
+@keyframes up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.35; } }
+
+/* ── SECTIONS ── */
+.sec { padding: 88px 0; }
+.sec-label { font-family: var(--mono); font-size: 11px; letter-spacing: 2.2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+.sec-title { font-family: var(--serif); font-size: clamp(28px, 3.8vw, 48px); font-weight: 400; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
+.sec-body { font-size: 16px; color: var(--t2); max-width: 520px; line-height: 1.72; }
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ── ROI BANNER ── */
+
+/* ── PROBLEM ── */
+.prob-sec { background: var(--bg); border-top: 1px solid var(--b); }
+.prob-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start; }
+.comp-hdr { display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 6px; }
+.comp-hdr span { font-size: 11px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 1.5px; padding: 0 16px 8px; }
+.ch-bad { color: var(--red); } .ch-good { color: var(--green); }
+.comparison { display: flex; flex-direction: column; gap: 8px; }
+.comp-row { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--b); overflow: hidden; border-radius: var(--r); }
+.cc { padding: 14px 16px; font-size: 13px; line-height: 1.55; }
+.cc.bad { background: var(--red2); color: var(--t2); }
+.cc.good { background: var(--green2); color: var(--t); border-right: 1px solid var(--b); }
+.cc-lbl { font-size: 10px; font-family: var(--mono); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.ccl-b { color: var(--red); } .ccl-g { color: var(--green); }
+
+/* ── PRODUCTS ── */
+.prod-sec { background: var(--bg2); border-top: 1px solid var(--b); border-bottom: 1px solid var(--b); }
+.tabs-wrap { margin-top: 40px; }
+.tabs { display: flex; gap: 0; border: 1px solid var(--b2); width: fit-content; border-radius: var(--r); overflow: hidden; margin-bottom: 20px; }
+.tab { padding: 10px 24px; font-size: 14px; font-weight: 500; cursor: pointer; background: transparent; color: var(--t3); border: none; font-family: var(--sans); border-right: 1px solid var(--b2); transition: all .18s; }
+.tab:last-child { border-right: none; }
+.tab.on { background: var(--surface2); color: var(--t); }
+.panels { }
+.panel { display: none; }
+.panel.on { display: grid; grid-template-columns: 1fr 1.1fr; gap: 32px; align-items: start; }
+
+.pinfo { padding: 32px; background: var(--bg3); border: 1px solid var(--b); border-radius: var(--r2); }
+.ptier { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--t3); margin-bottom: 10px; display: block; }
+.pname { font-family: var(--serif); font-size: 38px; font-weight: 400; letter-spacing: -1px; margin-bottom: 6px; }
+.phw { font-family: var(--mono); font-size: 11px; color: var(--t3); background: var(--surface); padding: 5px 10px; display: inline-block; border-radius: var(--r); margin-bottom: 16px; }
+.pmodel { font-size: 13px; color: var(--t2); padding: 12px 14px; background: var(--bg2); border: 1px solid var(--b); border-radius: var(--r); margin-bottom: 20px; }
+.pmodel strong { color: var(--gold); font-weight: 500; }
+.pfeats { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; }
+.pfeats li { display: flex; gap: 9px; font-size: 14px; }
+.pfeats li.y { color: var(--t); }
+.pfeats li.n { color: var(--t3); }
+.pfeats li.y::before { content: '✓'; color: var(--green); flex-shrink: 0; }
+.pfeats li.n::before { content: '—'; color: var(--t3); flex-shrink: 0; }
+.pprice { border-top: 1px solid var(--b); padding-top: 20px; display: flex; align-items: baseline; gap: 14px; }
+.pprice-main { font-family: var(--serif); font-size: 36px; line-height: 1; letter-spacing: -1px; }
+.pprice-sub { font-size: 13px; color: var(--t3); line-height: 1.55; }
+
+.pdetail { display: flex; flex-direction: column; gap: 12px; }
+.dblock { padding: 20px; background: var(--bg3); border: 1px solid var(--b); border-radius: var(--r); }
+.dblock h4 { font-size: 13px; font-weight: 600; margin-bottom: 7px; display: flex; align-items: center; gap: 8px; }
+.dtag { font-family: var(--mono); font-size: 10px; color: var(--t3); background: var(--surface); padding: 2px 8px; border-radius: 100px; font-weight: 400; }
+.dblock p { font-size: 13px; color: var(--t2); line-height: 1.6; }
+.dbar { margin-top: 10px; height: 2px; background: var(--b2); border-radius: 100px; overflow: hidden; }
+.dbar-f { height: 100%; border-radius: 100px; }
+
+/* ── ACCESSORIES ── */
+.acc-sec { background: var(--bg); border-top: 1px solid var(--b); }
+.acc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--b); border: 1px solid var(--b); margin-top: 48px; border-radius: var(--r2); overflow: hidden; }
+.acc-card { background: var(--bg2); padding: 28px 24px; transition: background .2s; }
+.acc-card:hover { background: var(--bg3); }
+.acc-icon { width: 38px; height: 38px; background: var(--bg3); border: 1px solid var(--b2); display: flex; align-items: center; justify-content: center; font-size: 16px; margin-bottom: 14px; border-radius: var(--r); }
+.acc-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.acc-card p { font-size: 13px; color: var(--t2); line-height: 1.6; margin-bottom: 12px; }
+.acc-price { font-family: var(--serif); font-size: 18px; color: var(--gold); }
+
+/* ── WHO ── */
+.who-sec { background: var(--bg2); border-top: 1px solid var(--b); border-bottom: 1px solid var(--b); }
+.who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--b); border: 1px solid var(--b); margin-top: 48px; border-radius: var(--r2); overflow: hidden; }
+.who-card { background: var(--bg); padding: 32px 26px; transition: background .2s; }
+.who-card:hover { background: var(--bg3); }
+.w-icon { width: 38px; height: 38px; background: var(--bg3); border: 1px solid var(--b2); display: flex; align-items: center; justify-content: center; font-size: 16px; margin-bottom: 16px; border-radius: var(--r); }
+.who-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.who-card p { font-size: 13px; color: var(--t2); line-height: 1.65; margin-bottom: 14px; }
+.wtags { display: flex; flex-wrap: wrap; gap: 6px; }
+.wtag { font-family: var(--mono); font-size: 10px; padding: 4px 10px; border: 1px solid var(--b2); color: var(--t3); border-radius: 100px; }
+.wrec { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--b); font-size: 12px; color: var(--t3); }
+.wrec strong { color: var(--t2); }
+
+/* ── HOW ── */
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--b); margin-top: 48px; border-radius: var(--r2); overflow: hidden; }
+.how-step { padding: 32px 28px; border-right: 1px solid var(--b); }
+.how-step:last-child { border-right: none; }
+.step-n { font-family: var(--serif); font-size: 64px; color: var(--t3); line-height: 1; margin-bottom: 16px; letter-spacing: -3px; }
+.step-t { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block; }
+.how-step h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+.how-step p { font-size: 13px; color: var(--t2); line-height: 1.65; }
+
+/* ── PRIVACY ── */
+.priv-box { border: 1px solid var(--gold3); background: var(--gold4); padding: 44px; display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: start; border-radius: var(--r2); }
+.priv-sym { font-family: var(--serif); font-size: 52px; color: var(--gold); line-height: 1; }
+.priv-box h3 { font-family: var(--serif); font-size: 24px; margin-bottom: 10px; }
+.priv-box p { font-size: 15px; color: var(--t2); line-height: 1.7; max-width: 520px; margin-bottom: 16px; }
+.priv-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.priv-chip { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--t); background: var(--bg3); border: 1px solid var(--b2); padding: 7px 13px; border-radius: 100px; }
+.priv-chip::before { content: '✓'; color: var(--green); font-size: 11px; }
+
+/* ── PRICING ── */
+.pricing-sec { background: var(--bg2); border-top: 1px solid var(--b); border-bottom: 1px solid var(--b); }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 48px; }
+.pc { background: var(--bg); border: 1px solid var(--b); padding: 26px 22px; display: flex; flex-direction: column; border-radius: var(--r2); transition: border-color .2s; position: relative; }
+.pc:hover { border-color: var(--b2); }
+.pc.feat { border-color: var(--gold3); background: linear-gradient(155deg, var(--gold4) 0%, var(--bg) 50%); }
+.pc-badge { position: absolute; top: -10px; left: 18px; font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; background: var(--gold); color: #09090b; padding: 3px 10px; border-radius: 100px; }
+.pc-name { font-family: var(--serif); font-size: 22px; margin-bottom: 3px; }
+.pc-hw { font-family: var(--mono); font-size: 10px; color: var(--t3); margin-bottom: 18px; }
+.pc-amount { font-family: var(--serif); font-size: 34px; letter-spacing: -1px; line-height: 1; margin-bottom: 2px; }
+.pc-period { font-size: 12px; color: var(--t3); margin-bottom: 3px; }
+.pc-ret { font-size: 13px; color: var(--t2); padding-bottom: 16px; border-bottom: 1px solid var(--b); margin-bottom: 16px; }
+.pc-feats { list-style: none; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.pc-feats li { font-size: 13px; display: flex; gap: 7px; }
+.pc-feats li.y { color: var(--t); }
+.pc-feats li.n { color: var(--t3); }
+.pc-feats li.y::before { content: '✓'; color: var(--green); flex-shrink: 0; }
+.pc-feats li.n::before { content: '—'; color: var(--t3); flex-shrink: 0; }
+.pc-cta { margin-top: 22px; }
+.btn-line { display: block; text-align: center; padding: 11px; font-size: 14px; font-weight: 500; border: 1px solid var(--b2); border-radius: var(--r); color: var(--t2); transition: all .18s; }
+.btn-line:hover { color: var(--t); border-color: var(--t3); background: var(--surface); }
+.btn-line.g { background: var(--gold); color: #09090b; border-color: transparent; }
+.btn-line.g:hover { opacity: .9; }
+.byod-note { margin-top: 20px; padding: 16px; background: var(--bg3); border: 1px solid var(--b); border-radius: var(--r); }
+.byod-note p { font-size: 13px; color: var(--t2); line-height: 1.6; }
+.byod-note strong { color: var(--t); }
+
+/* ── ABOUT ── */
+.about-sec { background: var(--bg); border-top: 1px solid var(--b); }
+.about-grid { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: start; }
+.about-photo { width: 120px; height: 120px; border-radius: var(--r2); background: var(--bg3); border: 1px solid var(--b2); display: flex; align-items: center; justify-content: center; font-size: 40px; flex-shrink: 0; }
+.about-name { font-family: var(--serif); font-size: 24px; margin-bottom: 4px; }
+.about-role { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+.about-bio { font-size: 15px; color: var(--t2); line-height: 1.7; max-width: 560px; margin-bottom: 18px; }
+.about-creds { display: flex; flex-wrap: wrap; gap: 8px; }
+.cred { font-size: 12px; color: var(--t3); padding: 5px 12px; border: 1px solid var(--b2); border-radius: 100px; }
+
+/* ── FAQ ── */
+.faq-sec { background: var(--bg2); border-top: 1px solid var(--b); border-bottom: 1px solid var(--b); }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; }
+.faq-item { padding: 24px; background: var(--bg); border: 1px solid var(--b); border-radius: var(--r); }
+.faq-q { font-size: 15px; font-weight: 600; margin-bottom: 10px; line-height: 1.3; }
+.faq-a { font-size: 14px; color: var(--t2); line-height: 1.65; }
+
+/* ── NEWSLETTER ── */
+.nl-sec { background: var(--bg); border-top: 1px solid var(--b); padding: 60px 0; }
+.nl-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.nl-text h3 { font-family: var(--serif); font-size: 26px; margin-bottom: 10px; }
+.nl-text p { font-size: 15px; color: var(--t2); line-height: 1.65; }
+.nl-form { display: flex; flex-direction: column; gap: 10px; }
+.nl-row { display: flex; gap: 8px; }
+.nl-inp { flex: 1; background: var(--surface); border: 1px solid var(--b2); color: var(--t); padding: 11px 14px; font-family: var(--sans); font-size: 14px; outline: none; border-radius: var(--r); transition: border-color .2s; }
+.nl-inp::placeholder { color: var(--t3); }
+.nl-inp:focus { border-color: var(--gold); }
+.nl-btn { background: var(--surface2); color: var(--t); border: 1px solid var(--b2); padding: 11px 18px; font-family: var(--sans); font-size: 14px; font-weight: 500; cursor: pointer; white-space: nowrap; border-radius: var(--r); transition: all .18s; }
+.nl-btn:hover { background: var(--surface); border-color: var(--t3); }
+.nl-consent { font-size: 11px; color: var(--t3); line-height: 1.5; }
+
+/* ── CONTACT ── */
+.contact-sec { padding: 88px 0; background: var(--bg2); border-top: 1px solid var(--b); }
+.contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start; }
+.ca-item { display: flex; gap: 10px; font-size: 14px; color: var(--t2); margin-bottom: 10px; }
+.ca-item span { color: var(--gold); }
+.ca-direct { margin-top: 28px; padding: 18px 20px; background: var(--bg3); border: 1px solid var(--b); border-radius: var(--r); }
+.ca-direct-lbl { font-family: var(--mono); font-size: 10px; color: var(--t3); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.ca-direct a { font-size: 14px; color: var(--t); transition: color .2s; }
+.ca-direct a:hover { color: var(--gold); }
+
+/* Wizard */
+.wizard { background: var(--bg); border: 1px solid var(--b); padding: 32px; border-radius: var(--r2); }
+.wprog { display: flex; gap: 0; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--b); }
+.ws { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--t3); flex: 1; }
+.ws.act { color: var(--gold); }
+.ws.done { color: var(--green); }
+.wd { width: 20px; height: 20px; border-radius: 50%; background: var(--surface); border: 1px solid var(--b2); display: flex; align-items: center; justify-content: center; font-size: 10px; font-family: var(--mono); flex-shrink: 0; transition: all .25s; }
+.ws.act .wd { background: var(--gold2); border-color: var(--gold3); color: var(--gold); }
+.ws.done .wd { background: var(--green2); border-color: var(--green); color: var(--green); }
+.wp { display: none; animation: fi .25s; }
+.wp.show { display: block; }
+@keyframes fi { from { opacity: 0; } to { opacity: 1; } }
+.wq { font-family: var(--serif); font-size: 20px; margin-bottom: 18px; line-height: 1.3; }
+.og { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-bottom: 20px; }
+.ob { padding: 13px 15px; border: 1px solid var(--b2); background: var(--bg2); color: var(--t2); cursor: pointer; font-family: var(--sans); font-size: 14px; text-align: left; border-radius: var(--r); transition: all .15s; display: flex; flex-direction: column; gap: 3px; }
+.ob:hover { border-color: var(--gold3); color: var(--t); background: var(--gold4); }
+.ob.sel { border-color: var(--gold); background: var(--gold4); color: var(--t); }
+.ob span { font-size: 11px; color: var(--t3); }
+.ob.sel span { color: var(--t2); }
+.wnav { display: flex; justify-content: space-between; align-items: center; }
+.wback { font-size: 13px; color: var(--t3); cursor: pointer; background: none; border: none; font-family: var(--sans); padding: 8px 0; transition: color .18s; }
+.wback:hover { color: var(--t2); }
+.wnext { padding: 10px 22px; background: var(--gold); color: #09090b; border: none; cursor: pointer; font-family: var(--sans); font-size: 14px; font-weight: 600; border-radius: var(--r); transition: opacity .18s; opacity: .3; pointer-events: none; }
+.wnext.rdy { opacity: 1; pointer-events: auto; }
+.rec-box { padding: 13px 15px; background: var(--gold4); border: 1px solid var(--gold3); border-radius: var(--r); margin-bottom: 14px; display: none; }
+.rec-box.show { display: block; }
+.rec-lbl { font-size: 10px; color: var(--gold); font-family: var(--mono); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.rec-prod { font-size: 16px; font-weight: 600; margin-bottom: 3px; }
+.rec-why { font-size: 13px; color: var(--t2); line-height: 1.5; }
+.cinputs { display: flex; flex-direction: column; gap: 11px; margin-bottom: 16px; }
+.clbl { font-size: 12px; color: var(--t3); margin-bottom: 4px; display: block; }
+.cinp { width: 100%; background: var(--bg2); border: 1px solid var(--b2); color: var(--t); padding: 11px 13px; font-family: var(--sans); font-size: 14px; outline: none; border-radius: var(--r); transition: border-color .18s; }
+.cinp:focus { border-color: var(--gold); }
+.cinp::placeholder { color: var(--t3); }
+.cinp.err { border-color: var(--red); }
+.fsuccess { text-align: center; padding: 32px 16px; display: none; }
+.fsuccess.show { display: block; }
+.fsuccess-ico { font-size: 32px; margin-bottom: 12px; }
+.fsuccess h4 { font-family: var(--serif); font-size: 22px; margin-bottom: 8px; }
+.fsuccess p { font-size: 14px; color: var(--t2); line-height: 1.6; }
+
+/* ── PILOT ── */
+.pilot { text-align: center; padding: 100px 0; position: relative; overflow: hidden; }
+.pilot::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 700px; height: 500px; background: radial-gradient(ellipse, rgba(200,169,110,0.06) 0%, transparent 70%); pointer-events: none; }
+.pilot .sec-title { max-width: 580px; margin: 0 auto 14px; font-size: clamp(32px, 5vw, 58px); }
+.pilot .sec-body { margin: 0 auto 40px; max-width: 400px; text-align: center; }
+.pilot-boxes { display: flex; justify-content: center; gap: 10px; margin-bottom: 36px; flex-wrap: wrap; }
+.pbox { padding: 11px 18px; border: 1px solid var(--b2); background: var(--bg2); font-size: 14px; color: var(--t2); display: flex; align-items: center; gap: 8px; border-radius: var(--r); }
+.pbox strong { color: var(--t); }
+.pilot-note { font-family: var(--mono); font-size: 11px; color: var(--t3); margin-top: 14px; }
+
+/* ── GDPR COOKIE ── */
+.gdpr-banner { position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 480px; background: var(--surface); border: 1px solid var(--b2); padding: 20px 22px; border-radius: var(--r2); z-index: 800; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 8px 32px rgba(0,0,0,.5); }
+.gdpr-banner p { font-size: 13px; color: var(--t2); line-height: 1.55; }
+.gdpr-banner a { color: var(--gold); }
+.gdpr-btns { display: flex; gap: 8px; }
+.gdpr-accept { padding: 9px 18px; background: var(--gold); color: #09090b; border: none; font-family: var(--sans); font-size: 13px; font-weight: 600; cursor: pointer; border-radius: var(--r); }
+.gdpr-decline { padding: 9px 14px; background: transparent; color: var(--t3); border: 1px solid var(--b2); font-family: var(--sans); font-size: 13px; cursor: pointer; border-radius: var(--r); transition: color .18s; }
+.gdpr-decline:hover { color: var(--t2); }
+
+/* ── FOOTER ── */
+footer { border-top: 1px solid var(--b); padding: 40px 0; background: var(--bg); }
+.foot-grid { display: grid; grid-template-columns: 1fr auto auto; gap: 48px; align-items: start; }
+.foot-brand .logo { font-size: 18px; display: block; margin-bottom: 9px; }
+.foot-brand p { font-size: 13px; color: var(--t3); line-height: 1.6; max-width: 230px; }
+.foot-col h4 { font-size: 11px; font-weight: 600; color: var(--t3); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; }
+.foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.foot-col li a { font-size: 13px; color: var(--t3); transition: color .18s; }
+.foot-col li a:hover { color: var(--t2); }
+.foot-bottom { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--b); display: flex; justify-content: space-between; font-size: 12px; color: var(--t3); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hero-stats { flex-wrap: wrap; gap: 20px; }
+  .stat { border-right: none; padding-right: 0; margin-right: 0; border-bottom: 1px solid var(--b); padding-bottom: 16px; }
+  .stat:last-child { border-bottom: none; }
+  .prob-grid, .panel.on, .about-grid, .faq-grid, .nl-inner, .contact-layout, .priv-box { grid-template-columns: 1fr; }
+  .who-grid, .how-grid { grid-template-columns: 1fr; }
+  .how-step { border-right: none; border-bottom: 1px solid var(--b); }
+  .how-step:last-child { border-bottom: none; }
+  .acc-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr 1fr; }
+  .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+  .pilot-boxes { flex-direction: column; align-items: center; }
+}
+@media (max-width: 600px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+  .tabs { width: 100%; }
+  .tab { flex: 1; padding: 9px 10px; font-size: 13px; text-align: center; }
+  .og { grid-template-columns: 1fr; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "1bot",
+  "description": "Lokálny AI asistent pre advokátov a regulované profesie. Beží priamo vo vašej kancelárií, bez cloudu.",
+  "url": "https://1bot.sk",
+  "email": "info@1bot.sk",
+  "founder": {
+    "@type": "Person",
+    "name": "Martin Hergovic"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bratislava",
+    "addressRegion": "Bratislavský kraj",
+    "addressCountry": "SK"
+  },
+  "areaServed": ["SK", "CZ"],
+  "priceRange": "€€€",
+  "category": "Software",
+  "sameAs": []
+}
+</script>
+</head>
+<body>
+
+<!-- GDPR BANNER -->
+<div class="gdpr-banner" id="gdpr" style="display:none">
+  <p>Táto stránka nepoužíva sledovacie cookies. Používame len nevyhnutné funkčné cookies. Viac informácií v <a href="#">ochrane súkromia</a>.</p>
+  <div class="gdpr-btns">
+    <button class="gdpr-accept" onclick="closeGDPR()">Rozumiem</button>
+    <button class="gdpr-decline" onclick="closeGDPR()">Zavrieť</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="w">
+    <div class="nav-i">
+      <a href="#" class="logo"><b>1</b>bot</a>
+      <ul class="nav-links">
+        <li><a href="#produkty">Produkty</a></li>
+        <li><a href="#pre-koho">Pre koho</a></li>
+        <li><a href="#cennik">Cenník</a></li>
+        <li><a href="#o-nas">O nás</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <button class="nav-cta" onclick="location.href='#kontakt'">Nezáväzná konzultácia</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+  <div class="w">
+    <div class="hero-content">
+      <div class="story-card">
+        <div class="story-ava">🤖</div>
+        <div class="story-body">
+          <div class="story-name">1bot · kancelária Novák &amp; Partners <div class="story-dot"></div></div>
+          <div class="story-msg">„Pekný víkend! Pripravil som prehľad zmien v novele obchodného zákonníka a skontroloval zmluvy z tohto týždňa. Všetko nájdete v priečinku. Uvidíme sa v pondelok."</div>
+          <div class="story-time">Pia 17:58 · iba vo vašej sieti</div>
+        </div>
+      </div>
+      <h1 class="h1">Váš AI kolega.<br><em>V krabičke.</em></h1>
+      <p class="hero-sub">1bot nainštalujeme priamo vo vašej kancelárií. Pozná vaše dokumenty, nikdy nespí — a vaše dáta sú vaše.</p>
+      <div class="hero-ctas">
+        <a href="#kontakt" class="btn-gold">Nezáväzná konzultácia →</a>
+        <a href="#produkty" class="btn-outline">Pozrieť produkty</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-n">100%</div><div class="stat-l">lokálne — bez cloudu</div></div>
+        <div class="stat"><div class="stat-n">0</div><div class="stat-l">dát na cudzích serveroch</div></div>
+        <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">k dispozícii</div></div>
+        <div class="stat"><div class="stat-n">3</div><div class="stat-l">konfigurácie</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI / ZAMESTNANEC -->
+
+<!-- PROBLEM -->
+<section class="prob-sec sec reveal">
+  <div class="w">
+    <div class="prob-grid">
+      <div>
+        <span class="sec-label">Prečo nie cloudové AI</span>
+        <h2 class="sec-title">Prečo advokáti nemôžu používať cloudové AI</h2>
+        <p class="sec-body">ChatGPT, Copilot a podobné nástroje sú šikovné — ale každý dokument, ktorý do nich nahráte, odchádza na servery niekde v zahraničí. Pre profesionálov pracujúcich s citlivými dátami to jednoducho nejde.</p>
+        <p class="sec-body" style="margin-top:14px;">1bot beží na vašom zariadení. Vaše dáta zostávajú u vás.</p>
+        <p class="sec-body" style="margin-top:14px;font-size:13px;color:var(--t3);">Od mája 2025 platia záväzné pravidlá pre používanie AI s klientskymi dátami v regulovaných profesiách. Advokáti a poradcovia môžu spracovávať dôverné informácie len v nástroji bežiacom lokálne pod ich výlučnou kontrolou. 1bot túto podmienku splňa priamo — bez ďalších zmlúv alebo certifikácií.</p>
+      </div>
+      <div>
+        <div class="comp-hdr">
+          <span class="ch-good">✓ 1bot</span>
+          <span class="ch-bad">✗ Cloudové AI</span>
+        </div>
+        <div class="comparison">
+          <div class="comp-row">
+            <div class="cc good"><div class="cc-lbl ccl-g">Kde sú dáta</div>Výlučne u vás, na vašom zariadení</div>
+            <div class="cc bad"><div class="cc-lbl ccl-b">Kde sú dáta</div>Na serveroch poskytovateľa v zahraničí</div>
+          </div>
+          <div class="comp-row">
+            <div class="cc good"><div class="cc-lbl ccl-g">Súkromie</div>GDPR splnené od prvého dňa, zero logging</div>
+            <div class="cc bad"><div class="cc-lbl ccl-b">Súkromie</div>Dokumenty klientov opúšťajú kanceláriu</div>
+          </div>
+          <div class="comp-row">
+            <div class="cc good"><div class="cc-lbl ccl-g">Náklady</div>Jednorazová inštalácia + fixný mesačný servis</div>
+            <div class="cc bad"><div class="cc-lbl ccl-b">Náklady</div>Mesačné SaaS, rastie s každým používateľom</div>
+          </div>
+          <div class="comp-row">
+            <div class="cc good"><div class="cc-lbl ccl-g">Závislosť</div>Funguje offline. Vaše zariadenie, vaše pravidlá.</div>
+            <div class="cc bad"><div class="cc-lbl ccl-b">Závislosť</div>Bez internetu nefunguje. Vendor lock-in.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="produkty" class="prod-sec sec">
+  <div class="w">
+    <span class="sec-label">Produkty</span>
+    <h2 class="sec-title">AI asistent pre advokátov — tri konfigurácie</h2>
+    <p class="sec-body">Odporúčame podľa veľkosti tímu a typu úloh — nie podľa toho, čo je najdrahšie.</p>
+    <div class="tabs-wrap reveal">
+      <div class="tabs">
+        <button class="tab on" data-t="start">Štart</button>
+        <button class="tab" data-t="pro">Pro</button>
+        <button class="tab" data-t="max">Max</button>
+      </div>
+      <div class="panels">
+
+        <!-- ŠTART -->
+        <div class="panel on" id="t-start">
+          <div class="pinfo">
+            <span class="ptier">Tier 1 · Malá kancelária</span>
+            <div class="pname">Štart</div>
+            <span class="phw">Mac Mini M4 · 16 GB · NemoClaw</span>
+            <div class="pmodel">Model: <strong>Qwen3-14B</strong> (Q4) — plnohodnotný asistent pre tím 2–5 ľudí</div>
+            <ul class="pfeats">
+              <li class="y">FAQ chatbot a knowledge base</li>
+              <li class="y">Analýza a sumarizácia zmlúv</li>
+              <li class="y">Interný Q&amp;A nad archívom</li>
+              <li class="y">2–5 ľudí súbežne</li>
+              <li class="y">Kontext 128k tokenov</li>
+              <li class="n">Due diligence pipeline</li>
+              <li class="n">Multi-agent workflow</li>
+            </ul>
+            <div class="pprice">
+              <div class="pprice-main">€1 790</div>
+              <div class="pprice-sub">inštalácia · + hardware ~€700<br>Servis <strong>€299 / mesiac</strong></div>
+            </div>
+          </div>
+          <div class="pdetail">
+            <div class="dblock">
+              <h4>Pre koho <span class="dtag">ideálny zákazník</span></h4>
+              <p>Kancelária alebo tím 2–5 ľudí, ktorý chce AI asistenta na každodenné úlohy — odpovede na otázky, review dokumentov, príprava podkladov. Zlatý stred ceny a výkonu.</p>
+            </div>
+            <div class="dblock">
+              <h4>Výkon <span class="dtag">Qwen3-14B @ M4</span></h4>
+              <p>15–25 tokenov za sekundu. Funguje v živej konverzácii, zvláda dlhé dokumenty, iteratívne úpravy. Spoľahlivá každodenná práca.</p>
+              <div class="dbar"><div class="dbar-f" style="width:50%;background:#4ab8a0"></div></div>
+            </div>
+            </div>
+        </div>
+
+        <!-- PRO -->
+        <div class="panel" id="t-pro">
+          <div class="pinfo">
+            <span class="ptier">Tier 2 · Stredná firma · ⭐ Najobľúbenejší</span>
+            <div class="pname">Pro</div>
+            <span class="phw">Mac Mini M4 Pro · 24 GB · Hermes</span>
+            <div class="pmodel">Model: <strong>Qwen3-30B MoE</strong> — reasoning, DD a compliance pre tím 5–15 ľudí</div>
+            <ul class="pfeats">
+              <li class="y">Všetko zo Štart tieru</li>
+              <li class="y">Due diligence asistent</li>
+              <li class="y">Viacrokový právny reasoning</li>
+              <li class="y">3–8 ľudí súbežne</li>
+              <li class="y">Kontext 256k tokenov</li>
+              <li class="y">Thinking mode pre zložité úlohy</li>
+              <li class="n">Enterprise integrácie / API</li>
+            </ul>
+            <div class="pprice">
+              <div class="pprice-main">€2 790</div>
+              <div class="pprice-sub">inštalácia · + hardware ~€900<br>Servis <strong>€499 / mesiac</strong></div>
+            </div>
+          </div>
+          <div class="pdetail">
+            <div class="dblock">
+              <h4>Pre koho <span class="dtag">ideálny zákazník</span></h4>
+              <p>Kancelária 5–15 ľudí, CASP alebo poradenská firma, kde DD a compliance nie sú príležitostnou úlohou, ale každodennou prácou. Thinking mode pre zložité analýzy.</p>
+            </div>
+            <div class="dblock">
+              <h4>Výkon <span class="dtag">Qwen3-30B MoE @ M4 Pro</span></h4>
+              <p>25–40 tokenov za sekundu vďaka MoE architektúre. Prepína medzi rýchlym a reasoning modom podľa zložitosti otázky — automaticky.</p>
+              <div class="dbar"><div class="dbar-f" style="width:74%;background:#9b7fd4"></div></div>
+            </div>
+            </div>
+        </div>
+
+        <!-- MAX -->
+        <div class="panel" id="t-max">
+          <div class="pinfo">
+            <span class="ptier">Tier 3 · Enterprise</span>
+            <div class="pname">Max</div>
+            <span class="phw">Mac Mini M4 Pro · 48–64 GB · OpenClaw</span>
+            <div class="pmodel">Model: <strong>Qwen3-72B</strong> (Q4 · ~42 GB) — enterprise full stack pre 8–20+ ľudí</div>
+            <ul class="pfeats">
+              <li class="y">Plný multi-agent pipeline</li>
+              <li class="y">RAG nad celým archívom firmy</li>
+              <li class="y">Compliance automatizácia</li>
+              <li class="y">8–20+ ľudí súbežne</li>
+              <li class="y">API integrácie</li>
+              <li class="y">Fine-tuning na vaše dáta</li>
+            </ul>
+            <div class="pprice">
+              <div class="pprice-main">€3 990</div>
+              <div class="pprice-sub">inštalácia · + hardware ~€1 400<br>Servis <strong>€699 / mesiac</strong></div>
+            </div>
+          </div>
+          <div class="pdetail">
+            <div class="dblock">
+              <h4>Pre koho <span class="dtag">ideálny zákazník</span></h4>
+              <p>Veľká kancelária, regulovaná entita (CASP, finančná inštitúcia) alebo firma, kde AI pracuje nielen ako asistent, ale ako súčasť operatívnych procesov.</p>
+            </div>
+            <div class="dblock">
+              <h4>Výkon <span class="dtag">Qwen3-72B @ M4 Pro 64 GB</span></h4>
+              <p>30–50 tokenov za sekundu. Plná veľkosť modelu bez kompromisov. Súbežné agenty, vektorová databáza, viacstupňová automatizácia.</p>
+              <div class="dbar"><div class="dbar-f" style="width:94%;background:#d4784a"></div></div>
+            </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESSORIES -->
+<section class="acc-sec sec reveal">
+  <div class="w">
+    <span class="sec-label">Príslušenstvo</span>
+    <h2 class="sec-title">Váš kolega<br>vždy k dispozícii.</h2>
+    <p class="sec-body">Rozšírenia a príslušenstvo pre maximálnu spoľahlivosť a výkon. Odporúčame pri inštalácii.</p>
+    <div class="acc-grid">
+      <div class="acc-card">
+        <div class="acc-icon">⚡</div>
+        <h3>Záložný zdroj (UPS)</h3>
+        <p>Záložný zdroj zabezpečí neprerušenú funkčnosť zariadenia aj pri výpadku elektrickej siete. Odporúčané pre všetky konfigurácie.</p>
+        <div class="acc-price">€89 – €149</div>
+      </div>
+      <div class="acc-card">
+        <div class="acc-icon">💾</div>
+        <h3>Rozšírenie úložiska</h3>
+        <p>Externý NVMe SSD 1–2 TB pre väčší archív dokumentov. Ideálne pre kancelárie s rozsiahlou históriou zmlúv a dokumentov.</p>
+        <div class="acc-price">€79 – €159</div>
+      </div>
+      <div class="acc-card">
+        <div class="acc-icon">🔄</div>
+        <h3>Automatické zálohovanie</h3>
+        <p>Nastavenie a monitoring pravidelného zálohovania konfigurácie a dát bota. Vrátane testovania obnovy. Mesačný monitoring.</p>
+        <div class="acc-price">€49 + €29 / mesiac</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="pre-koho" class="who-sec sec reveal">
+  <div class="w">
+    <span class="sec-label">Pre koho</span>
+    <h2 class="sec-title">Pre koho je lokálny AI asistent vhodný</h2>
+    <p class="sec-body">1bot je pre profesie, kde súkromie klientov nie je voliteľná možnosť — je to záväzok.</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="w-icon">⚖</div>
+        <h3>Advokáti &amp; notári</h3>
+        <p>Súkromie klientov a GDPR vylučujú odosielanie dokumentov do cloudu. 1bot analyzuje zmluvy, pripravuje stanoviská a odpovedá na otázky — všetko zostáva u vás.</p>
+        <div class="wtags"><span class="wtag">Analýza zmlúv</span><span class="wtag">Legal Q&amp;A</span><span class="wtag">Due diligence</span></div>
+        <div class="wrec">Odporúčaná konfigurácia: <strong>Štart alebo Pro</strong></div>
+      </div>
+      <div class="who-card">
+        <div class="w-icon">◈</div>
+        <h3>Účtovníci &amp; poradcovia</h3>
+        <p>Finančné dáta klientov nepatria na cudzie servery. 1bot pomáha s reportmi, hľadaním v dokumentoch a prípravou podkladov bez toho, aby čokoľvek opustilo vašu sieť.</p>
+        <div class="wtags"><span class="wtag">Finančné reporty</span><span class="wtag">Interný asistent</span><span class="wtag">Klientska dokumentácia</span></div>
+        <div class="wrec">Odporúčaná konfigurácia: <strong>Štart</strong></div>
+      </div>
+      <div class="who-card">
+        <div class="w-icon">₮</div>
+        <h3>CASP, Fintech &amp; finančné inštitúcie</h3>
+        <p>MiCA, AML a compliance dokumentácia si vyžadujú presné spracovanie regulačných textov. 1bot sleduje legislatívne zmeny a automatizuje compliance reporting.</p>
+        <div class="wtags"><span class="wtag">MiCA compliance</span><span class="wtag">AML monitoring</span><span class="wtag">Regulačné Q&amp;A</span></div>
+        <div class="wrec">Odporúčaná konfigurácia: <strong>Pro alebo Max</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="sec reveal">
+  <div class="w">
+    <span class="sec-label">Postup</span>
+    <h2 class="sec-title">Od konzultácie<br>po spustenie.</h2>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="step-n">01</div>
+        <span class="step-t">Deň 1–3</span>
+        <h3>Zistíme, čo potrebujete</h3>
+        <p>Spoločne sa pozrieme na to, koľko ľudí bude s botom pracovať a aké úlohy má zvládnuť. Na základe toho odporučíme konfiguráciu — nie zbytočne silnú, nie slabú.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-n">02</div>
+        <span class="step-t">Deň 3–7</span>
+        <h3>Inštalujeme a nastavíme</h3>
+        <p>Zariadenie doručíme predkonfigurované, alebo nastavíme na diaľku. Nahráme vaše dokumenty, nastavíme prístupy, otestujeme reálne úlohy.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-n">03</div>
+        <span class="step-t">Každý mesiac</span>
+        <h3>Staráme sa, vy pracujete</h3>
+        <p>Servis zahŕňa aktualizácie modelov, monitoring, pridávanie dokumentov a rozvoj bota. Techniku riešime my.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section class="sec reveal">
+  <div class="w">
+    <div class="priv-box">
+      <div class="priv-sym">§</div>
+      <div>
+        <h3>Vaše dáta sú vaše</h3>
+        <p>Vaše dáta sú vaše — a dáta vašich klientov sú bezpečné. Všetky modely bežia na vašom zariadení. Žiadny dotaz, žiadny dokument, žiadna odpoveď neopustí vašu sieť. Zariadenie funguje aj bez internetu.</p>
+        <div class="priv-chips">
+          <span class="priv-chip">GDPR splnené od prvého dňa</span>
+          <span class="priv-chip">Apache 2.0 — otvorené modely</span>
+          <span class="priv-chip">Funguje offline</span>
+          <span class="priv-chip">Šifrovaný vzdialený prístup</span>
+          <span class="priv-chip">Žiadny vendor lock-in</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="cennik" class="pricing-sec sec reveal">
+  <div class="w">
+    <span class="sec-label">Cenník</span>
+    <h2 class="sec-title">Cenník — lokálny AI asistent pre kancelárie</h2>
+    <p class="sec-body">Jednorazová inštalácia plus mesačný servis. Ceny sú bez DPH. Hardware odporúčame a pomôžeme objednať.</p>
+    <div class="pricing-grid">
+      <div class="pc">
+        <p class="pc-name">Štart</p>
+        <p class="pc-hw">Mac Mini M4 · 16 GB · Qwen3-14B</p>
+        <p class="pc-amount">€1 790</p>
+        <p class="pc-period">jednorazová inštalácia</p>
+        <p class="pc-ret">+ hardware ~€700 · servis <strong>€299 / mesiac</strong></p>
+        <ul class="pc-feats">
+          <li class="y">FAQ a knowledge base</li>
+          <li class="y">Analýza zmlúv</li>
+          <li class="y">Interný Q&amp;A</li>
+          <li class="y">2–5 používateľov</li>
+          <li class="y">Kontext 128k tokenov</li>
+          <li class="n">Due diligence pipeline</li>
+          <li class="n">Multi-agent workflow</li>
+        </ul>
+        <div class="pc-cta"><a href="#kontakt" class="btn-line">Nezáväzná konzultácia</a></div>
+      </div>
+      <div class="pc feat">
+        <span class="pc-badge">Najobľúbenejší</span>
+        <p class="pc-name">Pro</p>
+        <p class="pc-hw">Mac Mini M4 Pro · 24 GB · Qwen3-30B</p>
+        <p class="pc-amount">€2 790</p>
+        <p class="pc-period">jednorazová inštalácia</p>
+        <p class="pc-ret">+ hardware ~€900 · servis <strong>€499 / mesiac</strong></p>
+        <ul class="pc-feats">
+          <li class="y">Všetko zo Štart tieru</li>
+          <li class="y">Due diligence asistent</li>
+          <li class="y">Viacrokový reasoning</li>
+          <li class="y">3–8 používateľov</li>
+          <li class="y">Kontext 256k tokenov</li>
+          <li class="n">Enterprise integrácie</li>
+          <li class="n">Fine-tuning</li>
+        </ul>
+        <div class="pc-cta"><a href="#kontakt" class="btn-line g">Nezáväzná konzultácia</a></div>
+      </div>
+      <div class="pc">
+        <p class="pc-name">Max</p>
+        <p class="pc-hw">Mac Mini M4 Pro · 48–64 GB · Qwen3-72B</p>
+        <p class="pc-amount">€3 990</p>
+        <p class="pc-period">jednorazová inštalácia</p>
+        <p class="pc-ret">+ hardware ~€1 400 · servis <strong>€699 / mesiac</strong></p>
+        <ul class="pc-feats">
+          <li class="y">Multi-agent pipeline</li>
+          <li class="y">RAG nad celým archívom</li>
+          <li class="y">Compliance automatizácia</li>
+          <li class="y">8–20+ používateľov</li>
+          <li class="y">API integrácie</li>
+          <li class="y">Fine-tuning ready</li>
+        </ul>
+        <div class="pc-cta"><a href="#kontakt" class="btn-line">Nezáväzná konzultácia</a></div>
+      </div>
+    </div>
+    <div class="byod-note" style="margin-top:20px">
+      <p><strong>Máte vlastné zariadenie?</strong> Vieme inštalovať aj na váš Mac Mini — za poplatok za kompatibilitu (€150) a upravenú cenu inštalácie. <a href="#kontakt" style="color:var(--gold)">Napíšte nám →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="o-nas" class="about-sec sec reveal">
+  <div class="w">
+    <span class="sec-label">O nás</span>
+    <h2 class="sec-title">Kto za 1bot stojí.</h2>
+    <div class="about-grid" style="margin-top:40px">
+      <div class="about-photo">👤</div>
+      <div>
+        <div class="about-name">Martin Hergovic, JUDr.</div>
+        <div class="about-role">Zakladateľ · CEO · Legal &amp; AI stratég</div>
+        <p class="about-bio">Právnik a podnikateľ s dlhoročnou skúsenosťou na priesečníku práva, technológií a krypta. Predtým CLO vo Fumbi Network (€80M+ AUM), zakladateľ ETHBratislava, lektor na Ekonomickej univerzite a STU Bratislava. 1bot vznikol z jednoduchej otázky: prečo by mal advokát nahrávať klientske dokumenty na americké servery, keď existuje lepšia cesta?</p>
+        <div class="about-creds">
+          <span class="cred">JUDr. · Comenius University</span>
+          <span class="cred">Blockchain Slovakia</span>
+          <span class="cred">ETHBratislava</span>
+          <span class="cred">Aceon Accelerator</span>
+          <span class="cred">Bratislava, Slovakia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec sec reveal">
+  <div class="w">
+    <span class="sec-label">Časté otázky</span>
+    <h2 class="sec-title">Časté otázky.</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">Funguje bot aj po slovensky?</div>
+        <div class="faq-a">Áno. Qwen3 modely majú výbornú podporu slovenčiny a češtiny. Bot komunikuje v jazyku, v akom sa ho pýtate — vrátane právnej terminológie.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Čo ak sa zariadenie pokazí?</div>
+        <div class="faq-a">Konfigurácia je zálohovaná. V prípade poruchy nasadíme náhradné zariadenie do 48 hodín. Hardware Apple má štandardnú 1-ročnú záruku, odporúčame AppleCare+.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Potrebujem vlastné IT oddelenie?</div>
+        <div class="faq-a">Vôbec nie. Celú technickú stránku riešime my — inštalácia, aktualizácie, monitoring, podpora. Vy len používate bota cez prehliadač alebo aplikáciu.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Môžem bot neskôr upgradovať?</div>
+        <div class="faq-a">Áno. Upgrade na vyšší tier je možný kedykoľvek — doplatíte rozdiel v inštalácii a prechod zariadenie zvládneme vzdialene za jeden deň.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Mám vlastný Mac Mini — nainštalujete mi to?</div>
+        <div class="faq-a">Vieme, ale odporúčame naše zariadenie — garantujeme výkon a máme plnú kontrolu nad konfiguráciou. Ak trváte na vlastnom, urobíme kompatibilný check (€150) a inštaláciu za upravenú cenu.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Čo keď prestanete existovať?</div>
+        <div class="faq-a">Zariadenie je vaše, modely sú open source (Apache 2.0). Bot bude fungovať aj bez nás — nebudete mať servis, ale dáta a funkcia zostanú. Žiadny vendor lock-in.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="nl-sec reveal">
+  <div class="w">
+    <div class="nl-inner">
+      <div class="nl-text">
+        <span class="sec-label">Newsletter</span>
+        <h3>Čo sa deje vo svete<br>lokálneho AI.</h3>
+        <p>Nové modely, praktické tipy, aktualizácie produktov. Max. 2× mesačne. Bez zbytočností.</p>
+      </div>
+      <div>
+        <div class="nl-form">
+          <div class="nl-row">
+            <input class="nl-inp" type="text" placeholder="Meno">
+            <input class="nl-inp" type="text" placeholder="Firma (voliteľné)">
+          </div>
+          <div class="nl-row">
+            <input class="nl-inp" type="email" placeholder="Váš email" style="flex:2">
+            <button class="nl-btn">Odoberať</button>
+          </div>
+          <p class="nl-consent">Prihlásením súhlasíte so zasielaním newslettera. Odhlásite sa kedykoľvek. Žiadne zdieľanie s tretími stranami.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="kontakt" class="contact-sec">
+  <div class="w">
+    <div class="contact-layout">
+      <div>
+        <span class="sec-label">Kontakt</span>
+        <h2 class="sec-title">Porozprávajme sa<br>o 1bot.</h2>
+        <p style="font-size:15px;color:var(--t2);line-height:1.7;margin-bottom:22px">Vyplňte krátky dotazník — odporučíme konfiguráciu a ozveme sa do 24 hodín. Bezplatné, nezáväzné.</p>
+        <div class="ca-item"><span>→</span> Konzultácia je bezplatná</div>
+        <div class="ca-item"><span>→</span> Prvých 5 kancelárií: pilotný mesiac zdarma</div>
+        <div class="ca-item"><span>→</span> Odpíšeme do 24 hodín</div>
+        <div class="ca-direct">
+          <div class="ca-direct-lbl">Napíšte priamo</div>
+          <a href="/cdn-cgi/l/email-protection#0f666169604f3e6d607b217c64"><span class="__cf_email__" data-cfemail="82ebece4edc2b3e0edf6acf1e9">[email&#160;protected]</span></a>
+        </div>
+      </div>
+      <div class="wizard" id="wiz">
+        <div class="wprog">
+          <div class="ws act" id="ws1"><div class="wd">1</div> Typ firmy</div>
+          <div class="ws" id="ws2"><div class="wd">2</div> Veľkosť</div>
+          <div class="ws" id="ws3"><div class="wd">3</div> Kontakt</div>
+        </div>
+
+        <div class="wp show" id="wp1">
+          <div class="wq">Čo najlepšie opisuje vašu firmu?</div>
+          <div class="og">
+            <button class="ob" data-v="legal" onclick="pick(this,1)">Advokátska kancelária<span>advokáti, notári</span></button>
+            <button class="ob" data-v="accounting" onclick="pick(this,1)">Účtovníctvo / poradenstvo<span>daňoví poradcovia, audítori</span></button>
+            <button class="ob" data-v="vasp" onclick="pick(this,1)">CASP / Fintech<span>krypto, platobné inštitúcie</span></button>
+            <button class="ob" data-v="sme" onclick="pick(this,1)">Iná firma<span>výroba, obchod, služby</span></button>
+          </div>
+          <div class="wnav">
+            <button class="wback" style="opacity:0;pointer-events:none">← Späť</button>
+            <button class="wnext" id="wn1" onclick="go(2)">Ďalej →</button>
+          </div>
+        </div>
+
+        <div class="wp" id="wp2">
+          <div class="wq">Koľko ľudí bude s botom pracovať?</div>
+          <div class="og">
+            <button class="ob" data-v="1-2" onclick="pick(this,2)">1–2 ľudia<span>solo alebo dvojica</span></button>
+            <button class="ob" data-v="2-5" onclick="pick(this,2)">2–5 ľudí<span>malý tím → Štart</span></button>
+            <button class="ob" data-v="5-15" onclick="pick(this,2)">5–15 ľudí<span>stredná firma → Pro</span></button>
+            <button class="ob" data-v="15+" onclick="pick(this,2)">15 a viac<span>väčšia organizácia → Max</span></button>
+          </div>
+          <div class="wnav">
+            <button class="wback" onclick="go(1)">← Späť</button>
+            <button class="wnext" id="wn2" onclick="go(3)">Ďalej →</button>
+          </div>
+        </div>
+
+        <div class="wp" id="wp3">
+          <div class="wq">Ako vás kontaktujeme?</div>
+          <div class="rec-box" id="rec"><div class="rec-lbl">Naše odporúčanie</div><div class="rec-prod" id="rp">—</div><div class="rec-why" id="rw">—</div></div>
+          <div class="cinputs">
+            <div><label class="clbl">Meno a priezvisko *</label><input class="cinp" id="ci-name" type="text" placeholder="JUDr. Ján Novák"></div>
+            <div><label class="clbl">Firma</label><input class="cinp" id="ci-firm" type="text" placeholder="Novák & Partners s.r.o."></div>
+            <div><label class="clbl">Email *</label><input class="cinp" id="ci-email" type="email" placeholder="jan.novak@kancelaria.sk"></div>
+            <div><label class="clbl">Správa (voliteľné)</label><input class="cinp" id="ci-msg" type="text" placeholder="Čo by ste radi vedeli?"></div>
+          </div>
+          <p style="font-size:12px;color:var(--t3);margin-bottom:16px;line-height:1.5">Odoslaním súhlasíte so spracovaním osobných údajov za účelom zodpovedania vášho dopytu. <a href="#" style="color:var(--gold)">Ochrana súkromia.</a></p>
+          <div class="wnav">
+            <button class="wback" onclick="go(2)">← Späť</button>
+            <button class="wnext rdy" onclick="send()">Odoslať →</button>
+          </div>
+        </div>
+
+        <div class="fsuccess" id="fok">
+          <div class="fsuccess-ico">✓</div>
+          <h4>Ďakujeme, ozveme sa!</h4>
+          <p>Odpíšeme na zadaný email do 24 hodín.<br>Urgentne? <a href="/cdn-cgi/l/email-protection#7e171018113e4f1c110a500d15" style="color:var(--gold)"><span class="__cf_email__" data-cfemail="e0898e868fa0d1828f94ce938b">[email&#160;protected]</span></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILOT -->
+<section class="pilot reveal">
+  <div class="w">
+    <span class="sec-label">Obmedzený pilot</span>
+    <h2 class="sec-title">5 kancelárií.<br><em>Prvý mesiac bez poplatku.</em></h2>
+    <p class="sec-body">Prvých 5 kancelárií dostane pilotný mesiac bez poplatku — inštalácia, nastavenie aj prevádzka zdarma. Výmenou len za úprimnú spätnú väzbu.</p>
+    <div class="pilot-boxes">
+      <div class="pbox">Inštalácia <strong>zdarma</strong></div>
+      <div class="pbox">30 dní <strong>bez záväzku</strong></div>
+      <div class="pbox">NDA <strong>samozrejmosťou</strong></div>
+    </div>
+    <a href="#kontakt" class="btn-gold" style="font-size:15px;padding:14px 32px">Zapojiť sa →</a>
+    <p class="pilot-note" style="margin-top:14px">// Registrácia nezaväzuje · Pilotný program je obmedzený na 5 kancelárií</p>
+  </div>
+</section>
+
+<footer>
+  <div class="w">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="logo"><b>1</b>bot</a>
+        <p>Váš AI kolega v krabičke. Lokálne, súkromne, spoľahlivo. Bratislava, Slovensko.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produkty</h4>
+        <ul>
+          <li><a href="#produkty">Štart</a></li>
+          <li><a href="#produkty">Pro</a></li>
+          <li><a href="#produkty">Max</a></li>
+          <li><a href="#cennik">Cenník</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Spoločnosť</h4>
+        <ul>
+          <li><a href="#o-nas">O nás</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#533a3d353c1362313c277d2038"><span class="__cf_email__" data-cfemail="71181f171e3140131e055f021a">[email&#160;protected]</span></a></li>
+          <li><a href="#">Ochrana súkromia</a></li>
+          <li><a href="#">Podmienky použitia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 1bot · Bratislava, Slovensko · IČO: 54 566 746</span>
+      <span>Súkromné AI · Žiadny cloud · GDPR</span>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 50));
+
+// GDPR banner
+if (!localStorage.getItem('gdpr_ok')) {
+  setTimeout(() => { document.getElementById('gdpr').style.display = 'flex'; document.getElementById('gdpr').style.flexDirection = 'column'; }, 1500);
+}
+function closeGDPR() {
+  localStorage.setItem('gdpr_ok', '1');
+  document.getElementById('gdpr').style.display = 'none';
+}
+
+// Product tabs
+document.querySelectorAll('.tab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('on'));
+    document.querySelectorAll('.panel').forEach(x => x.classList.remove('on'));
+    t.classList.add('on');
+    document.getElementById('t-' + t.dataset.t).classList.add('on');
+  });
+});
+
+// Scroll reveal
+const ro = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// Wizard
+const S = { firm: null, size: null };
+function pick(btn, step) {
+  btn.closest('.og').querySelectorAll('.ob').forEach(b => b.classList.remove('sel'));
+  btn.classList.add('sel');
+  const keys = ['firm', 'size'];
+  if (step <= 2) S[keys[step-1]] = btn.dataset.v;
+  const n = document.getElementById('wn' + step);
+  if (n) n.classList.add('rdy');
+}
+
+function recommend() {
+  const s = S.size;
+  let prod, why;
+  if (s === '1-2' || s === '2-5') { prod = 'Štart (NemoClaw)'; why = 'Mac Mini M4 s 16GB pokrýva bežné úlohy pre malý tím — analýza zmlúv, interný Q&A, knowledge base.'; }
+  else if (s === '5-15') { prod = 'Pro (Hermes)'; why = 'Pre 5–15 ľudí odporúčame M4 Pro s 24GB a Qwen3-30B — reasoning mode pre DD a compliance úlohy.'; }
+  else { prod = 'Max (OpenClaw)'; why = 'Pre 15+ ľudí je správna voľba M4 Pro 64GB s Qwen3-72B — full enterprise stack s multi-agent pipeline.'; }
+  document.getElementById('rp').textContent = prod;
+  document.getElementById('rw').textContent = why;
+  document.getElementById('rec').classList.add('show');
+}
+
+function go(n) {
+  if (n === 3) recommend();
+  document.querySelectorAll('.wp').forEach(p => p.classList.remove('show'));
+  document.getElementById('wp' + n).classList.add('show');
+  for (let i = 1; i <= 3; i++) {
+    const ws = document.getElementById('ws' + i);
+    ws.classList.remove('act', 'done');
+    if (i < n) ws.classList.add('done');
+    if (i === n) ws.classList.add('act');
+  }
+}
+
+function send() {
+  const name = document.getElementById('ci-name');
+  const email = document.getElementById('ci-email');
+  let ok = true;
+  if (!na
