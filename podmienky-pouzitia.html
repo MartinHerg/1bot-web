@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c8a96e'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='400' fill='%2309090b' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Podmienky používania — 1bot. Všeobecné obchodné podmienky služby 1bot.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1bot.sk/podmienky-pouzitia">
+<meta property="og:title" content="Podmienky používania — 1bot">
+<meta property="og:description" content="Všeobecné obchodné podmienky služby 1bot — managed on-premise AI pre regulované profesie.">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:site_name" content="1bot">
+<link rel="canonical" href="https://1bot.sk/podmienky-pouzitia">
+<title>Podmienky používania — 1bot</title>
+<style>
+:root {
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
+  --bg: #09090b;
+  --bg2: #0f0f12;
+  --bg3: #16161a;
+  --surface: #1e1e24;
+  --surface2: #26262f;
+  --b: rgba(255,255,255,0.07);
+  --b2: rgba(255,255,255,0.13);
+  --b3: rgba(255,255,255,0.22);
+  --t: #eeeef0;
+  --t2: #9898a6;
+  --t3: #58586a;
+  --gold: #c8a96e;
+  --gold2: rgba(200,169,110,0.13);
+  --gold3: rgba(200,169,110,0.28);
+  --gold4: rgba(200,169,110,0.06);
+  --green: #5db87a;
+  --green2: rgba(93,184,122,0.11);
+  --red: #e05555;
+  --r: 5px;
+  --r2: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { background: var(--bg); color: var(--t); font-family: var(--sans); line-height: 1.6; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+.w { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+body::after {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 9000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E");
+  opacity: .55;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  padding: 16px 0;
+  background: rgba(9,9,11,.93);
+  border-bottom: 1px solid var(--b);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+}
+.nav-i { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.logo { font-family: var(--mono); font-size: 19px; font-weight: 500; letter-spacing: -.3px; color: var(--t); }
+.logo b { color: var(--gold); font-weight: 500; }
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--t2); transition: color .2s; }
+.nav-links a:hover { color: var(--t); }
+.nav-cta { font-family: var(--sans); font-size: 13px; font-weight: 600; padding: 9px 20px; background: var(--gold); color: #09090b; border: none; cursor: pointer; border-radius: var(--r); transition: opacity .2s; white-space: nowrap; }
+.nav-cta:hover { opacity: .88; }
+
+/* PAGE */
+.page { padding: 120px 0 80px; max-width: 740px; }
+
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--t3); margin-bottom: 40px; transition: color .2s; }
+.back-link:hover { color: var(--gold); }
+
+.page-label { font-family: var(--mono); font-size: 11px; letter-spacing: 2.2px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
+.page-title { font-family: var(--serif); font-size: clamp(32px, 4.5vw, 52px); font-weight: 400; line-height: 1.06; letter-spacing: -1.5px; margin-bottom: 12px; }
+.page-updated { font-family: var(--mono); font-size: 12px; color: var(--t3); margin-bottom: 56px; padding-bottom: 32px; border-bottom: 1px solid var(--b); }
+
+.doc-section { margin-bottom: 48px; }
+.doc-section h2 { font-family: var(--serif); font-size: 22px; font-weight: 400; letter-spacing: -.5px; margin-bottom: 16px; color: var(--t); padding-bottom: 10px; border-bottom: 1px solid var(--b); }
+.doc-section h3 { font-size: 15px; font-weight: 600; margin: 20px 0 8px; color: var(--t); }
+.doc-section p { font-size: 15px; color: var(--t2); line-height: 1.75; margin-bottom: 12px; }
+.doc-section ul { margin: 12px 0 12px 0; display: flex; flex-direction: column; gap: 8px; list-style: none; }
+.doc-section ul li { font-size: 15px; color: var(--t2); line-height: 1.65; display: flex; gap: 10px; }
+.doc-section ul li::before { content: '·'; color: var(--gold); flex-shrink: 0; font-size: 18px; line-height: 1.5; }
+.doc-section a { color: var(--gold); transition: opacity .2s; }
+.doc-section a:hover { opacity: .8; }
+
+.info-box { background: var(--bg3); border: 1px solid var(--b2); border-radius: var(--r2); padding: 20px 24px; margin: 16px 0; }
+.info-box p { font-size: 14px; color: var(--t2); margin-bottom: 0; line-height: 1.65; }
+.info-box strong { color: var(--t); }
+
+.tier-table { width: 100%; border-collapse: collapse; margin: 16px 0; border: 1px solid var(--b); border-radius: var(--r2); overflow: hidden; }
+.tier-table th { background: var(--bg3); font-size: 12px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 1px; color: var(--t3); padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--b2); }
+.tier-table td { font-size: 14px; color: var(--t2); padding: 12px 14px; border-bottom: 1px solid var(--b); }
+.tier-table tr:last-child td { border-bottom: none; }
+.tier-table tr:hover td { background: var(--bg3); }
+.tier-name { color: var(--t); font-weight: 500; }
+.tier-price { color: var(--gold); font-family: var(--mono); }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--b); padding: 40px 0 32px; margin-top: 0; background: var(--bg2); }
+.foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+.foot-brand p { font-size: 13px; color: var(--t3); line-height: 1.65; margin-top: 10px; max-width: 260px; }
+.foot-col h4 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--t3); font-family: var(--mono); margin-bottom: 12px; }
+.foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.foot-col ul li a { font-size: 13px; color: var(--t3); transition: color .2s; }
+.foot-col ul li a:hover { color: var(--t2); }
+.foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--b); font-size: 12px; color: var(--t3); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .foot-grid { grid-template-columns: 1fr; gap: 24px; }
+  .foot-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .tier-table { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="w">
+    <div class="nav-i">
+      <a href="/" class="logo"><b>1</b>bot</a>
+      <ul class="nav-links">
+        <li><a href="/#produkty">Produkty</a></li>
+        <li><a href="/#pre-koho">Pre koho</a></li>
+        <li><a href="/#cennik">Cenník</a></li>
+        <li><a href="/#o-nas">O nás</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
+      </ul>
+      <button class="nav-cta" onclick="location.href='/#kontakt'">Nezáväzná konzultácia</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="w">
+    <div class="page">
+
+      <a href="/" class="back-link">← Späť na 1bot.sk</a>
+
+      <span class="page-label">Právne dokumenty</span>
+      <h1 class="page-title">Podmienky používania</h1>
+      <p class="page-updated">Všeobecné obchodné podmienky &nbsp;·&nbsp; Platné od: 1. apríl 2025 &nbsp;·&nbsp; Verzia 1.0</p>
+
+      <div class="doc-section">
+        <h2>1. Poskytovateľ služby</h2>
+        <p>Tieto všeobecné obchodné podmienky (ďalej „VOP") upravujú vzájomné práva a povinnosti medzi poskytovateľom a zákazníkom pri poskytovaní služby 1bot.</p>
+        <div class="info-box">
+          <p>
+            <strong>blockWise s.r.o.</strong> (ďalej „Poskytovateľ")<br>
+            IČO: 54 566 746<br>
+            Sídlo: Bratislava, Slovenská republika<br>
+            Email: <a href="mailto:info@1bot.sk">info@1bot.sk</a><br>
+            Web: <a href="https://1bot.sk">https://1bot.sk</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="doc-section">
+        <h2>2. Popis služby</h2>
+        <p><strong>1bot</strong> je managed on-premise AI asistent pre regulované profesie. Služba zahŕňa:</p>
+        <ul>
+          <li>Dodávku a inštaláciu hardvérového zariadenia (Mac Mini) s predinštalovaným softvérom</li>
+          <li>Konfiguráciu AI modelu (Ollama), používateľského rozhrania (Open WebUI) a vzdialeného prístupu (Tailscale)</li>
+          <li>Mesačný servis: technická podpora, aktualizácie softvéru, monitoring dostupnosti</li>
+          <li>Vzdialený prístup k zariadeniu prostredníctvom Tailscale VPN</li>
+        </ul>
+        <p>AI model beží výlučne lokálne na zariadení zákazníka. Dáta zákazníka <strong>neopúšťajú jeho sieť</strong> a nie sú prenášané na servery Poskytovateľa ani tretích strán.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>3. Produktové konfigurácie a ceny</h2>
+        <p>Poskytovateľ ponúka nasledovné konfigurácie:</p>
+        <table class="tier-table">
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Hardvér</th>
+              <th>AI Model</th>
+              <th>Inštalácia</th>
+              <th>Servis/mes.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tier-name">Štart</td>
+              <td>Mac Mini M4 16 GB</td>
+              <td>Qwen3-14B Q4</td>
+              <td class="tier-price">€ 1 790</td>
+              <td class="tier-price">€ 299</td>
+            </tr>
+            <tr>
+              <td class="tier-name">Pro</td>
+              <td>Mac Mini M4 Pro 24 GB</td>
+              <td>Qwen3-30B MoE</td>
+              <td class="tier-price">€ 2 790</td>
+              <td class="tier-price">€ 499</td>
+            </tr>
+            <tr>
+              <td class="tier-name">Max</td>
+              <td>Mac Mini M4 Pro 48–64 GB</td>
+              <td>Qwen3-72B Q4</td>
+              <td class="tier-price">€ 3 990</td>
+              <td class="tier-price">€ 699</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Ceny sú uvedené bez DPH. K cene inštalácie je zahrnutá dodávka zariadenia, konfigurácia a uvedenie do prevádzky. Cena hardvéru závisí od aktuálnej dostupnosti a môže sa líšiť od odporúčaných cien.</p>
+        <p>Poskytovateľ si vyhradzuje právo zmeniť cenník s oznámením zákazníkovi minimálne <strong>30 dní</strong> vopred.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>4. Objednávka a uzavretie zmluvy</h2>
+        <p>Objednávka sa realizuje prostredníctvom:</p>
+        <ul>
+          <li>Kontaktného formulára na 1bot.sk</li>
+          <li>Priameho emailového kontaktu na info@1bot.sk</li>
+        </ul>
+        <p>Po doručení dopytu Poskytovateľ pripraví individuálnu cenovú ponuku. Zmluva je uzavretá písomným potvrdením objednávky zo strany Poskytovateľa a uhradením zálohy zákazníkom.</p>
+        <p>Štandardná záloha pri objednávke: <strong>50 % z ceny inštalácie</strong>. Zvyšok je splatný pri odovzdaní zariadenia.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>5. Platobné podmienky</h2>
+        <p>Faktúry sú splatné do <strong>14 dní</strong> od vystavenia, pokiaľ nie je dohodnuté inak.</p>
+        <p>Mesačný servisný poplatok je fakturovaný vopred, vždy k 1. dňu príslušného mesiaca.</p>
+        <p>V prípade omeškania platby má Poskytovateľ právo pozastaviť vzdialenú technickú podporu až do vyrovnania záväzku.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>6. Inštalácia a odovzdanie</h2>
+        <p>Inštalácia prebieha osobne v priestoroch zákazníka (Bratislava a okolie) alebo na dohodnutom mieste. Termín inštalácie sa dohodne individuálne, štandardne do <strong>14 pracovných dní</strong> od uhradenia zálohy.</p>
+        <p>Pri inštalácii Poskytovateľ:</p>
+        <ul>
+          <li>Zapojí a nakonfiguruje zariadenie v sieti zákazníka</li>
+          <li>Nastaví používateľské kontá a prístupy</li>
+          <li>Vyškolí zodpovednú osobu zákazníka (základné ovládanie, cca 1 hodina)</li>
+          <li>Odovzdá prístupové údaje a dokumentáciu</li>
+        </ul>
+        <p>Zákazník zabezpečí potrebnú sieťovú infraštruktúru (ethernet prípojka, stabilná internetová linka pre Tailscale).</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>7. Servis a podpora</h2>
+        <p>Mesačný servisný poplatok zahŕňa:</p>
+        <ul>
+          <li>Vzdialenú technickú podporu cez Tailscale (best-effort, v pracovné dni 9:00–18:00)</li>
+          <li>Aktualizácie softvéru (Ollama, Open WebUI, OS aktualizácie)</li>
+          <li>Monitoring dostupnosti zariadenia</li>
+          <li>Konzultácie ohľadom využitia AI (max. 2 hodiny/mesiac)</li>
+        </ul>
+        <p><strong>SLA:</strong> Poskytovateľ sa zaväzuje reagovať na kritické problémy do 4 pracovných hodín, na bežné požiadavky do 1 pracovného dňa. Tieto časy sú orientačné (best-effort), nie zmluvne garantované.</p>
+        <p>Fyzický servis (návšteva na mieste) nie je zahrnutý v mesačnom poplatku a účtuje sa zvlášť.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>8. Záručné podmienky</h2>
+        <p>Na hardvérové zariadenie (Mac Mini) sa vzťahuje <strong>štandardná záručná doba 24 mesiacov</strong> v súlade so zákonom č. 40/1964 Zb. (Občiansky zákonník) a zákonom č. 250/2007 Z.z. o ochrane spotrebiteľa v znení neskorších predpisov, ak je zákazníkom spotrebiteľ.</p>
+        <p>Pre B2B zákazníkov sa záručná doba riadi zmluvnými podmienkami výrobcu (Apple Inc.) a všeobecne platnými ustanoveniami Obchodného zákonníka.</p>
+        <p>Softvérové komponenty (Ollama, Open WebUI) sú open-source a poskytujú sa „ako sú" bez záruky funkčnosti pre špecifické účely.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>9. Obmedzenie zodpovednosti</h2>
+        <p>Poskytovateľ nezodpovedá za:</p>
+        <ul>
+          <li>Obsah generovaný AI modelom — zákazník je zodpovedný za overenie a použitie výstupov</li>
+          <li>Stratu dát spôsobenú zákazníkom alebo vyššou mocou</li>
+          <li>Nedostupnosť služby spôsobenú výpadkom internetu, elektrickej energie alebo iných infraštruktúr mimo kontroly Poskytovateľa</li>
+          <li>Škody spôsobené nesprávnym používaním zariadenia zákazníkom</li>
+        </ul>
+        <p>Celková zodpovednosť Poskytovateľa za škody je limitovaná výškou mesačného servisného poplatku za príslušné obdobie.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>10. Trvanie zmluvy a ukončenie</h2>
+        <p>Servisná zmluva sa uzatvára na dobu neurčitú. Ktorákoľvek strana môže zmluvu ukončiť s <strong>30-dňovou výpovednou lehotou</strong>, doručenou emailom na adresu druhej strany.</p>
+        <p>Poskytovateľ môže zmluvu ukončiť okamžite v prípade:</p>
+        <ul>
+          <li>Neuhradenia faktúry po dobu dlhšiu ako 60 dní</li>
+          <li>Závažného porušenia týchto VOP zákazníkom</li>
+        </ul>
+        <p>Ukončenie zmluvy nemá vplyv na vlastníctvo zariadenia — hardvér zostáva majetkom zákazníka.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>11. Duševné vlastníctvo</h2>
+        <p>Softvérové komponenty použité v rámci 1bot (Ollama, Open WebUI, AI modely) sú open-source a podliehajú príslušným licenciám (MIT, Apache 2.0 a pod.). Zákazník má právo softvér používať v rámci podmienok príslušných licencií.</p>
+        <p>Konfigurácie, skripty a know-how Poskytovateľa sú jeho duševným vlastníctvom. Zákazník ich nesmie ďalej distribuovať ani predávať tretím stranám.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>12. Rozhodné právo a riešenie sporov</h2>
+        <p>Tieto VOP sa riadia právnym poriadkom <strong>Slovenskej republiky</strong>. Spory sa riešia prednostne mimosúdnou cestou — dohodou strán.</p>
+        <p>Ak sa strany nedohodnú, spory budú riešené pred príslušným súdom Slovenskej republiky. Pre spotrebiteľov je príslušnou alternatívnou možnosťou riešenie sporov prostredníctvom Slovenskej obchodnej inšpekcie (SOI) alebo platformy RSO (<a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>).</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>13. Zmeny VOP</h2>
+        <p>Poskytovateľ si vyhradzuje právo tieto VOP zmeniť. O zmenách bude zákazník informovaný emailom minimálne <strong>14 dní</strong> pred ich účinnosťou. Pokračovanie v používaní služby po nadobudnutí účinnosti zmien sa považuje za súhlas s novými VOP.</p>
+        <p>Aktuálna verzia VOP je vždy dostupná na <a href="https://1bot.sk/podmienky-pouzitia">1bot.sk/podmienky-pouzitia</a>.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>14. Kontakt</h2>
+        <div class="info-box">
+          <p>
+            <strong>blockWise s.r.o. — 1bot</strong><br>
+            Email: <a href="mailto:info@1bot.sk">info@1bot.sk</a><br>
+            Web: <a href="https://1bot.sk">https://1bot.sk</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="w">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="logo"><b>1</b>bot</a>
+        <p>Váš AI kolega v krabičke. Lokálne, súkromne, spoľahlivo. Bratislava, Slovensko.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produkty</h4>
+        <ul>
+          <li><a href="/#produkty">Štart</a></li>
+          <li><a href="/#produkty">Pro</a></li>
+          <li><a href="/#produkty">Max</a></li>
+          <li><a href="/#cennik">Cenník</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Spoločnosť</h4>
+        <ul>
+          <li><a href="/#o-nas">O nás</a></li>
+          <li><a href="mailto:info@1bot.sk">info@1bot.sk</a></li>
+          <li><a href="/ochrana-sukromia">Ochrana súkromia</a></li>
+          <li><a href="/podmienky-pouzitia">Podmienky použitia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 1bot · Bratislava, Slovensko · IČO: 54 566 746</span>
+      <span>Súkromné AI · Žiadny cloud · GDPR</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

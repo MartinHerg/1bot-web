@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c8a96e'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='400' fill='%2309090b' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Ochrana súkromia — 1bot. Informácie o spracúvaní osobných údajov v súlade s GDPR.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1bot.sk/ochrana-sukromia">
+<meta property="og:title" content="Ochrana súkromia — 1bot">
+<meta property="og:description" content="Informácie o spracúvaní osobných údajov v súlade s GDPR.">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:site_name" content="1bot">
+<link rel="canonical" href="https://1bot.sk/ochrana-sukromia">
+<title>Ochrana súkromia — 1bot</title>
+<style>
+:root {
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
+  --bg: #09090b;
+  --bg2: #0f0f12;
+  --bg3: #16161a;
+  --surface: #1e1e24;
+  --surface2: #26262f;
+  --b: rgba(255,255,255,0.07);
+  --b2: rgba(255,255,255,0.13);
+  --b3: rgba(255,255,255,0.22);
+  --t: #eeeef0;
+  --t2: #9898a6;
+  --t3: #58586a;
+  --gold: #c8a96e;
+  --gold2: rgba(200,169,110,0.13);
+  --gold3: rgba(200,169,110,0.28);
+  --gold4: rgba(200,169,110,0.06);
+  --green: #5db87a;
+  --green2: rgba(93,184,122,0.11);
+  --red: #e05555;
+  --r: 5px;
+  --r2: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { background: var(--bg); color: var(--t); font-family: var(--sans); line-height: 1.6; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+.w { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+body::after {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 9000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E");
+  opacity: .55;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  padding: 16px 0;
+  background: rgba(9,9,11,.93);
+  border-bottom: 1px solid var(--b);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+}
+.nav-i { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.logo { font-family: var(--mono); font-size: 19px; font-weight: 500; letter-spacing: -.3px; color: var(--t); }
+.logo b { color: var(--gold); font-weight: 500; }
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--t2); transition: color .2s; }
+.nav-links a:hover { color: var(--t); }
+.nav-cta { font-family: var(--sans); font-size: 13px; font-weight: 600; padding: 9px 20px; background: var(--gold); color: #09090b; border: none; cursor: pointer; border-radius: var(--r); transition: opacity .2s; white-space: nowrap; }
+.nav-cta:hover { opacity: .88; }
+
+/* PAGE */
+.page { padding: 120px 0 80px; max-width: 740px; }
+
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--t3); margin-bottom: 40px; transition: color .2s; }
+.back-link:hover { color: var(--gold); }
+
+.page-label { font-family: var(--mono); font-size: 11px; letter-spacing: 2.2px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
+.page-title { font-family: var(--serif); font-size: clamp(32px, 4.5vw, 52px); font-weight: 400; line-height: 1.06; letter-spacing: -1.5px; margin-bottom: 12px; }
+.page-updated { font-family: var(--mono); font-size: 12px; color: var(--t3); margin-bottom: 56px; padding-bottom: 32px; border-bottom: 1px solid var(--b); }
+
+.doc-section { margin-bottom: 48px; }
+.doc-section h2 { font-family: var(--serif); font-size: 22px; font-weight: 400; letter-spacing: -.5px; margin-bottom: 16px; color: var(--t); padding-bottom: 10px; border-bottom: 1px solid var(--b); }
+.doc-section h3 { font-size: 15px; font-weight: 600; margin: 20px 0 8px; color: var(--t); }
+.doc-section p { font-size: 15px; color: var(--t2); line-height: 1.75; margin-bottom: 12px; }
+.doc-section ul { margin: 12px 0 12px 0; display: flex; flex-direction: column; gap: 8px; list-style: none; }
+.doc-section ul li { font-size: 15px; color: var(--t2); line-height: 1.65; display: flex; gap: 10px; }
+.doc-section ul li::before { content: '·'; color: var(--gold); flex-shrink: 0; font-size: 18px; line-height: 1.5; }
+.doc-section a { color: var(--gold); transition: opacity .2s; }
+.doc-section a:hover { opacity: .8; }
+
+.info-box { background: var(--bg3); border: 1px solid var(--b2); border-radius: var(--r2); padding: 20px 24px; margin: 16px 0; }
+.info-box p { font-size: 14px; color: var(--t2); margin-bottom: 0; line-height: 1.65; }
+.info-box strong { color: var(--t); }
+
+.rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
+.right-item { background: var(--bg3); border: 1px solid var(--b); border-radius: var(--r); padding: 14px 16px; }
+.right-item h4 { font-size: 13px; font-weight: 600; margin-bottom: 5px; color: var(--t); display: flex; align-items: center; gap: 7px; }
+.right-item h4::before { content: '✓'; color: var(--green); font-size: 11px; }
+.right-item p { font-size: 13px; color: var(--t2); line-height: 1.55; margin-bottom: 0; }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--b); padding: 40px 0 32px; margin-top: 0; background: var(--bg2); }
+.foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+.foot-brand p { font-size: 13px; color: var(--t3); line-height: 1.65; margin-top: 10px; max-width: 260px; }
+.foot-col h4 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--t3); font-family: var(--mono); margin-bottom: 12px; }
+.foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.foot-col ul li a { font-size: 13px; color: var(--t3); transition: color .2s; }
+.foot-col ul li a:hover { color: var(--t2); }
+.foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--b); font-size: 12px; color: var(--t3); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .rights-grid { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr; gap: 24px; }
+  .foot-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="w">
+    <div class="nav-i">
+      <a href="/" class="logo"><b>1</b>bot</a>
+      <ul class="nav-links">
+        <li><a href="/#produkty">Produkty</a></li>
+        <li><a href="/#pre-koho">Pre koho</a></li>
+        <li><a href="/#cennik">Cenník</a></li>
+        <li><a href="/#o-nas">O nás</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
+      </ul>
+      <button class="nav-cta" onclick="location.href='/#kontakt'">Nezáväzná konzultácia</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="w">
+    <div class="page">
+
+      <a href="/" class="back-link">← Späť na 1bot.sk</a>
+
+      <span class="page-label">Právne dokumenty</span>
+      <h1 class="page-title">Ochrana súkromia</h1>
+      <p class="page-updated">Platné od: 1. apríl 2025 &nbsp;·&nbsp; Verzia 1.0</p>
+
+      <div class="doc-section">
+        <h2>1. Prevádzkovateľ osobných údajov</h2>
+        <p>Prevádzkovateľom osobných údajov je:</p>
+        <div class="info-box">
+          <p>
+            <strong>blockWise s.r.o.</strong><br>
+            IČO: 54 566 746<br>
+            Sídlo: Bratislava, Slovenská republika<br>
+            Email: <a href="mailto:info@1bot.sk">info@1bot.sk</a><br>
+            Web: <a href="https://1bot.sk">https://1bot.sk</a>
+          </p>
+        </div>
+        <p>Spoločnosť blockWise s.r.o. prevádzkuje službu <strong>1bot</strong> — managed on-premise AI asistent pre regulované profesie.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>2. Aké osobné údaje spracúvame</h2>
+        <p>Spracúvame iba údaje, ktoré nám dobrovoľne poskytnete prostredníctvom kontaktného formulára na stránke 1bot.sk:</p>
+        <ul>
+          <li>Meno a priezvisko</li>
+          <li>Emailová adresa</li>
+          <li>Názov firmy alebo kancelárie</li>
+          <li>Obsah správy / dopytu</li>
+          <li>Typ profesie a veľkosť tímu (voliteľné, pri vyplnení formulára)</li>
+        </ul>
+        <p>Iné osobné údaje (napr. IP adresa, súbory cookie, behaviorálne dáta) <strong>nespracúvame</strong>. Web 1bot.sk nepoužíva analytické nástroje tretích strán ani sledovacie píxely.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>3. Účel a právny základ spracúvania</h2>
+        <p>Vaše osobné údaje spracúvame výlučne na nasledovné účely:</p>
+        <ul>
+          <li><strong>Odpoveď na váš dopyt</strong> — spracúvame kontaktné údaje, aby sme vám mohli odpovedať na otázky ohľadne produktov a služieb 1bot. Právny základ: oprávnený záujem prevádzkovateľa (čl. 6 ods. 1 písm. f) GDPR).</li>
+          <li><strong>Newsletter</strong> — ak ste nám poskytli súhlas so zasielaním noviniek, spracúvame vašu emailovú adresu na marketingovú komunikáciu. Právny základ: súhlas dotknutej osoby (čl. 6 ods. 1 písm. a) GDPR). Súhlas môžete kedykoľvek odvolať.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <h2>4. Doba uchovávania údajov</h2>
+        <p>Osobné údaje z kontaktného formulára uchovávame po dobu <strong>12 mesiacov</strong> od doručenia vášho dopytu, prípadne do skončenia obchodného vzťahu. Po uplynutí tejto doby sú údaje vymazané.</p>
+        <p>Údaje pre newsletter uchovávame do odvolania súhlasu alebo do žiadosti o vymazanie.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>5. Príjemcovia osobných údajov</h2>
+        <p>Vaše osobné údaje <strong>nepredávame ani neposkytujeme tretím stranám</strong> na marketingové účely.</p>
+        <p>Na prevádzku webu a komunikáciu využívame nasledovné služby, ktoré môžu prichádzať do kontaktu s vašimi údajmi:</p>
+        <ul>
+          <li><strong>WebSupport.sk</strong> (hosting) — servery umiestnené na Slovensku a v EÚ</li>
+          <li><strong>Google Workspace</strong> (emailová komunikácia) — spracúva emailovú korešpondenciu; Google Inc. je certifikovaný podľa štandardov EÚ-USA Data Privacy Framework</li>
+        </ul>
+        <p>Žiadne údaje nie sú prenášané mimo Európskeho hospodárskeho priestoru (EHP) bez primeraných záruk.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>6. Vaše práva</h2>
+        <p>V súlade s GDPR máte nasledovné práva:</p>
+        <div class="rights-grid">
+          <div class="right-item">
+            <h4>Právo na prístup</h4>
+            <p>Máte právo získať potvrdenie, či spracúvame vaše osobné údaje, a prístup k nim.</p>
+          </div>
+          <div class="right-item">
+            <h4>Právo na opravu</h4>
+            <p>Máte právo na opravu nesprávnych alebo neúplných osobných údajov.</p>
+          </div>
+          <div class="right-item">
+            <h4>Právo na vymazanie</h4>
+            <p>Máte právo požiadať o vymazanie vašich osobných údajov (právo „byť zabudnutý").</p>
+          </div>
+          <div class="right-item">
+            <h4>Právo na obmedzenie</h4>
+            <p>Máte právo požiadať o obmedzenie spracúvania vašich osobných údajov.</p>
+          </div>
+          <div class="right-item">
+            <h4>Právo na prenosnosť</h4>
+            <p>Máte právo získať svoje údaje v štruktúrovanom, strojovo čitateľnom formáte.</p>
+          </div>
+          <div class="right-item">
+            <h4>Právo namietať</h4>
+            <p>Máte právo namietať proti spracúvaniu na základe oprávneného záujmu.</p>
+          </div>
+        </div>
+        <p>Práva môžete uplatniť emailom na adrese <a href="mailto:info@1bot.sk">info@1bot.sk</a>. Na vašu žiadosť odpovieme do 30 dní.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>7. Súbory cookie</h2>
+        <p>Web 1bot.sk <strong>nepoužíva súbory cookie</strong> na sledovanie ani analytiku. Nepoužívame žiadne analytické nástroje tretích strán (Google Analytics, Meta Pixel, Hotjar a pod.).</p>
+        <p>Web môže používať nevyhnutné technické cookies potrebné pre jeho správnu funkciu (napr. zabezpečenie formulára). Tieto cookies nespracúvajú osobné údaje a nie sú zdieľané s tretími stranami.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>8. Bezpečnosť údajov</h2>
+        <p>Prijímame primerané technické a organizačné opatrenia na ochranu vašich osobných údajov pred neoprávneným prístupom, zmenou, zverejnením alebo zničením. Webová stránka je zabezpečená pomocou HTTPS (SSL/TLS šifrovanie).</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>9. Sťažnosti</h2>
+        <p>Ak sa domnievate, že spracúvanie vašich osobných údajov porušuje GDPR, máte právo podať sťažnosť na dozorný orgán:</p>
+        <div class="info-box">
+          <p>
+            <strong>Úrad na ochranu osobných údajov Slovenskej republiky</strong><br>
+            Hraničná 12, 820 07 Bratislava<br>
+            Web: <a href="https://www.dataprotection.gov.sk" target="_blank" rel="noopener">www.dataprotection.gov.sk</a><br>
+            Email: statny.dozor@pdp.gov.sk
+          </p>
+        </div>
+      </div>
+
+      <div class="doc-section">
+        <h2>10. Kontakt</h2>
+        <p>Pre akékoľvek otázky týkajúce sa ochrany osobných údajov nás kontaktujte:</p>
+        <div class="info-box">
+          <p>
+            <strong>blockWise s.r.o. — 1bot</strong><br>
+            Email: <a href="mailto:info@1bot.sk">info@1bot.sk</a><br>
+            Web: <a href="https://1bot.sk">https://1bot.sk</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="w">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="logo"><b>1</b>bot</a>
+        <p>Váš AI kolega v krabičke. Lokálne, súkromne, spoľahlivo. Bratislava, Slovensko.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produkty</h4>
+        <ul>
+          <li><a href="/#produkty">Štart</a></li>
+          <li><a href="/#produkty">Pro</a></li>
+          <li><a href="/#produkty">Max</a></li>
+          <li><a href="/#cennik">Cenník</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Spoločnosť</h4>
+        <ul>
+          <li><a href="/#o-nas">O nás</a></li>
+          <li><a href="mailto:info@1bot.sk">info@1bot.sk</a></li>
+          <li><a href="/ochrana-sukromia">Ochrana súkromia</a></li>
+          <li><a href="/podmienky-pouzitia">Podmienky použitia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 1bot · Bratislava, Slovensko · IČO: 54 566 746</span>
+      <span>Súkromné AI · Žiadny cloud · GDPR</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
