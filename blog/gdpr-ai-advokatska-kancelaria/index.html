@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c8a96e'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='400' fill='%2309090b' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
+<meta name="description" content="GDPR a AI v advokátskej kancelárií — praktický sprievodca. Čo nariadenie hovorí o AI nástrojoch, aké riziká existujú a ako ich eliminovať bez zbytočnej byrokracie.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://1bot.sk/blog/gdpr-ai-advokatska-kancelaria/">
+<meta property="og:title" content="GDPR a AI v advokátskej kancelárií — praktický sprievodca">
+<meta property="og:description" content="Čo GDPR hovorí o AI nástrojoch, aké riziká existujú a ako ich eliminovať. Bez zbytočnej teórie.">
+<meta property="og:image" content="https://1bot.sk/og-image.png">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:site_name" content="1bot">
+<meta property="article:published_time" content="2026-04-03T08:00:00Z">
+<meta property="article:author" content="Martin Hergovic">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://1bot.sk/blog/gdpr-ai-advokatska-kancelaria/">
+<link rel="alternate" hreflang="sk" href="https://1bot.sk/blog/gdpr-ai-advokatska-kancelaria/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "GDPR a AI v advokátskej kancelárií — praktický sprievodca",
+  "datePublished": "2026-04-03T08:00:00Z",
+  "author": { "@type": "Person", "name": "Martin Hergovic" },
+  "publisher": { "@type": "Organization", "name": "1bot", "url": "https://1bot.sk" },
+  "keywords": ["gdpr ai advokát", "gdpr ai kancelária", "ai spracovanie osobných údajov"],
+  "inLanguage": "sk"
+}
+</script>
+<title>GDPR a AI v advokátskej kancelárií — 1bot</title>
+<style>
+:root {
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
+  --bg: #09090b; --bg2: #0f0f12; --bg3: #16161a;
+  --surface: #1e1e24;
+  --b: rgba(255,255,255,0.07); --b2: rgba(255,255,255,0.13);
+  --t: #eeeef0; --t2: #9898a6; --t3: #58586a;
+  --gold: #c8a96e; --gold3: rgba(200,169,110,0.28); --gold4: rgba(200,169,110,0.06);
+  --green: #5db87a; --green2: rgba(93,184,122,0.12);
+  --red: #e05555; --red2: rgba(224,85,85,0.1);
+  --r: 5px; --r2: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--t); font-family: var(--sans); line-height: 1.6; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+.w { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+body::after { content:''; position:fixed; inset:0; pointer-events:none; z-index:9000; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E"); opacity:.55; }
+nav { position:fixed; top:0; left:0; right:0; z-index:500; padding:16px 0; background:rgba(9,9,11,.93); border-bottom:1px solid var(--b); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+.nav-i { display:flex; justify-content:space-between; align-items:center; gap:24px; }
+.logo { font-family:var(--mono); font-size:19px; font-weight:500; letter-spacing:-.3px; }
+.logo b { color:var(--gold); }
+.nav-links { display:flex; gap:24px; list-style:none; }
+.nav-links a { font-size:14px; color:var(--t2); transition:color .2s; }
+.nav-links a:hover { color:var(--t); }
+.nav-cta { font-family:var(--sans); font-size:13px; font-weight:600; padding:9px 20px; background:var(--gold); color:#09090b; border:none; cursor:pointer; border-radius:var(--r); transition:opacity .2s; }
+.nav-cta:hover { opacity:.88; }
+.article-wrap { padding:100px 0 80px; display:grid; grid-template-columns:1fr 280px; gap:60px; align-items:start; }
+.article-main { min-width:0; }
+.back-link { display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--t3); margin-bottom:32px; transition:color .2s; }
+.back-link:hover { color:var(--gold); }
+.article-label { font-family:var(--mono); font-size:11px; letter-spacing:2.2px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:block; }
+.article-title { font-family:var(--serif); font-size:clamp(26px,4.2vw,48px); font-weight:400; line-height:1.08; letter-spacing:-1.5px; margin-bottom:20px; }
+.article-meta { display:flex; align-items:center; gap:16px; font-size:13px; color:var(--t3); margin-bottom:40px; padding-bottom:32px; border-bottom:1px solid var(--b); flex-wrap:wrap; }
+.article-content { font-size:16px; line-height:1.82; color:var(--t2); }
+.article-content h2 { font-family:var(--serif); font-size:26px; font-weight:400; letter-spacing:-.5px; margin:44px 0 16px; color:var(--t); padding-bottom:10px; border-bottom:1px solid var(--b); }
+.article-content h3 { font-size:17px; font-weight:600; margin:28px 0 10px; color:var(--t); }
+.article-content p { margin-bottom:18px; }
+.article-content strong { color:var(--t); font-weight:600; }
+.article-content a { color:var(--gold); }
+.article-content ul, .article-content ol { margin:14px 0 18px 22px; display:flex; flex-direction:column; gap:8px; }
+.article-content li { line-height:1.7; }
+.article-content blockquote { border-left:2px solid var(--gold); padding:16px 20px; margin:28px 0; background:var(--gold4); border-radius:0 var(--r) var(--r) 0; }
+.article-content blockquote p { margin-bottom:0; color:var(--t); font-style:italic; }
+.verdict-box { border-radius:var(--r2); padding:20px 24px; margin:28px 0; }
+.verdict-box.red { background:var(--red2); border:1px solid rgba(224,85,85,0.25); }
+.verdict-box.green { background:var(--green2); border:1px solid rgba(93,184,122,0.25); }
+.verdict-box.gold { background:var(--gold4); border:1px solid var(--gold3); }
+.verdict-box h4 { font-size:14px; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.verdict-box.red h4 { color:var(--red); }
+.verdict-box.green h4 { color:var(--green); }
+.verdict-box.gold h4 { color:var(--gold); }
+.verdict-box p, .verdict-box ul { font-size:14px; color:var(--t2); line-height:1.65; margin-bottom:0; }
+.verdict-box ul { margin:8px 0 0 18px; }
+.checklist { list-style:none; margin:16px 0 !important; }
+.checklist li { display:flex; gap:10px; align-items:flex-start; padding:8px 0; border-bottom:1px solid var(--b); }
+.checklist li:last-child { border-bottom:none; }
+.checklist li::before { content:'☐'; color:var(--gold); flex-shrink:0; font-size:16px; line-height:1.4; }
+.article-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:48px; padding-top:32px; border-top:1px solid var(--b); }
+.article-tag { font-family:var(--mono); font-size:11px; padding:5px 12px; border:1px solid var(--b2); color:var(--t3); border-radius:100px; }
+.article-sidebar { position:sticky; top:88px; display:flex; flex-direction:column; gap:14px; }
+.sidebar-card { background:var(--bg2); border:1px solid var(--b); border-radius:var(--r2); padding:22px; }
+.sidebar-card h4 { font-size:13px; font-weight:600; margin-bottom:14px; color:var(--t); }
+.toc-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.toc-list a { font-size:13px; color:var(--t3); transition:color .2s; line-height:1.4; display:block; padding-left:10px; border-left:1px solid var(--b); }
+.toc-list a:hover { color:var(--gold); border-color:var(--gold); }
+.cta-card { background:var(--gold4); border:1px solid var(--gold3); border-radius:var(--r2); padding:22px; }
+.cta-card h4 { font-family:var(--serif); font-size:18px; font-weight:400; margin-bottom:10px; }
+.cta-card p { font-size:13px; color:var(--t2); line-height:1.6; margin-bottom:16px; }
+.cta-btn { display:block; text-align:center; background:var(--gold); color:#09090b; padding:11px; border-radius:var(--r); font-size:13px; font-weight:600; transition:opacity .18s; }
+.cta-btn:hover { opacity:.88; }
+footer { border-top:1px solid var(--b); padding:40px 0 32px; background:var(--bg2); }
+.foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; margin-bottom:32px; }
+.foot-brand p { font-size:13px; color:var(--t3); line-height:1.65; margin-top:10px; max-width:260px; }
+.foot-col h4 { font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:var(--t3); font-family:var(--mono); margin-bottom:12px; }
+.foot-col ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.foot-col ul li a { font-size:13px; color:var(--t3); transition:color .2s; }
+.foot-col ul li a:hover { color:var(--t2); }
+.foot-bottom { display:flex; justify-content:space-between; padding-top:24px; border-top:1px solid var(--b); font-size:12px; color:var(--t3); }
+@media(max-width:768px){ .article-wrap{grid-template-columns:1fr} .article-sidebar{position:static} .foot-grid{grid-template-columns:1fr} .nav-links{display:none} }
+</style>
+</head>
+<body>
+<nav>
+  <div class="w">
+    <div class="nav-i">
+      <a href="/" class="logo"><b>1</b>bot</a>
+      <ul class="nav-links">
+        <li><a href="/#produkty">Produkty</a></li>
+        <li><a href="/#cennik">Cenník</a></li>
+        <li><a href="/#o-nas">O nás</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <button class="nav-cta" onclick="location.href='/#kontakt'">Nezáväzná konzultácia</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="w">
+    <div class="article-wrap">
+      <article class="article-main">
+        <a href="/blog/" class="back-link">← Späť na blog</a>
+        <span class="article-label">Blog · GDPR &amp; Compliance</span>
+        <h1 class="article-title">GDPR a AI v advokátskej kancelárií — praktický sprievodca</h1>
+        <div class="article-meta">
+          <span>✍️ Martin Hergovic</span>
+          <span>📅 3. apríl 2026</span>
+          <span>⏱ 7 min čítania</span>
+        </div>
+
+        <div class="article-content">
+
+          <p>GDPR platí od roku 2018 — a napriek tomu väčšina advokátskych kancelárií stále nevie presne, čo smú a čo nesmú robiť s klientskymi dátami pri použití AI nástrojov. Tento článok to vysvetlí prakticky, bez zbytočnej teórie.</p>
+
+          <p>Dobrá správa: GDPR nie je nepriateľ AI. Je to rámec, ktorý keď správne pochopíte, vám pomôže vybrať nástroje, s ktorými nebudete mať problémy.</p>
+
+          <h2 id="zaklad">GDPR a advokátska kancelária — základ</h2>
+
+          <p>Advokátska kancelária je <strong>prevádzkovateľom osobných údajov</strong> (data controller) podľa GDPR. To znamená, že ste zodpovední za to, čo sa deje s osobnými údajmi vašich klientov — aj keď ich spracúva niekto iný.</p>
+
+          <p>Keď používate AI nástroj na spracovanie klientskych dokumentov, nastáva jedna z dvoch situácií:</p>
+
+          <ol>
+            <li><strong>AI beží lokálne</strong> (na vašom zariadení) — ste stále jediný prevádzkovateľ, žiadny prenos dát</li>
+            <li><strong>AI beží v cloude</strong> — poskytovateľ AI sa stáva <em>sprostredkovateľom</em> (data processor) a musíte s ním mať uzatvorenú spracovateľskú zmluvu (DPA)</li>
+          </ol>
+
+          <div class="verdict-box gold">
+            <h4>📋 Kľúčový rozdiel</h4>
+            <p>Prevádzkovateľ rozhoduje <em>prečo</em> sa dáta spracúvajú. Sprostredkovateľ rozhoduje <em>ako</em>. Vy ste vždy prevádzkovateľ — zodpovednosť zostáva na vás, aj keď dáta spracúva cloudový AI.</p>
+          </div>
+
+          <h2 id="sest-zasad">Šesť zásad GDPR v kontexte AI</h2>
+
+          <p>GDPR stojí na šiestich základných zásadách. Tu je ako sa každá z nich vzťahuje na používanie AI v kancelárií:</p>
+
+          <h3>1. Zákonnosť, spravodlivosť, transparentnosť</h3>
+          <p>Musíte mať právny základ na spracúvanie dát. Pre klientske dokumenty je to typicky <strong>plnenie zmluvy</strong> (čl. 6 ods. 1 písm. b) alebo <strong>oprávnený záujem</strong>. Klienti by mali vedieť, ak ich dáta spracúvate cez AI nástroj — najmä ak ide o cloudové riešenie.</p>
+
+          <h3>2. Obmedzenie účelu</h3>
+          <p>Dáta môžete použiť iba na účel, na ktorý boli zozbierané. Klientske dokumenty môžete analyzovať AI-om na účely právneho poradenstva — nie na tréning AI modelov, marketingové analýzy ani iné účely.</p>
+
+          <div class="verdict-box red">
+            <h4>⚠️ Problém s bezplatnými AI nástrojmi</h4>
+            <p>ChatGPT Free, Gemini Free a podobné nástroje môžu používať vaše vstupy na tréning modelu. Tým by ste porušili zásadu obmedzenia účelu. Bezplatné verzie sú pre klientske dáta nevhodné.</p>
+          </div>
+
+          <h3>3. Minimalizácia dát</h3>
+          <p>Spracúvajte len také dáta, ktoré skutočne potrebujete. Pri použití AI to znamená: nenahrávajte celý spis, ak potrebujete analyzovať len jednu zmluvu. Anonymizujte alebo pseudonymizujte tam, kde je to možné.</p>
+
+          <h3>4. Správnosť</h3>
+          <p>AI môže generovať nepresné alebo zavádzajúce informácie (tzv. halucinácie). Ste zodpovední za správnosť právnych výstupov — výstupy AI vždy overujte pred použitím pre klienta.</p>
+
+          <h3>5. Obmedzenie uchovávania</h3>
+          <p>Dáta nesmú byť uchovávané dlhšie, ako je potrebné. Cloudové AI nástroje môžu uchovávať históriu konverzácií — skontrolujte ich politiku a nastavenia retencie.</p>
+
+          <h3>6. Integrita a dôvernosť</h3>
+          <p>Zabezpečte primerané technické opatrenia. Lokálny AI model je z tohto pohľadu najsilnejší — dáta nikam neopúšťajú, žiadne šifrovanie pri prenose, žiadne riziko úniku u tretej strany.</p>
+
+          <h2 id="spracovatelska-zmluva">Spracovateľská zmluva (DPA) — kedy je povinná</h2>
+
+          <p>Ak používate cloudový AI na spracovanie osobných údajov klientov, <strong>musíte mať so poskytovateľom uzatvorenú spracovateľskú zmluvu</strong> (Data Processing Agreement). Bez nej porušujete čl. 28 GDPR.</p>
+
+          <p>Čo musí DPA obsahovať:</p>
+          <ul>
+            <li>Predmet a trvanie spracúvania</li>
+            <li>Povaha a účel spracúvania</li>
+            <li>Typ osobných údajov a kategórie dotknutých osôb</li>
+            <li>Povinnosti a práva prevádzkovateľa</li>
+            <li>Záväzok spracúvať dáta len podľa pokynov prevádzkovateľa</li>
+            <li>Technické a organizačné bezpečnostné opatrenia</li>
+          </ul>
+
+          <p>Väčšina cloudových AI poskytovateľov ponúka DPA ako súčasť podnikových plánov:</p>
+          <ul>
+            <li><strong>OpenAI (ChatGPT Enterprise)</strong> — DPA dostupná, servery môžu byť mimo EÚ</li>
+            <li><strong>Microsoft (Copilot for M365)</strong> — DPA dostupná, EÚ dátová rezidencia možná</li>
+            <li><strong>Google (Workspace AI)</strong> — DPA dostupná, EÚ dátová rezidencia možná</li>
+          </ul>
+
+          <blockquote>
+            <p>DPA je nutná podmienka, nie postačujúca. Aj s DPA zostáva riziko z pohľadu advokátskej mlčanlivosti — dáta stále opúšťajú kanceláriu.</p>
+          </blockquote>
+
+          <h2 id="prenos-mimo-ehu">Prenos dát mimo EÚ/EHP</h2>
+
+          <p>Väčšina veľkých AI poskytovateľov má servery v USA. Prenos osobných údajov do USA si vyžaduje jeden z týchto právnych základov:</p>
+
+          <ul>
+            <li><strong>EU-U.S. Data Privacy Framework (DPF)</strong> — platný od 2023, nahrádza Privacy Shield. OpenAI, Microsoft, Google sú certifikovaní.</li>
+            <li><strong>Štandardné zmluvné doložky (SCC)</strong> — set štandardizovaných zmluvných podmienok schválených Európskou komisiou</li>
+            <li><strong>EÚ dátová rezidencia</strong> — ak poskytovateľ garantuje, že dáta zostanú v EÚ</li>
+          </ul>
+
+          <p>Pre advokátov odporúčame vždy preveriť, kde fyzicky sídlia servery a aký právny základ sa použije pri prenose. Tieto informácie by mali byť v DPA alebo v dokumentácii poskytovateľa.</p>
+
+          <h2 id="prakticky-checklist">Praktický GDPR checklist pre AI v kancelárií</h2>
+
+          <p>Pred zavedením akéhokoľvek AI nástroja si prejdite tieto body:</p>
+
+          <ul class="checklist">
+            <li>Identifikoval som, aké osobné údaje bude AI spracúvať?</li>
+            <li>Mám právny základ na toto spracúvanie (zmluva, oprávnený záujem)?</li>
+            <li>Ak ide o cloudový AI — mám podpísanú DPA s poskytovateľom?</li>
+            <li>Viem, kde fyzicky sídlia servery a aký je právny základ prenosu mimo EÚ?</li>
+            <li>Poskytovateľ nezaručuje, že moje dáta nebudú použité na tréning modelu?</li>
+            <li>Informoval som klientov (alebo som to zahrnul do VOP), že používam AI nástroje?</li>
+            <li>Mám nastavené primerané technické opatrenia (šifrovanie, prístupové práva)?</li>
+            <li>Overujem výstupy AI pred použitím pre klienta?</li>
+          </ul>
+
+          <h2 id="najjednoduchsie-riesenie">Najjednoduchšie riešenie: lokálny AI</h2>
+
+          <p>Ak vás GDPR compliance zaťažuje, existuje riešenie, ktoré väčšinu týchto otázok eliminuje jedným ťahom: <strong>AI model bežiaci lokálne, priamo vo vašej kancelárií</strong>.</p>
+
+          <div class="verdict-box green">
+            <h4>✅ Lokálny AI a GDPR</h4>
+            <ul>
+              <li>Žiadny prenos dát mimo kanceláriu → žiadna potreba DPA</li>
+              <li>Žiadny prenos mimo EÚ → žiadne otázky o právnom základe</li>
+              <li>Dáta zostávajú pod vašou výlučnou kontrolou</li>
+              <li>GDPR splnené od prvého dňa, bez ďalšej dokumentácie</li>
+            </ul>
+          </div>
+
+          <p>Technicky je to dnes reálne dostupné aj pre malé kancelárie — Mac Mini M4 s lokálnym AI modelom (napr. Qwen2.5) ponúka kvalitu porovnateľnú s cloudovými riešeniami pri nulových GDPR rizikách.</p>
+
+          <h2 id="zaver">Záver</h2>
+
+          <p>GDPR nevyžaduje, aby ste sa vzdali AI. Vyžaduje, aby ste vedeli, čo s vašimi dátami robíte. Pre advokátske kancelárie je lokálny AI najpriamočiarejšou cestou — žiadne DPA, žiadne prenosy, žiadne riziká.</p>
+
+          <p>Ak používate cloudové riešenie, minimálne si zabezpečte DPA, overte právny základ prenosu mimo EÚ a uistite sa, že dáta nie sú použité na tréning modelu.</p>
+
+          <p>Máte otázky na konkrétne riešenie pre vašu kanceláriu? <a href="/#kontakt">Kontaktujte nás →</a></p>
+
+        </div>
+
+        <div class="article-tags">
+          <a href="#" class="article-tag">GDPR AI</a>
+          <a href="#" class="article-tag">advokátska kancelária</a>
+          <a href="#" class="article-tag">spracovateľská zmluva</a>
+          <a href="#" class="article-tag">DPA</a>
+          <a href="#" class="article-tag">lokálny AI</a>
+        </div>
+      </article>
+
+      <aside class="article-sidebar">
+        <div class="sidebar-card">
+          <h4>Obsah článku</h4>
+          <ul class="toc-list">
+            <li><a href="#zaklad">GDPR a advokátska kancelária</a></li>
+            <li><a href="#sest-zasad">6 zásad GDPR a AI</a></li>
+            <li><a href="#spracovatelska-zmluva">Spracovateľská zmluva (DPA)</a></li>
+            <li><a href="#prenos-mimo-ehu">Prenos dát mimo EÚ</a></li>
+            <li><a href="#prakticky-checklist">Praktický checklist</a></li>
+            <li><a href="#najjednoduchsie-riesenie">Lokálny AI — riešenie</a></li>
+            <li><a href="#zaver">Záver</a></li>
+          </ul>
+        </div>
+        <div class="cta-card">
+          <h4>GDPR bez starostí</h4>
+          <p>1bot beží lokálne — žiadne DPA, žiadne prenosy. GDPR splnené od prvého dňa.</p>
+          <a href="/#kontakt" class="cta-btn">Nezáväzná konzultácia →</a>
+        </div>
+        <div class="sidebar-card">
+          <h4>Súvisiace články</h4>
+          <ul class="toc-list">
+            <li><a href="/blog/moze-advokat-pouzivat-chatgpt/">Môže advokát používať ChatGPT?</a></li>
+            <li><a href="/blog/lokalny-ai-asistent-ako-funguje/">Lokálny AI — ako funguje v praxi</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="w">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="logo"><b>1</b>bot</a>
+        <p>Váš AI kolega v krabičke. Lokálne, súkromne, spoľahlivo. Bratislava, Slovensko.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produkty</h4>
+        <ul><li><a href="/#produkty">Štart</a></li><li><a href="/#produkty">Pro</a></li><li><a href="/#produkty">Max</a></li><li><a href="/#cennik">Cenník</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h4>Spoločnosť</h4>
+        <ul><li><a href="/#o-nas">O nás</a></li><li><a href="/blog/">Blog</a></li><li><a href="/ochrana-sukromia">Ochrana súkromia</a></li><li><a href="/podmienky-pouzitia">Podmienky použitia</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 1bot · Bratislava, Slovensko · IČO: 54 566 746</span>
+      <span>Súkromné AI · Žiadny cloud · GDPR</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
