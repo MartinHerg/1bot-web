@@ -4,22 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c8a96e'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='400' fill='%2309090b' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
-<meta name="description" content="Môže advokát používať ChatGPT na klientske dokumenty? Odpoveď nie je jednoduchá — závisí od toho, ako a kde AI beží. Praktický sprievodca pre advokátov na Slovensku.">
+
+<meta name="description" content="Môže advokát používať ChatGPT? Áno, ale s podmienkami. Vysvetľujeme GDPR riziká, mlčanlivosť a ako na bezpečné AI v advokátskej praxi.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://1bot.sk/blog/moze-advokat-pouzivat-chatgpt/">
-<meta property="og:title" content="Môže advokát používať ChatGPT na klientske dokumenty?">
-<meta property="og:description" content="Odpoveď nie je jednoduchá — závisí od toho, ako a kde AI beží. Praktický sprievodca pre advokátov na Slovensku.">
+<meta property="og:title" content="Môže advokát používať ChatGPT? — 1bot">
+<meta property="og:description" content="Môže advokát používať ChatGPT? Áno, ale s podmienkami. Vysvetľujeme GDPR riziká, mlčanlivosť a ako na bezpečné AI v advokátskej praxi.">
 <meta property="og:image" content="https://1bot.sk/og-image.png">
 <meta property="og:locale" content="sk_SK">
 <meta property="og:site_name" content="1bot">
-<meta property="article:published_time" content="2026-04-01T08:00:00Z">
+<meta property="article:published_time" content="2026-04-02">
 <meta property="article:author" content="Martin Hergovic">
-<meta property="article:tag" content="ChatGPT advokát">
-<meta property="article:tag" content="AI právna prax">
-<meta property="article:tag" content="GDPR AI">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Môže advokát používať ChatGPT na klientske dokumenty?">
-<meta name="twitter:description" content="Odpoveď nie je jednoduchá — závisí od toho, ako a kde AI beží.">
+<meta name="twitter:title" content="Môže advokát používať ChatGPT? — 1bot">
+<meta name="twitter:description" content="Môže advokát používať ChatGPT? Áno, ale s podmienkami. Vysvetľujeme GDPR riziká, mlčanlivosť a bezpečné AI pre advokátov.">
 <meta name="twitter:image" content="https://1bot.sk/og-image.png">
 <link rel="canonical" href="https://1bot.sk/blog/moze-advokat-pouzivat-chatgpt/">
 <link rel="alternate" hreflang="sk" href="https://1bot.sk/blog/moze-advokat-pouzivat-chatgpt/">
@@ -28,30 +26,30 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Môže advokát používať ChatGPT na klientske dokumenty?",
-  "description": "Môže advokát používať ChatGPT na klientske dokumenty? Odpoveď nie je jednoduchá — závisí od toho, ako a kde AI beží.",
-  "datePublished": "2026-04-01T08:00:00Z",
-  "dateModified": "2026-04-01T08:00:00Z",
+  "headline": "Môže advokát používať ChatGPT?",
+  "description": "Môže advokát používať ChatGPT? Áno, ale s podmienkami. Vysvetľujeme GDPR riziká, mlčanlivosť a ako na bezpečné AI v advokátskej praxi.",
+  "datePublished": "2026-04-02",
   "author": { "@type": "Person", "name": "Martin Hergovic" },
-  "publisher": { "@type": "Organization", "name": "1bot", "url": "https://1bot.sk" },
-  "keywords": ["chatgpt advokát", "ai právna prax", "gdpr ai advokát", "mlčanlivosť advokát AI"],
-  "inLanguage": "sk"
+  "publisher": {
+    "@type": "Organization",
+    "name": "1bot",
+    "url": "https://1bot.sk"
+  }
 }
 </script>
 
-<title>Môže advokát používať ChatGPT na klientske dokumenty? — 1bot</title>
+<title>Môže advokát používať ChatGPT? — 1bot</title>
 <style>
 :root {
   --serif: Georgia, 'Times New Roman', serif;
   --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
   --bg: #09090b; --bg2: #0f0f12; --bg3: #16161a;
-  --surface: #1e1e24; --surface2: #26262f;
+  --surface: #1e1e24;
   --b: rgba(255,255,255,0.07); --b2: rgba(255,255,255,0.13);
   --t: #eeeef0; --t2: #9898a6; --t3: #58586a;
-  --gold: #c8a96e; --gold2: rgba(200,169,110,0.13); --gold3: rgba(200,169,110,0.28); --gold4: rgba(200,169,110,0.06);
-  --green: #5db87a; --green2: rgba(93,184,122,0.12);
-  --red: #e05555; --red2: rgba(224,85,85,0.1);
+  --gold: #c8a96e; --gold3: rgba(200,169,110,0.28); --gold4: rgba(200,169,110,0.06);
+  --green: #5db87a;
   --r: 5px; --r2: 10px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -59,89 +57,83 @@ html { scroll-behavior: smooth; font-size: 16px; }
 body { background: var(--bg); color: var(--t); font-family: var(--sans); line-height: 1.6; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 .w { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
-body::after { content:''; position:fixed; inset:0; pointer-events:none; z-index:9000; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E"); opacity:.55; }
+body::after { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9000; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E"); opacity: .55; }
 
-nav { position:fixed; top:0; left:0; right:0; z-index:500; padding:16px 0; background:rgba(9,9,11,.93); border-bottom:1px solid var(--b); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
-.nav-i { display:flex; justify-content:space-between; align-items:center; gap:24px; }
-.logo { font-family:var(--mono); font-size:19px; font-weight:500; letter-spacing:-.3px; color:var(--t); }
-.logo b { color:var(--gold); }
-.nav-links { display:flex; gap:24px; list-style:none; }
-.nav-links a { font-size:14px; color:var(--t2); transition:color .2s; }
-.nav-links a:hover { color:var(--t); }
-.nav-cta { font-family:var(--sans); font-size:13px; font-weight:600; padding:9px 20px; background:var(--gold); color:#09090b; border:none; cursor:pointer; border-radius:var(--r); transition:opacity .2s; }
-.nav-cta:hover { opacity:.88; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 16px 0; background: rgba(9,9,11,.93); border-bottom: 1px solid var(--b); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.nav-i { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.logo { font-family: var(--mono); font-size: 19px; font-weight: 500; letter-spacing: -.3px; color: var(--t); }
+.logo b { color: var(--gold); }
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--t2); transition: color .2s; }
+.nav-links a:hover { color: var(--t); }
+.nav-cta { font-family: var(--sans); font-size: 13px; font-weight: 600; padding: 9px 20px; background: var(--gold); color: #09090b; border: none; cursor: pointer; border-radius: var(--r); transition: opacity .2s; }
+.nav-cta:hover { opacity: .88; }
 
-.article-wrap { padding:100px 0 80px; display:grid; grid-template-columns:1fr 280px; gap:60px; align-items:start; }
-.article-main { min-width:0; }
-.back-link { display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--t3); margin-bottom:32px; transition:color .2s; }
-.back-link:hover { color:var(--gold); }
-.article-label { font-family:var(--mono); font-size:11px; letter-spacing:2.2px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:block; }
-.article-title { font-family:var(--serif); font-size:clamp(28px,4.5vw,50px); font-weight:400; line-height:1.08; letter-spacing:-1.5px; margin-bottom:20px; }
-.article-meta { display:flex; align-items:center; gap:16px; font-size:13px; color:var(--t3); margin-bottom:40px; padding-bottom:32px; border-bottom:1px solid var(--b); flex-wrap:wrap; }
-.read-time { font-family:var(--mono); }
+.article-wrap { padding: 100px 0 80px; display: grid; grid-template-columns: 1fr 280px; gap: 60px; align-items: start; }
+.article-main { min-width: 0; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--t3); margin-bottom: 32px; transition: color .2s; }
+.back-link:hover { color: var(--gold); }
+.article-label { font-family: var(--mono); font-size: 11px; letter-spacing: 2.2px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
+.article-title { font-family: var(--serif); font-size: clamp(28px, 4.5vw, 52px); font-weight: 400; line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 20px; }
+.article-meta { display: flex; align-items: center; gap: 16px; font-size: 13px; color: var(--t3); margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--b); flex-wrap: wrap; }
+.article-meta-item { display: flex; align-items: center; gap: 6px; }
+.read-time { font-family: var(--mono); }
 
-.article-content { font-size:16px; line-height:1.82; color:var(--t2); }
-.article-content h2 { font-family:var(--serif); font-size:26px; font-weight:400; letter-spacing:-.5px; margin:44px 0 16px; color:var(--t); padding-bottom:10px; border-bottom:1px solid var(--b); }
-.article-content h3 { font-size:17px; font-weight:600; margin:28px 0 10px; color:var(--t); }
-.article-content p { margin-bottom:18px; }
-.article-content strong { color:var(--t); font-weight:600; }
-.article-content em { color:var(--t2); font-style:italic; }
-.article-content a { color:var(--gold); transition:opacity .2s; }
-.article-content a:hover { opacity:.8; }
-.article-content ul, .article-content ol { margin:14px 0 18px 22px; display:flex; flex-direction:column; gap:8px; }
-.article-content li { line-height:1.7; }
-.article-content blockquote { border-left:2px solid var(--gold); padding:16px 20px; margin:28px 0; background:var(--gold4); border-radius:0 var(--r) var(--r) 0; }
-.article-content blockquote p { margin-bottom:0; color:var(--t); font-style:italic; }
+.article-content { font-size: 16px; line-height: 1.8; color: var(--t2); }
+.article-content h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; letter-spacing: -.5px; margin: 44px 0 16px; color: var(--t); padding-bottom: 10px; border-bottom: 1px solid var(--b); }
+.article-content h3 { font-size: 18px; font-weight: 600; margin: 28px 0 10px; color: var(--t); }
+.article-content p { margin-bottom: 18px; }
+.article-content strong { color: var(--t); font-weight: 600; }
+.article-content a { color: var(--gold); transition: opacity .2s; }
+.article-content a:hover { opacity: .8; }
+.article-content ul, .article-content ol { margin: 14px 0 18px 22px; display: flex; flex-direction: column; gap: 8px; }
+.article-content li { line-height: 1.7; }
+.article-content blockquote { border-left: 2px solid var(--gold); padding: 16px 20px; margin: 24px 0; background: var(--gold4); border-radius: 0 var(--r) var(--r) 0; font-style: italic; }
+.article-content blockquote p { margin-bottom: 0; color: var(--t); }
+.info-box { background: var(--bg3); border: 1px solid var(--b2); border-radius: var(--r2); padding: 20px 24px; margin: 24px 0; }
+.info-box p { color: var(--t2); margin-bottom: 0; }
+.warning-box { background: rgba(224,85,85,0.07); border: 1px solid rgba(224,85,85,0.25); border-radius: var(--r2); padding: 20px 24px; margin: 24px 0; }
+.warning-box p { color: var(--t2); margin-bottom: 0; }
+.green-box { background: rgba(93,184,122,0.07); border: 1px solid rgba(93,184,122,0.25); border-radius: var(--r2); padding: 20px 24px; margin: 24px 0; }
+.green-box p { color: var(--t2); margin-bottom: 0; }
 
-.verdict-box { border-radius:var(--r2); padding:20px 24px; margin:28px 0; }
-.verdict-box.red { background:var(--red2); border:1px solid rgba(224,85,85,0.25); }
-.verdict-box.green { background:var(--green2); border:1px solid rgba(93,184,122,0.25); }
-.verdict-box.gold { background:var(--gold4); border:1px solid var(--gold3); }
-.verdict-box h4 { font-size:14px; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
-.verdict-box.red h4 { color:var(--red); }
-.verdict-box.green h4 { color:var(--green); }
-.verdict-box.gold h4 { color:var(--gold); }
-.verdict-box p { font-size:14px; color:var(--t2); line-height:1.65; margin-bottom:0; }
-.verdict-box ul { margin:8px 0 0 18px; }
-.verdict-box ul li { font-size:14px; color:var(--t2); }
+.article-sidebar { position: sticky; top: 88px; }
+.sidebar-card { background: var(--bg2); border: 1px solid var(--b); border-radius: var(--r2); padding: 22px; margin-bottom: 14px; }
+.sidebar-card h4 { font-size: 13px; font-weight: 600; margin-bottom: 14px; color: var(--t); }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.toc-list a { font-size: 13px; color: var(--t3); transition: color .2s; line-height: 1.4; display: block; }
+.toc-list a:hover { color: var(--gold); }
+.cta-card { background: var(--gold4); border: 1px solid var(--gold3); border-radius: var(--r2); padding: 22px; }
+.cta-card h4 { font-family: var(--serif); font-size: 18px; font-weight: 400; margin-bottom: 10px; }
+.cta-card p { font-size: 13px; color: var(--t2); line-height: 1.6; margin-bottom: 16px; }
+.cta-btn { display: block; text-align: center; background: var(--gold); color: #09090b; padding: 11px; border-radius: var(--r); font-size: 13px; font-weight: 600; transition: opacity .18s; }
+.cta-btn:hover { opacity: .88; }
 
-.comparison-table { width:100%; border-collapse:collapse; margin:24px 0; border:1px solid var(--b); border-radius:var(--r2); overflow:hidden; }
-.comparison-table th { background:var(--bg3); font-size:12px; font-family:var(--mono); text-transform:uppercase; letter-spacing:1px; color:var(--t3); padding:12px 16px; text-align:left; border-bottom:1px solid var(--b2); }
-.comparison-table td { font-size:14px; color:var(--t2); padding:12px 16px; border-bottom:1px solid var(--b); vertical-align:top; line-height:1.55; }
-.comparison-table tr:last-child td { border-bottom:none; }
-.comparison-table tr:hover td { background:var(--bg3); }
-.td-red { color:var(--red) !important; }
-.td-green { color:var(--green) !important; }
-.td-label { font-weight:600; color:var(--t) !important; }
+.article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--b); }
+.article-tag { font-family: var(--mono); font-size: 11px; padding: 5px 12px; border: 1px solid var(--b2); color: var(--t3); border-radius: 100px; transition: all .2s; }
+.article-tag:hover { color: var(--t2); border-color: var(--b3); }
 
-.article-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:48px; padding-top:32px; border-top:1px solid var(--b); }
-.article-tag { font-family:var(--mono); font-size:11px; padding:5px 12px; border:1px solid var(--b2); color:var(--t3); border-radius:100px; transition:all .2s; }
-.article-tag:hover { color:var(--t2); border-color:var(--b3); }
+.related-sec { padding: 60px 0; border-top: 1px solid var(--b); }
+.related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 32px; }
+.related-card { background: var(--bg2); border: 1px solid var(--b); border-radius: var(--r2); padding: 22px; transition: border-color .2s; }
+.related-card:hover { border-color: var(--b2); }
+.related-label { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 8px; display: block; }
+.related-title { font-family: var(--serif); font-size: 16px; font-weight: 400; line-height: 1.3; margin-bottom: 8px; color: var(--t); }
+.related-desc { font-size: 13px; color: var(--t3); line-height: 1.55; }
 
-.article-sidebar { position:sticky; top:88px; }
-.sidebar-card { background:var(--bg2); border:1px solid var(--b); border-radius:var(--r2); padding:22px; margin-bottom:14px; }
-.sidebar-card h4 { font-size:13px; font-weight:600; margin-bottom:14px; color:var(--t); }
-.toc-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
-.toc-list a { font-size:13px; color:var(--t3); transition:color .2s; line-height:1.4; display:block; padding-left:10px; border-left:1px solid var(--b); }
-.toc-list a:hover { color:var(--gold); border-color:var(--gold); }
-.cta-card { background:var(--gold4); border:1px solid var(--gold3); border-radius:var(--r2); padding:22px; }
-.cta-card h4 { font-family:var(--serif); font-size:18px; font-weight:400; margin-bottom:10px; }
-.cta-card p { font-size:13px; color:var(--t2); line-height:1.6; margin-bottom:16px; }
-.cta-btn { display:block; text-align:center; background:var(--gold); color:#09090b; padding:11px; border-radius:var(--r); font-size:13px; font-weight:600; transition:opacity .18s; }
-.cta-btn:hover { opacity:.88; }
-
-footer { border-top:1px solid var(--b); padding:40px 0 32px; background:var(--bg2); }
-.foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; margin-bottom:32px; }
-.foot-brand p { font-size:13px; color:var(--t3); line-height:1.65; margin-top:10px; max-width:260px; }
-.foot-col h4 { font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:var(--t3); font-family:var(--mono); margin-bottom:12px; }
-.foot-col ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
-.foot-col ul li a { font-size:13px; color:var(--t3); transition:color .2s; }
-.foot-col ul li a:hover { color:var(--t2); }
-.foot-bottom { display:flex; justify-content:space-between; padding-top:24px; border-top:1px solid var(--b); font-size:12px; color:var(--t3); }
+footer { border-top: 1px solid var(--b); padding: 40px 0 32px; background: var(--bg2); }
+.foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+.foot-brand p { font-size: 13px; color: var(--t3); line-height: 1.65; margin-top: 10px; max-width: 260px; }
+.foot-col h4 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--t3); font-family: var(--mono); margin-bottom: 12px; }
+.foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.foot-col ul li a { font-size: 13px; color: var(--t3); transition: color .2s; }
+.foot-col ul li a:hover { color: var(--t2); }
+.foot-bottom { display: flex; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--b); font-size: 12px; color: var(--t3); }
 
 @media(max-width:768px){
   .article-wrap{grid-template-columns:1fr;gap:40px}
   .article-sidebar{position:static}
+  .related-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr;gap:24px}
   .foot-bottom{flex-direction:column;gap:8px}
   .nav-links{display:none}
@@ -170,162 +162,132 @@ footer { border-top:1px solid var(--b); padding:40px 0 32px; background:var(--bg
     <div class="article-wrap">
       <article class="article-main">
         <a href="/blog/" class="back-link">← Späť na blog</a>
-        <span class="article-label">Blog · Právna prax &amp; AI</span>
-        <h1 class="article-title">Môže advokát používať ChatGPT na klientske dokumenty?</h1>
+        <span class="article-label">Blog · Právna prax</span>
+        <h1 class="article-title">Môže advokát používať ChatGPT?</h1>
         <div class="article-meta">
-          <span>✍️ Martin Hergovic</span>
-          <span>📅 1. apríl 2026</span>
-          <span class="read-time">⏱ 6 min čítania</span>
+          <span class="article-meta-item">✍️ Martin Hergovic</span>
+          <span class="article-meta-item">📅 2. apríla 2026</span>
+          <span class="article-meta-item read-time">⏱ 6 min čítania</span>
         </div>
 
         <div class="article-content">
 
-          <p>Krátka odpoveď: <strong>závisí to od toho, ako a kde ChatGPT beží.</strong> Dlhá odpoveď je o niečo komplikovanejšia — a pre advokátov na Slovensku veľmi dôležitá.</p>
+          <p>ChatGPT je neuveriteľne užitočný nástroj — pomáha písať, sumarizovať, analyzovať a ušetrí hodiny rutinnej práce. Niet divu, že mnohí advokáti ho začínajú používať každý deň. Ale je to legálne? A čo GDPR a advokátska mlčanlivosť?</p>
 
-          <p>AI nástroje ako ChatGPT, Microsoft Copilot alebo Google Gemini sa stávajú štandardnou súčasťou práce v mnohých profesiách. Advokáti nie sú výnimkou. Problém je, že právnická profesia má špecifické povinnosti mlčanlivosti, ktoré väčšina cloudových AI nástrojov jednoducho nezvláda bezpečne.</p>
+          <p>Odpoveď nie je jednoduchá. <strong>Áno, advokát môže používať ChatGPT</strong> — ale len za určitých podmienok. A tie podmienky väčšina advokátov dnes nespĺňa.</p>
 
-          <div class="verdict-box red">
-            <h4>⚠️ Priame riziko</h4>
-            <p>Každý dokument, ktorý nahráte do ChatGPT, Copilotu alebo podobného cloudového nástroja, opúšťa vašu kanceláriu a je spracovaný na serveroch v zahraničí. Pre klientske dáta je to problém.</p>
-          </div>
+          <h2 id="problem">Kde je problém s ChatGPT v advokácii?</h2>
 
-          <h2 id="co-hovor-zakon">Čo hovorí zákon o mlčanlivosti advokáta</h2>
+          <p>ChatGPT prevádzkuje OpenAI — americká spoločnosť so servermi mimo EÚ. Keď zadáte text do ChatGPT, tieto dáta putujú na servery OpenAI, kde môžu byť (a predvolene sú) použité na tréning modelov.</p>
 
-          <p>Zákon č. 586/2003 Z. z. o advokácii ukladá advokátom <strong>povinnosť zachovávať mlčanlivosť o všetkých skutočnostiach, o ktorých sa dozvedeli v súvislosti s výkonom advokácie</strong>. Táto povinnosť sa vzťahuje na:</p>
+          <p>Pre bežného užívateľa to môže byť akceptovateľné. Pre advokáta pracujúceho s dôvernými informáciami klientov to je zásadný problém z niekoľkých dôvodov:</p>
 
           <ul>
-            <li>Obsah klientskych prípadov a dokumentov</li>
-            <li>Totožnosť klientov a ich právne postavenie</li>
-            <li>Právne stratégie a interné komunikácie</li>
-            <li>Akékoľvek informácie, ktoré klient advokátovi zveril</li>
+            <li><strong>Advokátska mlčanlivosť</strong> — zákon o advokácii ukladá advokátovi povinnosť zachovávať mlčanlivosť o všetkých skutočnostiach, o ktorých sa dozvedel pri poskytovaní právnych služieb. Táto povinnosť sa vzťahuje na akúkoľvek formu zdieľania informácií — vrátane AI nástrojov.</li>
+            <li><strong>GDPR</strong> — ak pracujete s osobnými údajmi klientov (a vždy pracujete), ich odosielanie do cloudových AI systémov bez vhodného právneho základu a bez zmluvy o spracúvaní údajov je porušením nariadenia.</li>
+            <li><strong>Prenos mimo EÚ</strong> — servery OpenAI sú v USA. Prenos osobných údajov do tretích krajín bez adekvátnych záruk (štandard SCC, Binding Corporate Rules) je problematický.</li>
           </ul>
 
-          <p>Keď nahráte klientsky dokument do cloudového AI nástroja, de facto zdieľate tieto informácie s tretími stranami — konkrétne s poskytovateľom AI a potenciálne s jeho subdodávateľmi. To môže byť v priamom rozpore s vašou zákonnou povinnosťou mlčanlivosti.</p>
-
-          <h2 id="gdpr-a-ai">GDPR a AI: čo platí od roku 2024</h2>
-
-          <p>Okrem zákona o advokácii vstupuje do hry aj GDPR. Ak klientske dokumenty obsahujú osobné údaje (a takmer vždy obsahujú), platí nariadenie EÚ 2016/679.</p>
-
-          <p>Kľúčové body:</p>
-
-          <ul>
-            <li><strong>Prenos mimo EHP</strong> — väčšina cloudových AI má servery v USA. Prenos osobných údajov do USA je regulovaný a vyžaduje si štandardné zmluvné doložky alebo iný právny základ.</li>
-            <li><strong>Spracovateľská zmluva</strong> — ak využívate AI nástroj na spracovanie klientskych osobných údajov, technicky by ste mali mať so poskytovateľom uzatvorenú spracovateľskú zmluvu (DPA).</li>
-            <li><strong>Minimalizácia dát</strong> — GDPR vyžaduje, aby ste nezdieľali viac osobných údajov, ako je nevyhnutne potrebné.</li>
-          </ul>
-
-          <div class="verdict-box gold">
-            <h4>📋 Praktický problém</h4>
-            <p>OpenAI aj Microsoft ponúkajú podnikové verzie (ChatGPT Enterprise, Copilot for Microsoft 365) s DPA zmluvami a prísľubom, že dáta nebudú použité na tréning. Tieto verzie sú legitímnejšou voľbou — ale stále ide o cloud, stále dochádza k prenosu dát, a stále existuje riziko z pohľadu mlčanlivosti advokáta.</p>
+          <div class="warning-box">
+            <p>⚠️ <strong>Pozor:</strong> Aj keď OpenAI ponúka nastavenie „nevyužívať dáta na tréning", stále ide o prenos dát na externé servery mimo kontroly advokáta. To samo o sebe nestačí na splnenie povinností podľa GDPR a advokátskeho poriadku.</p>
           </div>
 
-          <h2 id="tri-rezimy">Tri režimy používania AI — ktorý je bezpečný?</h2>
+          <h2 id="kedy-ano">Kedy môže advokát legálne používať ChatGPT?</h2>
 
-          <p>Nie všetky AI nástroje fungujú rovnako. Z pohľadu ochrany klientskych dát existujú tri základné režimy:</p>
+          <p>Existujú situácie, kde je použitie ChatGPT v advokácii bezproblémové. Kľúčom je <strong>čo do nástroja zadávate</strong>.</p>
 
-          <table class="comparison-table">
-            <thead>
-              <tr><th>Režim</th><th>Kde beží AI</th><th>Klientske dáta</th><th>Pre advokátov</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="td-label">A — Cloud bez DPA<br><small style="color:var(--t3);font-weight:400">ChatGPT Free, Gemini Free</small></td>
-                <td>Servery OpenAI / Google v USA</td>
-                <td class="td-red">Môžu byť použité na tréning</td>
-                <td class="td-red">❌ Nevhodné</td>
-              </tr>
-              <tr>
-                <td class="td-label">B — Cloud s DPA<br><small style="color:var(--t3);font-weight:400">ChatGPT Enterprise, Copilot for M365</small></td>
-                <td>Servery v EÚ / USA s garanciami</td>
-                <td>Nepoužívajú sa na tréning, ale opúšťajú kanceláriu</td>
-                <td style="color:var(--gold)">⚠️ Rizikové, vyžaduje právne posúdenie</td>
-              </tr>
-              <tr>
-                <td class="td-label">C — Lokálny AI<br><small style="color:var(--t3);font-weight:400">1bot, self-hosted Ollama</small></td>
-                <td>Váš vlastný server / Mac Mini</td>
-                <td class="td-green">Nikdy neopúšťajú vaše zariadenie</td>
-                <td class="td-green">✅ Bezpečné</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Bezpečné použitie (bez dát klientov)</h3>
 
-          <p>Len Režim C — lokálny AI — garantuje, že klientske dáta zostanú výlučne u vás. Žiadny prenos, žiadna tretia strana, žiadne riziko porušenia mlčanlivosti.</p>
+          <ul>
+            <li>Formulovanie všeobecných právnych otázok bez identifikácie klienta</li>
+            <li>Vytváranie šablón zmlúv bez konkrétnych stranových údajov</li>
+            <li>Výskum judikatúry a právnych princípov vo všeobecnej rovine</li>
+            <li>Písanie marketingových textov pre kanceláriu</li>
+            <li>Preklady všeobecných dokumentov bez osobných údajov</li>
+          </ul>
 
-          <h2 id="prakticky-dopad">Praktický dopad pre slovenských advokátov</h2>
+          <div class="green-box">
+            <p>✅ <strong>Príklad bezpečného promptu:</strong> „Napíš vzor zmluvy o dielo podľa slovenského práva pre IT projekty" — žiadne osobné údaje, žiadna identifikácia klienta.</p>
+          </div>
 
-          <p>Slovenská advokátska komora (SAK) zatiaľ nevydala záväzné usmernenie špecificky pre AI nástroje. Napriek tomu platia existujúce pravidlá mlčanlivosti a GDPR, ktoré sú dostatočne jasné.</p>
+          <h3>Rizikové použitie (vyhnúť sa)</h3>
+
+          <ul>
+            <li>Vkladanie mien, adries a kontaktov klientov do promptov</li>
+            <li>Nahrávanie zmlúv, zápisníc alebo dokumentov s osobnými údajmi</li>
+            <li>Popis konkrétnych prípadov s identifikovateľnými stranami</li>
+            <li>Analýza emailov alebo komunikácie s klientmi</li>
+          </ul>
 
           <blockquote>
-            <p>Ak by prišlo ku kontrole alebo sťažnosti klienta, advokát by musel vedieť preukázať, že klientske dáta nezdieľal s tretími stranami bez právneho základu. Pri cloudovom AI je to prakticky nemožné.</p>
+            <p>„Pravidlo je jednoduché: ak by ste ten istý text neodoslali neznámej osobe emailom, neposielajte ho ani do ChatGPT."</p>
           </blockquote>
 
-          <p>Reálne riziká pri použití cloudového AI na klientske dokumenty:</p>
+          <h2 id="gdpr-detaily">ChatGPT a GDPR — čo konkrétne hrozí?</h2>
 
-          <ul>
-            <li>Disciplinárne konanie zo strany SAK za porušenie mlčanlivosti</li>
-            <li>Náhrada škody klientovi v prípade úniku informácií</li>
-            <li>Pokuta od Úradu na ochranu osobných údajov za porušenie GDPR</li>
-            <li>Reputačné škody v prípade zverejnenia</li>
-          </ul>
+          <p>GDPR (Nariadenie EÚ 2016/679) sa vzťahuje na každé spracúvanie osobných údajov fyzických osôb. Ak advokát zadá do ChatGPT text obsahujúci meno, adresu, rodné číslo alebo iný identifikátor klienta, ide o spracúvanie osobných údajov.</p>
 
-          <h2 id="ake-ulohy-su-bezpecne">Aké úlohy sú bezpečné s cloudovým AI?</h2>
+          <p>Aby bolo toto spracúvanie zákonné, advokát by potreboval:</p>
 
-          <p>Nie všetko je zakázané. Cloudový AI môžete bezpečne použiť na úlohy, kde <strong>nezdieľate žiadne klientske dáta</strong>:</p>
+          <ol>
+            <li><strong>Právny základ</strong> — napríklad súhlas dotknutej osoby alebo legitímny záujem</li>
+            <li><strong>Zmluvu o spracúvaní údajov (DPA)</strong> — uzavretú s OpenAI ako sprostredkovateľom</li>
+            <li><strong>Zaistenie primeranej ochrany</strong> — pri prenose do USA (štandardné zmluvné doložky)</li>
+            <li><strong>Zápis v registri spracúvania</strong> — aktualizovaný o tento prípad spracúvania</li>
+          </ol>
 
-          <div class="verdict-box green">
-            <h4>✅ Bezpečné s cloudovým AI</h4>
-            <ul>
-              <li>Príprava šablón zmlúv bez konkrétnych klientskych údajov</li>
-              <li>Právny výskum a analýza verejne dostupných rozhodnutí</li>
-              <li>Formulácia interných procesov a metodík</li>
-              <li>Tvorba marketingových textov a webového obsahu</li>
-              <li>Prekladanie všeobecných právnych textov</li>
-            </ul>
+          <p>OpenAI síce ponúka DPA pre firemných zákazníkov (cez ChatGPT Enterprise), ale aj pri tejto verzii dáta fyzicky putujú na servery OpenAI. Pre mnohých advokátov to nie je akceptovateľné riešenie.</p>
+
+          <div class="info-box">
+            <p>💡 <strong>Tip:</strong> Slovenská advokátska komora zatiaľ nevydala záväzné stanovisko k používaniu AI nástrojov. Napriek tomu platia všeobecné etické a zákonné povinnosti — a tie sú pri cloudových AI nástrojoch ťažko splniteľné bez ďalších opatrení.</p>
           </div>
 
-          <div class="verdict-box red">
-            <h4>❌ Rizikové s cloudovým AI</h4>
-            <ul>
-              <li>Nahrávanie zmlúv alebo podaní s menami klientov</li>
-              <li>Analýza súdnych rozhodnutí s identifikovateľnými osobami</li>
-              <li>Sumarizácia klientskej korešpondencie</li>
-              <li>Príprava právnych memoránd o konkrétnych prípadoch</li>
-              <li>Akákoľvek práca, kde dokument obsahuje osobné údaje klienta</li>
-            </ul>
+          <h2 id="riesenie">Bezpečná alternatíva: lokálne AI</h2>
+
+          <p>Riešenie existuje — a je elegantné. <strong>Lokálne AI modely bežiace priamo vo vašej kancelárií</strong> poskytujú výkonnosť porovnateľnú s ChatGPT, ale dáta neopustia vaše priestory.</p>
+
+          <p>Ako to funguje v praxi?</p>
+
+          <ul>
+            <li>AI model beží na Mac Mini alebo podobnom zariadení priamo u vás</li>
+            <li>Pristupujete cez webový prehliadač alebo aplikáciu — rovnako jednoducho ako k ChatGPT</li>
+            <li>Žiadne dáta neodchádzajú na externé servery</li>
+            <li>Vy ste správcom aj prevádzkovateľom — plná kontrola</li>
+            <li>Možnosť trénovať model na vašich vlastných vzoroch dokumentov</li>
+          </ul>
+
+          <p>Aktuálne lokálne modely ako <strong>Llama 3.3, Mistral alebo Qwen</strong> dosahujú výkonnosť, ktorá je pre väčšinu právnych úkonov viac než postačujúca — sumarizácia, analýza zmlúv, príprava podaní, výskum.</p>
+
+          <div class="green-box">
+            <p>✅ <strong>Výhoda lokálneho AI:</strong> Môžete bez obáv zadať celú zmluvu vrátane mien a dátumov. Dáta zostávajú u vás — a vy ste plne v súlade s GDPR aj advokátskou mlčanlivosťou.</p>
           </div>
 
-          <h2 id="riesenie">Riešenie: lokálny AI v kancelárií</h2>
+          <h2 id="prakticky-postup">Praktický postup pre advokátske kancelárie</h2>
 
-          <p>Bezpečnou alternatívou je AI model, ktorý beží priamo vo vašej kancelárií — na vašom serveri, bez pripojenia k externým cloudovým službám. Technicky je to dnes reálne dostupné aj pre malé kancelárie.</p>
+          <p>Ak chcete začať využívať AI naplno — bezpečne a v súlade s predpismi — odporúčame tento postup:</p>
 
-          <p>Moderné AI modely (ako Qwen2.5 alebo Llama 3) ponúkajú kvalitu porovnateľnú s ChatGPT, pričom všetky výpočty prebiehajú lokálne. Na bežnú advokátsku prácu — sumarizácia zmlúv, analýza dokumentov, príprava podaní — je to plne postačujúce.</p>
-
-          <p><strong>Výhody lokálneho AI pre advokátske kancelárie:</strong></p>
-          <ul>
-            <li>100 % zhoda s povinnosťou mlčanlivosti — dáta nikam neodchádzajú</li>
-            <li>GDPR splnené bez ďalších zmlúv alebo certifikácií</li>
-            <li>Funguje aj bez internetu</li>
-            <li>Fixné náklady — žiadne poplatky za každý dopyt</li>
-            <li>Možnosť prispôsobiť AI na špecifické potreby kancelárie</li>
-          </ul>
+          <ol>
+            <li><strong>Audit súčasného stavu</strong> — zistite, aké AI nástroje vaši spolupracovníci už používajú</li>
+            <li><strong>Interné pravidlá</strong> — vydajte interný predpis o používaní AI nástrojov s jasnými hranicami</li>
+            <li><strong>Rozhodnite sa pre model</strong> — cloud (s prísnou disciplínou) alebo lokálne AI (odporúčané)</li>
+            <li><strong>Nasadenie lokálneho AI</strong> — jednorázová inštalácia, mesačná údržba</li>
+            <li><strong>Vzdelávanie tímu</strong> — základné školenie o bezpečnom používaní AI (2 hodiny postačia)</li>
+          </ol>
 
           <h2 id="zaver">Záver</h2>
 
-          <p>Advokát <strong>môže</strong> používať AI — ale musí vedieť, kde jeho dáta putujú. Cloudový ChatGPT na klientske dokumenty je problematický z pohľadu zákona o advokácii aj GDPR. Bezpečnou cestou je lokálny AI model bežiaci priamo vo vašej kancelárií.</p>
+          <p>ChatGPT je mocný nástroj a advokáti ho môžu využívať — ale len vtedy, keď do neho nevkladajú dôverné informácie klientov. Pre plnohodnotné AI v advokátskej praxi, kde potrebujete pracovať so skutočnými dokumentmi a prípadmi, je lokálne AI jedinou skutočne bezpečnou cestou.</p>
 
-          <p>Ak vás zaujíma, ako takéto riešenie funguje v praxi, radi vám ukážeme fungujúci systém v pilotnú kancelárií v Bratislave — bez záväzkov a bez tlaku.</p>
-
-          <p><a href="/#kontakt">Kontaktujte nás pre nezáväznú konzultáciu →</a></p>
+          <p>Technológia na to existuje, je cenovo dostupná a nasadenie je jednoduchšie, ako si väčšina advokátov myslí. <a href="/#kontakt">Kontaktujte nás</a> — radi vám ukážeme, ako to funguje v praxi na nezáväznej konzultácii.</p>
 
         </div>
 
         <div class="article-tags">
-          <a href="#" class="article-tag">ChatGPT advokát</a>
-          <a href="#" class="article-tag">AI právna prax</a>
-          <a href="#" class="article-tag">GDPR AI</a>
-          <a href="#" class="article-tag">mlčanlivosť advokáta</a>
-          <a href="#" class="article-tag">lokálny AI</a>
-          <a href="#" class="article-tag">Slovensko</a>
+          <a href="/blog/" class="article-tag">AI pre advokátov</a>
+          <a href="/blog/" class="article-tag">GDPR</a>
+          <a href="/blog/" class="article-tag">ChatGPT</a>
+          <a href="/blog/" class="article-tag">Mlčanlivosť</a>
+          <a href="/blog/" class="article-tag">Lokálne AI</a>
         </div>
       </article>
 
@@ -333,30 +295,45 @@ footer { border-top:1px solid var(--b); padding:40px 0 32px; background:var(--bg
         <div class="sidebar-card">
           <h4>Obsah článku</h4>
           <ul class="toc-list">
-            <li><a href="#co-hovor-zakon">Čo hovorí zákon o mlčanlivosti</a></li>
-            <li><a href="#gdpr-a-ai">GDPR a AI od roku 2024</a></li>
-            <li><a href="#tri-rezimy">Tri režimy — ktorý je bezpečný?</a></li>
-            <li><a href="#prakticky-dopad">Praktický dopad pre SK advokátov</a></li>
-            <li><a href="#ake-ulohy-su-bezpecne">Čo je bezpečné s cloudovým AI</a></li>
-            <li><a href="#riesenie">Riešenie: lokálny AI</a></li>
+            <li><a href="#problem">Kde je problém s ChatGPT?</a></li>
+            <li><a href="#kedy-ano">Kedy môže advokát ChatGPT použiť?</a></li>
+            <li><a href="#gdpr-detaily">ChatGPT a GDPR</a></li>
+            <li><a href="#riesenie">Bezpečná alternatíva: lokálne AI</a></li>
+            <li><a href="#prakticky-postup">Praktický postup</a></li>
             <li><a href="#zaver">Záver</a></li>
           </ul>
         </div>
         <div class="cta-card">
-          <h4>Chcete bezpečné AI?</h4>
-          <p>1bot beží priamo vo vašej kancelárií. Žiadny cloud, žiadne dáta von. GDPR a mlčanlivosť splnené od prvého dňa.</p>
+          <h4>Chcete AI bez rizika?</h4>
+          <p>Nainštalujeme AI priamo vo vašej kancelárií. Žiadny cloud, žiadne dáta von. GDPR compliant od prvého dňa.</p>
           <a href="/#kontakt" class="cta-btn">Nezáväzná konzultácia →</a>
-        </div>
-        <div class="sidebar-card" style="margin-top:14px">
-          <h4>Súvisiace články</h4>
-          <ul class="toc-list">
-            <li><a href="/blog/gdpr-ai-advokatska-kancelaria/">GDPR a AI v advokátskej kancelárií — praktický sprievodca</a></li>
-            <li><a href="/blog/lokalny-ai-asistent-ako-funguje/">Lokálny AI asistent — ako to funguje v praxi</a></li>
-          </ul>
         </div>
       </aside>
     </div>
   </div>
+
+  <section class="related-sec">
+    <div class="w">
+      <span style="font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px">Ďalšie články</span>
+      <div class="related-grid">
+        <a href="/blog/gdpr-ai-advokatska-kancelaria/" class="related-card">
+          <span class="related-label">GDPR</span>
+          <div class="related-title">GDPR a AI v advokátskej kancelárii</div>
+          <p class="related-desc">Kompletný prehľad povinností pri nasadení AI nástrojov v regulovaných profesiách.</p>
+        </a>
+        <a href="/blog/" class="related-card">
+          <span class="related-label">AI technológie</span>
+          <div class="related-title">Lokálne AI vs. cloudové AI — porovnanie pre firmy</div>
+          <p class="related-desc">Kedy má zmysel lokálne riešenie a kedy postačí cloud? Praktické porovnanie nákladov a bezpečnosti.</p>
+        </a>
+        <a href="/blog/" class="related-card">
+          <span class="related-label">Právna prax</span>
+          <div class="related-title">5 úloh, ktoré AI zvládne za advokáta za minúty</div>
+          <p class="related-desc">Sumarizácia, analýza zmlúv, príprava podaní — kde AI skutočne šetrí čas v právnej praxi.</p>
+        </a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
