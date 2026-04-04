@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c8a96e'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='400' fill='%2309090b' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
-<meta name="description" content="1bot — Váš AI kolega v krabičke. Súkromné AI pre advokátov, poradcov a firmy. Žiadny cloud, žiadne zdieľanie dát. Mac Mini, lokálne, 24/7.">
+<meta name="description" content="AI asistent pre advokátov a daňových poradcov. Beží lokálne na vašom Mac Mini, dáta neopúšťajú kanceláriu. GDPR compliant. 1bot.sk">
 <!-- OG / Social sharing -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://1bot.sk/">
 <meta property="og:title" content="1bot — Lokálny AI asistent pre advokátov">
 <meta property="og:description" content="Súkromné AI pre advokátov, daňových poradcov a fintech firmy. Beží lokálne na Mac Mini — žiadny cloud, žiadne dáta von.">
 <meta property="og:image" content="https://1bot.sk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="sk_SK">
 <meta property="og:site_name" content="1bot">
 <!-- Twitter/X card -->
@@ -42,7 +44,7 @@
   "category": "Software"
 }
 </script>
-<title>1bot — Váš AI kolega. V krabičke.</title>
+<title>1bot — Lokálny AI asistent pre advokátov | Mac Mini, žiadny cloud</title>
 <style>
 /* System fonts — zero external requests, zero privacy risk */
 :root {
@@ -198,7 +200,7 @@ nav.stuck { background: rgba(9,9,11,.93); border-color: var(--b); backdrop-filte
 
 .pdetail { display: flex; flex-direction: column; gap: 12px; }
 .dblock { padding: 20px; background: var(--bg3); border: 1px solid var(--b); border-radius: var(--r); }
-.dblock h4 { font-size: 13px; font-weight: 600; margin-bottom: 7px; display: flex; align-items: center; gap: 8px; }
+.dblock h3 { font-size: 13px; font-weight: 600; margin-bottom: 7px; display: flex; align-items: center; gap: 8px; }
 .dtag { font-family: var(--mono); font-size: 10px; color: var(--t3); background: var(--surface); padding: 2px 8px; border-radius: 100px; font-weight: 400; }
 .dblock p { font-size: 13px; color: var(--t2); line-height: 1.6; }
 .dbar { margin-top: 10px; height: 2px; background: var(--b2); border-radius: 100px; overflow: hidden; }
@@ -288,6 +290,17 @@ nav.stuck { background: rgba(9,9,11,.93); border-color: var(--b); backdrop-filte
 .faq-item { padding: 24px; background: var(--bg); border: 1px solid var(--b); border-radius: var(--r); }
 .faq-q { font-size: 15px; font-weight: 600; margin-bottom: 10px; line-height: 1.3; }
 .faq-a { font-size: 14px; color: var(--t2); line-height: 1.65; }
+
+/* ── TESTIMONIALS ── */
+.testi-sec { background: var(--bg); border-top: 1px solid var(--b); }
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 48px; }
+.testi-card { background: var(--bg2); border: 1px solid var(--b); border-radius: var(--r2); padding: 28px 24px; min-height: 250px; display: flex; flex-direction: column; justify-content: space-between; }
+.testi-badge { font-family: var(--mono); font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: inline-block; }
+.testi-quote { font-family: var(--serif); font-size: 24px; line-height: 1.35; letter-spacing: -.5px; margin-bottom: 18px; }
+.testi-meta { padding-top: 16px; border-top: 1px solid var(--b); }
+.testi-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.testi-role { font-size: 12px; color: var(--t3); }
+.testi-note { margin-top: 18px; font-size: 13px; color: var(--t3); }
 
 /* ── NEWSLETTER ── */
 .nl-sec { background: var(--bg); border-top: 1px solid var(--b); padding: 60px 0; }
@@ -391,7 +404,7 @@ footer { border-top: 1px solid var(--b); padding: 40px 0; background: var(--bg);
   .stat { border-right: none; padding-right: 0; margin-right: 0; border-bottom: 1px solid var(--b); padding-bottom: 16px; }
   .stat:last-child { border-bottom: none; }
   .prob-grid, .panel.on, .about-grid, .faq-grid, .nl-inner, .contact-layout, .priv-box { grid-template-columns: 1fr; }
-  .who-grid, .how-grid { grid-template-columns: 1fr; }
+  .who-grid, .how-grid, .testi-grid { grid-template-columns: 1fr; }
   .how-step { border-right: none; border-bottom: 1px solid var(--b); }
   .how-step:last-child { border-bottom: none; }
   .acc-grid { grid-template-columns: 1fr; }
@@ -406,6 +419,8 @@ footer { border-top: 1px solid var(--b); padding: 40px 0; background: var(--bg);
   .og { grid-template-columns: 1fr; }
 }
 </style>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "w6c9ol1hdk");</script>
 </head>
 <body>
 
@@ -426,11 +441,11 @@ footer { border-top: 1px solid var(--b); padding: 40px 0; background: var(--bg);
       <ul class="nav-links">
         <li><a href="#produkty">Produkty</a></li>
         <li><a href="#pre-koho">Pre koho</a></li>
-        <li><a href="#cennik">Cenník</a></li>
+        <li><a href="pricing.html">Cennik</a></li>
         <li><a href="#o-nas">O nás</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
-      <button class="nav-cta" onclick="location.href='#kontakt'">Nezáväzná konzultácia</button>
+      <button class="nav-cta" onclick="location.href='#kontakt'">Rezervovať konzultáciu</button>
     </div>
   </div>
 </nav>
@@ -449,17 +464,17 @@ footer { border-top: 1px solid var(--b); padding: 40px 0; background: var(--bg);
           <div class="story-time">Pia 17:58 · iba vo vašej sieti</div>
         </div>
       </div>
-      <h1 class="h1">Váš AI kolega.<br><em>V krabičke.</em></h1>
-      <p class="hero-sub">1bot nainštalujeme priamo vo vašej kancelárií. Pozná vaše dokumenty, nikdy nespí — a vaše dáta sú vaše.</p>
+      <h1 class="h1">AI pre vašu kanceláriu.<br><em>Bez cloudu. Bez rizika.</em></h1>
+      <p class="hero-sub">1bot je lokálny AI asistent pre advokátov, poradcov a regulované firmy. Nasadíme ho priamo u vás, nastavíme na vaše dokumenty a vy získate pomocníka, ktorý šetrí hodiny práce bez toho, aby dáta opustili vašu sieť.</p>
       <div class="hero-ctas">
-        <a href="#kontakt" class="btn-gold">Nezáväzná konzultácia →</a>
-        <a href="#produkty" class="btn-outline">Pozrieť produkty</a>
+        <a href="#kontakt" class="btn-gold">Chcem 15-min konzultáciu →</a>
+        <a href="#cennik" class="btn-outline">Pozrieť ceny a balíky</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><div class="stat-n">100%</div><div class="stat-l">lokálne — bez cloudu</div></div>
-        <div class="stat"><div class="stat-n">0</div><div class="stat-l">dát na cudzích serveroch</div></div>
-        <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">k dispozícii</div></div>
-        <div class="stat"><div class="stat-n">3</div><div class="stat-l">konfigurácie</div></div>
+        <div class="stat"><div class="stat-n">100%</div><div class="stat-l">lokálne nasadenie</div></div>
+        <div class="stat"><div class="stat-n">0</div><div class="stat-l">dokumentov v cloude</div></div>
+        <div class="stat"><div class="stat-n">24 h</div><div class="stat-l">odpoveď na dopyt</div></div>
+        <div class="stat"><div class="stat-n">1</div><div class="stat-l">partner pre AI aj servis</div></div>
       </div>
     </div>
   </div>
@@ -506,6 +521,48 @@ footer { border-top: 1px solid var(--b); padding: 40px 0; background: var(--bg);
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="testi-sec sec reveal">
+  <div class="w">
+    <span class="sec-label">Dôvera</span>
+    <h2 class="sec-title">Pripravujeme prvé prípadové štúdie a referencie.</h2>
+    <p class="sec-body">Prvé nasadenia bežia v pilotnom režime. Nižšie je ukážka typu výsledkov, ktoré klienti od 1bot očakávajú po nasadení.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div>
+          <span class="testi-badge">Placeholder referencia</span>
+          <p class="testi-quote">„Namiesto prehľadávania priečinkov sa právnik spýta jednu otázku a do minúty má odpoveď aj so zdrojom."</p>
+        </div>
+        <div class="testi-meta">
+          <div class="testi-name">Advokátska kancelária</div>
+          <div class="testi-role">Boutique tím, 4 ľudia · Bratislava</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div>
+          <span class="testi-badge">Placeholder referencia</span>
+          <p class="testi-quote">„Najväčšia hodnota nie je len rýchlosť. Je to pokoj, že klientske dáta nikam neodchádzajú."</p>
+        </div>
+        <div class="testi-meta">
+          <div class="testi-name">Daňové poradenstvo</div>
+          <div class="testi-role">Poradenská firma, 8 ľudí · Slovensko</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div>
+          <span class="testi-badge">Placeholder referencia</span>
+          <p class="testi-quote">„Keď príde audit alebo interná kontrola, vieme ukázať, že AI pracuje pod našou plnou kontrolou."</p>
+        </div>
+        <div class="testi-meta">
+          <div class="testi-name">Regulovaná firma</div>
+          <div class="testi-role">Compliance tím · CZ / SK</div>
+        </div>
+      </div>
+    </div>
+    <p class="testi-note">Po ukončení pilotov sem doplníme mená klientov, konkrétne výsledky a čísla z nasadenia.</p>
+  </div>
+</section>
+
 <!-- PRODUCTS -->
 <section id="produkty" class="prod-sec sec">
   <div class="w">
@@ -543,11 +600,11 @@ footer { border-top: 1px solid var(--b); padding: 40px 0; background: var(--bg);
           </div>
           <div class="pdetail">
             <div class="dblock">
-              <h4>Pre koho <span class="dtag">ideálny zákazník</span></h4>
+              <h3>Pre koho <span class="dtag">ideálny zákazník</span></h3>
               <p>Kancelária alebo tím 2–5 ľudí, ktorý chce AI asistenta na každodenné úlohy — odpovede na otázky, review dokumentov, príprava podkladov. Zlatý stred ceny a výkonu.</p>
             </div>
             <div class="dblock">
-              <h4>Výkon <span class="dtag">Qwen3-14B @ M4</span></h4>
+              <h3>Výkon <span class="dtag">Qwen3-14B @ M4</span></h3>
               <p>15–25 tokenov za sekundu. Funguje v živej konverzácii, zvláda dlhé dokumenty, iteratívne úpravy. Spoľahlivá každodenná práca.</p>
               <div class="dbar"><div class="dbar-f" style="width:50%;background:#4ab8a0"></div></div>
             </div>
@@ -577,11 +634,11 @@ footer { border-top: 1px solid var(--b); padding: 40px 0; background: var(--bg);
           </div>
           <div class="pdetail">
             <div class="dblock">
-              <h4>Pre koho <span class="dtag">ideálny zákazník</span></h4>
+              <h3>Pre koho <span class="dtag">ideálny zákazník</span></h3>
               <p>Kancelária 5–15 ľudí, CASP alebo poradenská firma, kde DD a compliance nie sú príležitostnou úlohou, ale každodennou prácou. Thinking mode pre zložité analýzy.</p>
             </div>
             <div class="dblock">
-              <h4>Výkon <span class="dtag">Qwen3-30B MoE @ M4 Pro</span></h4>
+              <h3>Výkon <span class="dtag">Qwen3-30B MoE @ M4 Pro</span></h3>
               <p>25–40 tokenov za sekundu vďaka MoE architektúre. Prepína medzi rýchlym a reasoning modom podľa zložitosti otázky — automaticky.</p>
               <div class="dbar"><div class="dbar-f" style="width:74%;background:#9b7fd4"></div></div>
             </div>
@@ -610,11 +667,11 @@ footer { border-top: 1px solid var(--b); padding: 40px 0; background: var(--bg);
           </div>
           <div class="pdetail">
             <div class="dblock">
-              <h4>Pre koho <span class="dtag">ideálny zákazník</span></h4>
+              <h3>Pre koho <span class="dtag">ideálny zákazník</span></h3>
               <p>Veľká kancelária, regulovaná entita (CASP, finančná inštitúcia) alebo firma, kde AI pracuje nielen ako asistent, ale ako súčasť operatívnych procesov.</p>
             </div>
             <div class="dblock">
-              <h4>Výkon <span class="dtag">Qwen3-72B @ M4 Pro 64 GB</span></h4>
+              <h3>Výkon <span class="dtag">Qwen3-72B @ M4 Pro 64 GB</span></h3>
               <p>30–50 tokenov za sekundu. Plná veľkosť modelu bez kompromisov. Súbežné agenty, vektorová databáza, viacstupňová automatizácia.</p>
               <div class="dbar"><div class="dbar-f" style="width:94%;background:#d4784a"></div></div>
             </div>
@@ -827,31 +884,31 @@ footer { border-top: 1px solid var(--b); padding: 40px 0; background: var(--bg);
 <section class="faq-sec sec reveal">
   <div class="w">
     <span class="sec-label">Časté otázky</span>
-    <h2 class="sec-title">Časté otázky.</h2>
+    <h2 class="sec-title">Otázky, ktoré rieši každý pred rozhodnutím.</h2>
     <div class="faq-grid">
       <div class="faq-item">
-        <div class="faq-q">Funguje bot aj po slovensky?</div>
-        <div class="faq-a">Áno. Qwen3 modely majú výbornú podporu slovenčiny a češtiny. Bot komunikuje v jazyku, v akom sa ho pýtate — vrátane právnej terminológie.</div>
+        <div class="faq-q">Ako rýchlo vieme 1bot spustiť?</div>
+        <div class="faq-a">Typicky do 3 až 7 dní od úvodnej konzultácie. Najprv vyberieme vhodnú konfiguráciu, potom zariadenie pripravíme, nahráme vaše podklady a otestujeme reálne workflow na vašich prípadoch.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Čo ak sa zariadenie pokazí?</div>
-        <div class="faq-a">Konfigurácia je zálohovaná. V prípade poruchy nasadíme náhradné zariadenie do 48 hodín. Hardware Apple má štandardnú 1-ročnú záruku, odporúčame AppleCare+.</div>
+        <div class="faq-q">Čo presne získam v konzultácii?</div>
+        <div class="faq-a">Za 15 minút prejdeme vaše použitie, odporučíme balík a povieme vám, či sa vám 1bot oplatí už teraz. Ak nie, povieme to priamo. Cieľ nie je predať najdrahší variant, ale odporučiť správne nasadenie.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Potrebujem vlastné IT oddelenie?</div>
-        <div class="faq-a">Vôbec nie. Celú technickú stránku riešime my — inštalácia, aktualizácie, monitoring, podpora. Vy len používate bota cez prehliadač alebo aplikáciu.</div>
+        <div class="faq-q">Funguje 1bot aj po slovensky a s odbornou terminológiou?</div>
+        <div class="faq-a">Áno. Modely, ktoré nasadzujeme, zvládajú slovenčinu aj češtinu veľmi dobre. Bot vie pracovať s vašou terminológiou, internými dokumentmi a štýlom komunikácie, keď ho nastavíme na vaše dáta.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Môžem bot neskôr upgradovať?</div>
-        <div class="faq-a">Áno. Upgrade na vyšší tier je možný kedykoľvek — doplatíte rozdiel v inštalácii a prechod zariadenie zvládneme vzdialene za jeden deň.</div>
+        <div class="faq-q">Potrebujeme na to interné IT alebo AI tím?</div>
+        <div class="faq-a">Nie. Zariadenie pripravíme, nasadíme, monitorujeme a aktualizujeme my. Vy používate hotový nástroj cez prehliadač. Ak máte interné IT, radi ich zapojíme, ale nie je to podmienka.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Mám vlastný Mac Mini — nainštalujete mi to?</div>
-        <div class="faq-a">Vieme, ale odporúčame naše zariadenie — garantujeme výkon a máme plnú kontrolu nad konfiguráciou. Ak trváte na vlastnom, urobíme kompatibilný check (€150) a inštaláciu za upravenú cenu.</div>
+        <div class="faq-q">Čo ak sa zariadenie pokazí alebo budeme chcieť výkon zvýšiť?</div>
+        <div class="faq-a">Konfiguráciu zálohujeme a vieme ju preniesť na náhradné zariadenie. Pri upgrade stačí doplatiť rozdiel v balíku a migráciu vieme spraviť bez toho, aby ste začínali od nuly.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Čo keď prestanete existovať?</div>
-        <div class="faq-a">Zariadenie je vaše, modely sú open source (Apache 2.0). Bot bude fungovať aj bez nás — nebudete mať servis, ale dáta a funkcia zostanú. Žiadny vendor lock-in.</div>
+        <div class="faq-q">Čo ak už máme vlastný Mac Mini alebo nechceme vendor lock-in?</div>
+        <div class="faq-a">Vieme nasadiť aj na vaše zariadenie po kompatibilnom checku. Zariadenie aj dáta sú vaše a používame otvorené modely, takže 1bot funguje ďalej aj bez nás. To je rozdiel oproti cloudovým SaaS nástrojom.</div>
       </div>
     </div>
   </div>
@@ -874,7 +931,7 @@ footer { border-top: 1px solid var(--b); padding: 40px 0; background: var(--bg);
           </div>
           <div class="nl-row">
             <input class="nl-inp" type="email" placeholder="Váš email" style="flex:2">
-            <button class="nl-btn">Odoberať</button>
+            <button class="nl-btn" aria-label="Odoberať newsletter">Odoberať</button>
           </div>
           <p class="nl-consent">Prihlásením súhlasíte so zasielaním newslettera. Odhlásite sa kedykoľvek. Žiadne zdieľanie s tretími stranami.</p>
         </div>
@@ -1076,14 +1133,42 @@ function go(n) {
 function send() {
   const name = document.getElementById('ci-name');
   const email = document.getElementById('ci-email');
+  const firm = document.getElementById('ci-firm');
+  const msg = document.getElementById('ci-msg');
   let ok = true;
   if (!name.value.trim()) { name.classList.add('err'); ok = false; } else name.classList.remove('err');
   if (!email.value.trim() || !email.value.includes('@')) { email.classList.add('err'); ok = false; } else email.classList.remove('err');
   if (!ok) return;
-  document.querySelectorAll('.wp').forEach(p => p.classList.remove('show'));
-  document.querySelector('.wprog').style.display = 'none';
-  document.getElementById('fok').classList.add('show');
+
+  const btn = document.querySelector('.wnext.rdy');
+  btn.textContent = 'Odosielam…';
+  btn.disabled = true;
+
+  // Map internal values to readable labels
+  const firmLabels = { legal: 'Advokátska kancelária', accounting: 'Účtovníctvo / poradenstvo', vasp: 'CASP / Fintech', sme: 'Iná firma' };
+  const sizeLabels = { '1-2': '1–2 ľudia', '2-5': '2–5 ľudí', '5-15': '5–15 ľudí', '15+': '15 a viac' };
+  const firmType = firmLabels[S.firm] || S.firm || '—';
+  const teamSize = sizeLabels[S.size] || S.size || '—';
+
+  emailjs.send('service_btd6izv', 'template_mdmf6ng', {
+    name: name.value.trim(),
+    email: email.value.trim(),
+    title: firm ? firm.value.trim() : '',
+    message: '🏢 Typ firmy: ' + firmType + '\n👥 Veľkosť tímu: ' + teamSize + (msg && msg.value.trim() ? '\n\n💬 Správa: ' + msg.value.trim() : ''),
+    time: new Date().toLocaleString('sk-SK')
+  }).then(function() {
+    document.querySelectorAll('.wp').forEach(p => p.classList.remove('show'));
+    document.querySelector('.wprog').style.display = 'none';
+    document.getElementById('fok').classList.add('show');
+  }).catch(function(err) {
+    btn.textContent = 'Odoslať →';
+    btn.disabled = false;
+    console.error('EmailJS error:', err);
+    alert('Nastala chyba pri odosielaní. Napíšte nám priamo na info@1bot.sk');
+  });
 }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("FGNt01wuXxFN_3zjW");</script>
 </body>
 </html>
